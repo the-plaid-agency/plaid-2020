@@ -1,3 +1,3 @@
 import React from "react"
 
-export default () => <div>Hello world!</div>
+export default () => <div>Home of THE PLAID AGENCY WEBSITE in 2020 :).</div>
