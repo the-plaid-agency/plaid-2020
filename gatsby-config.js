@@ -5,5 +5,15 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `THE PLAID AGENCY 2020`,
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `501418ff7875a4f392e1d5623cbc85`,
+      },
+    },
+  ]
 }
