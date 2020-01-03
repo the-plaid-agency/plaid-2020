@@ -26,6 +26,23 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Playfair Display`,
+            subsets: [`latin`],
+            variants: [`700`]
+          },
+          {
+            family: `Lato`,
+            subsets: [`latin`],
+            variants: [`400`, `400i`, `700`, `900`]
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `THE PLAID AGENCY`,
