@@ -4,6 +4,6 @@ import { App } from 'components'
 
 export default () => (
   <App>
-    <div>Home page</div>
+    <div>About Page</div>
   </App>
 )
