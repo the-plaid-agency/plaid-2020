@@ -12,7 +12,7 @@ export const Nav = () => (
       <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to="/about">
         About
       </AniLink>
-      <AniLink paintDrip direction="left" hex="#FF671D" activeClassName="active" to="/portfolio">
+      <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to="/portfolio">
         Portfolio
       </AniLink>
     </Row>
