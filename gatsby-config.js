@@ -8,7 +8,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `THE PLAID AGENCY`,
-    subtitle: `TPA`,
+    subTitle: `TPA`,
     description: `The official website of THE PLAID AGENCY.`,
     author: `THE PLAID AGENCY`,
     siteUrl: `https://plaid-2020.netlify.com/`,
