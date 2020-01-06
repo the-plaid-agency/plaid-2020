@@ -7,12 +7,26 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `THE PLAID AGENCY 2020`,
+    title: `THE PLAID AGENCY`,
+    subtitle: `TPA`,
     description: `The official website of THE PLAID AGENCY.`,
     author: `THE PLAID AGENCY`,
     siteUrl: `https://plaid-2020.netlify.com/`,
   },
   plugins: [
+    `gatsby-alias-imports`,
+    // {
+    //   resolve: `gatsby-plugin-layout`,
+    //   options: {
+    //     component: require.resolve(`./src/components/Layout/Layout`),
+    //   },
+    // },
+    {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        layout: require.resolve(`./src/components/Layout/Layout`),
+      },
+    },
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -32,12 +46,12 @@ module.exports = {
           {
             family: `Playfair Display`,
             subsets: [`latin`],
-            variants: [`700`]
+            variants: [`700`],
           },
           {
             family: `Lato`,
             subsets: [`latin`],
-            variants: [`400`, `400i`, `700`, `900`]
+            variants: [`400`, `400i`, `700`, `900`],
           },
         ],
       },
@@ -57,8 +71,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-alias-imports`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`
-  ]
+    /* Must be after gatsby-plugin-manifest */
+    `gatsby-plugin-offline`,
+  ],
 }

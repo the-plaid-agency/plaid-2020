@@ -6,7 +6,7 @@ export default () => (
     <Page>
       <Section>
         <Row>
-          <p>Home page</p>
+          <p>404 Page</p>
         </Row>
       </Section>
     </Page>

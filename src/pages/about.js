@@ -1,9 +1,14 @@
 import React from 'react'
-import { App } from 'components'
-
+import { Page, Section, Row } from 'components'
 
 export default () => (
-  <App>
-    <div>About Page</div>
-  </App>
+  <>
+    <Page>
+      <Section>
+        <Row>
+          <p>About page</p>
+        </Row>
+      </Section>
+    </Page>
+  </>
 )
