@@ -1,8 +1,9 @@
 import React from 'react'
-import { Page, Section, Row } from 'components'
+import { SEO, Page, Section, Row } from 'components'
 
 export default () => (
   <>
+    <SEO title="Portfolio" />
     <Page>
       <Section>
         <Row>

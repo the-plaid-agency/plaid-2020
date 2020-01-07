@@ -6,13 +6,28 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 export const Nav = () => (
   <StyledNav>
     <Row>
-      <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to="/">
+      <AniLink
+        cover
+        direction="left"
+        bg="#FF671D"
+        activeClassName="active"
+        to="/">
         Home
       </AniLink>
-      <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to="/about">
+      <AniLink
+        cover
+        direction="left"
+        bg="#FF671D"
+        activeClassName="active"
+        to="/about">
         About
       </AniLink>
-      <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to="/portfolio">
+      <AniLink
+        cover
+        direction="left"
+        bg="#FF671D"
+        activeClassName="active"
+        to="/portfolio">
         Portfolio
       </AniLink>
     </Row>

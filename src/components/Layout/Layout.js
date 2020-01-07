@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header, Nav, Footer, NormalizeStyle, ResetStyle, GlobalStyle } from 'components'
+import { SEO, NormalizeStyle, ResetStyle, GlobalStyle, Header, Nav, Footer } from 'components'
 
 const Layout = ({ children: pages }) => (
   <StyledLayout>
+    <SEO title="" />
     <NormalizeStyle />
     <ResetStyle />
     <GlobalStyle />
