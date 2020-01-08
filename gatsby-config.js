@@ -74,5 +74,6 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     /* Must be after gatsby-plugin-manifest */
     `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-trailing-slashes`,
   ],
 }
