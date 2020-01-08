@@ -1,7 +1,20 @@
+import React from 'react'
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-export const Button = styled(AniLink)`
+export const Button = ({
+  to = '/',
+  text = 'Button',
+  coverDir = 'left',
+  coverBg = '#FF671D',
+  ...props
+}) => (
+  <StyledButton to={to} cover direction={coverDir} bg={coverBg} {...props}>
+    {text}
+  </StyledButton>
+)
+
+const StyledButton = styled(AniLink)`
   background-color: #FF671D;
   color: #fff;
   display: inline-flex;
