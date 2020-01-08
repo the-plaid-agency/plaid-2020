@@ -26,7 +26,6 @@ const StyledButton = styled(AniLink)`
   padding: 20px 48px;
   position: relative;
   text-transform: uppercase;
-  width: auto;
 
   ::after {
     content: '';

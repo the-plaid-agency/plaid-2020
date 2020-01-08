@@ -30,6 +30,14 @@ export const Nav = () => (
         to="/portfolio">
         Portfolio
       </AniLink>
+      <AniLink
+        cover
+        direction="left"
+        bg="#FF671D"
+        activeClassName="active"
+        to="/components">
+        Components
+      </AniLink>
     </Row>
   </StyledNav>
 )

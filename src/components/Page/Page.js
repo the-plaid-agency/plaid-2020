@@ -23,7 +23,7 @@ const StyledPage = styled.main`
 
   h1,h2,h3,h4,h5,h6,
   p,ol,ul {
-    margin-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
   }
   *:last-child {
     margin-bottom: 0;
