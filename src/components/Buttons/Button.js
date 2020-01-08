@@ -15,7 +15,7 @@ export const Button = ({
 )
 
 const StyledButton = styled(AniLink)`
-  background-color: #FF671D;
+  background-color: ${props => props.theme.colors.primary};
   color: #fff;
   display: inline-flex;
   font-size: 0.875em; /* 14px */

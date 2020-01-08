@@ -1,18 +1,29 @@
 import React from 'react'
-import styled from 'styled-components'
-import { SEO, NormalizeStyle, ResetStyle, GlobalStyle, Header, Nav, Footer } from 'components'
+import styled, { ThemeProvider } from 'styled-components'
+import { theme } from 'utils'
+import {
+  SEO,
+  NormalizeStyle,
+  ResetStyle,
+  GlobalStyle,
+  Header,
+  Nav,
+  Footer,
+} from 'components'
 
 const Layout = ({ children: pages }) => (
-  <StyledLayout>
-    <SEO title="" />
-    <NormalizeStyle />
-    <ResetStyle />
-    <GlobalStyle />
-    <Nav />
-    <Header />
-    {pages}
-    <Footer />
-  </StyledLayout>
+  <ThemeProvider theme={theme}>
+    <StyledLayout>
+      <SEO title="" />
+      <NormalizeStyle />
+      <ResetStyle />
+      <GlobalStyle />
+      <Nav />
+      <Header />
+      {pages}
+      <Footer />
+    </StyledLayout>
+  </ThemeProvider>
 )
 
 const StyledLayout = styled.div`
