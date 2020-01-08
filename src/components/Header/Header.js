@@ -17,7 +17,6 @@ const StyledHeader = styled.header`
 
   h1 {
     color: #222;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 5em;
     line-height: 1;
     user-select: none;

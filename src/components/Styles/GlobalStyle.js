@@ -14,28 +14,34 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 5em; /* 80px */
     line-height: 1.25;
   }
   h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 3.4375em; /* 55px */
-    line-height: 1.25;
+    line-height: 1.1818181818;
   }
   h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 2.25em; /* 36px */
-    line-height: 1.25;
+    line-height: 1.1944444444;
   }
   h4 {
     font-size: 1.625em; /* 26px */
-    line-height: 1.25;
+    line-height: 1.2307692308;
   }
   h5 {
     font-size: 1.125em; /* 18px */
-    line-height: 1.25;
+    line-height: 1.4444444444;
   }
   h6 {
     font-size: 0.875em; /* 14px */
-    line-height: 1.25;
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 2;
+    text-transform: uppercase;
   }
 
   a {
@@ -44,9 +50,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p, ol, ul {
-    font-size: 1.25em;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.75;
   }
 
   ul {

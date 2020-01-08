@@ -8,8 +8,8 @@ const Layout = ({ children: pages }) => (
     <NormalizeStyle />
     <ResetStyle />
     <GlobalStyle />
-    <Header />
     <Nav />
+    <Header />
     {pages}
     <Footer />
   </StyledLayout>

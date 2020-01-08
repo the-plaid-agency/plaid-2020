@@ -47,7 +47,7 @@ const StyledNav = styled.nav`
     /* text-transform: uppercase; */
     margin-left: 30px;
     line-height: 60px;
-    transition: 0.3s all;
+    transition: 0.2s all;
   }
   a:first-child {
     margin-left: 0;

@@ -23,8 +23,8 @@ export const SEO = ({ description = ``, lang = `en`, meta = [], title }) => {
     <Helmet
       htmlAttributes={{ lang }}
       title={title ?? ``}
-      defaultTitle={`${site.siteMetadata.title + ' ' + site.siteMetadata.subTitle}`}
-      titleTemplate={`${site.siteMetadata.title + ' ' + site.siteMetadata.subTitle} | %s`}
+      defaultTitle={`${site.siteMetadata.title}`}
+      titleTemplate={`${site.siteMetadata.title} | %s`}
       meta={[
         {
           name: `description`,
