@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Row as Row_ } from 'components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-export const Nav = () => (
+export const NavBar = () => (
   <StyledNav>
     <Row>
       <AniLink
@@ -43,11 +43,15 @@ export const Nav = () => (
 )
 
 const StyledNav = styled.nav`
-  background: rgba(144, 199, 168, 0.075);
+  background: rgba(255, 255, 255, 0.25);
   display: flex;
   justify-content: center;
+  left: 0;
   padding: 0 30px;
+  position: fixed;
+  right: 0;
   user-select: none;
+  z-index: 9999;
 
   a {
     font-weight: 900;

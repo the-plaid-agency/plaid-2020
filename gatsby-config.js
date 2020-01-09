@@ -70,10 +70,19 @@ module.exports = {
         icon: `src/assets/icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets/`
+      }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
-    /* Must be after gatsby-plugin-manifest */
-    `gatsby-plugin-offline`,
     `gatsby-plugin-remove-trailing-slashes`,
+    /* gatsby-plugin-offline - MUST be after gatsby-plugin-manifest */
+    `gatsby-plugin-offline`,
   ],
 }
