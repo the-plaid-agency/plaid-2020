@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, Header, Section, Row } from 'components'
+import { Header, Page, Section, Row, Footer } from 'components'
 
 export default () => (
   <>
@@ -10,6 +10,7 @@ export default () => (
           <p>Home page</p>
         </Row>
       </Section>
+      <Footer />
     </Page>
   </>
 )

@@ -6,8 +6,8 @@ import {
   NormalizeStyle,
   ResetStyle,
   GlobalStyle,
+  Nav,
   NavBar,
-  Footer,
 } from 'components'
 
 const Layout = ({ children: pages }) => (
@@ -18,8 +18,8 @@ const Layout = ({ children: pages }) => (
       <ResetStyle />
       <GlobalStyle />
       <NavBar />
+      <Nav />
       {pages}
-      <Footer />
     </StyledLayout>
   </ThemeProvider>
 )

@@ -35,6 +35,14 @@ export const Nav = () => (
         direction="left"
         bg="#FF671D"
         activeClassName="active"
+        to="/contact">
+        Contact
+      </AniLink>
+      <AniLink
+        cover
+        direction="left"
+        bg="#FF671D"
+        activeClassName="active"
         to="/components">
         Components
       </AniLink>
@@ -43,7 +51,7 @@ export const Nav = () => (
 )
 
 const StyledNav = styled.nav`
-  background: rgba(255, 255, 255, 0.25);
+  background-color: ${props => props.theme.colors.primary};
   display: flex;
   justify-content: center;
   left: 0;
@@ -59,7 +67,7 @@ const StyledNav = styled.nav`
     /* text-transform: uppercase; */
     margin-left: 30px;
     line-height: 60px;
-    transition: 0.2s all;
+    transition: ${props => props.theme.transitions.default};
   }
   a:first-child {
     margin-left: 0;

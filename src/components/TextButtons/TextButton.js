@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { FaChevronRight } from 'react-icons/fa'
-// import { FaChevronRight } from 'react-icons/fa'
 
 export const TextButton = ({
   to = '/',
@@ -12,12 +11,13 @@ export const TextButton = ({
   ...props
 }) => (
   <StyledButton to={to} cover direction={coverDir} bg={coverBg} {...props}>
-    {text}<FaChevronRight />
+    {text}
+    <FaChevronRight />
   </StyledButton>
 )
 
 const StyledButton = styled(AniLink)`
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   color: #fff;
   display: inline-flex;
   font-size: 0.9375em; /* 15px */

@@ -14,25 +14,34 @@ module.exports = {
     siteUrl: `https://plaid-2020.netlify.com/`,
   },
   plugins: [
-    `gatsby-alias-imports`,
-    // {
-    //   resolve: `gatsby-plugin-layout`,
-    //   options: {
-    //     component: require.resolve(`./src/components/Layout/Layout`),
-    //   },
-    // },
-    {
-      resolve: 'gatsby-plugin-transition-link',
-      options: {
-        layout: require.resolve(`./src/components/Layout/Layout`),
-      },
-    },
+    /**
+     *
+     * Source Plugins
+     *
+     */
     {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATO_API_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets/`,
+      },
+    },
+
+    /**
+     *
+     * Functionality Plugins
+     *
+     */
+    `gatsby-alias-imports`,
+    `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -57,6 +66,26 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        layout: require.resolve(`./src/components/Layout/Layout`),
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-layout`,
+    //   options: {
+    //     component: require.resolve(`./src/components/Layout/Layout`),
+    //   },
+    // },
+
+    /**
+     *
+     * SEO Plugins
+     *
+     */
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-react-helmet`,
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `THE PLAID AGENCY`,
@@ -70,19 +99,6 @@ module.exports = {
         icon: `src/assets/icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets/`
-      }
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-remove-trailing-slashes`,
-    /* gatsby-plugin-offline - MUST be after gatsby-plugin-manifest */
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`, // MUST be after gatsby-plugin-manifest
   ],
 }

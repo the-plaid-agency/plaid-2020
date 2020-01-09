@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+  SEO,
   Page,
   Section,
   Row,
+  Footer,
   OrangeButton as OrangeButton_,
   WhiteButton as WhiteButton_,
   BlackTextButton as BlackTextButton_,
@@ -11,6 +13,7 @@ import {
 
 export default () => (
   <>
+    <SEO title="Portfolio" />
     <Page>
       <Section>
         <Row>
@@ -26,6 +29,7 @@ export default () => (
           <BlackTextButton text="Featured Work" to="/about" />
         </Row>
       </Section>
+      <Footer />
     </Page>
   </>
 )

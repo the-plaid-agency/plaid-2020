@@ -2,9 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row as Row_ } from 'components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { GiHamburgerMenu } from 'react-icons/go'
 
 export const NavBar = () => (
-  <StyledNav>
+  <StyledNavBar>
     <Row>
       <AniLink
         cover
@@ -35,15 +36,23 @@ export const NavBar = () => (
         direction="left"
         bg="#FF671D"
         activeClassName="active"
+        to="/contact">
+        Contact
+      </AniLink>
+      <AniLink
+        cover
+        direction="left"
+        bg="#FF671D"
+        activeClassName="active"
         to="/components">
         Components
       </AniLink>
     </Row>
-  </StyledNav>
+  </StyledNavBar>
 )
 
-const StyledNav = styled.nav`
-  background: rgba(255, 255, 255, 0.25);
+const StyledNavBar = styled.div`
+  background-color: rgba(255, 255, 255, 0.25);
   display: flex;
   justify-content: center;
   left: 0;
