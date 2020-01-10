@@ -17,7 +17,7 @@ export const NavClose = () => {
 const StyledNavClose = styled.div`
   display: flex;
   justify-content: right;
-  padding: 1.875rem 1.875rem 100px 1.875rem;
+  padding: 3.75rem 3.75rem 6.25rem 1.875rem;
 `
 const IoMdClose = styled(IoMdClose_)`
   color: #fff;

@@ -7,6 +7,6 @@ export const theme = {
     black: '#000',
   },
   transitions: {
-    default: '0.2s all ease',
+    default: '0.3s all ease',
   }
 }
