@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Image } from 'components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
-import logoPlaid from 'assets/logo_plaid_1.svg'
+// import logoPlaid from 'assets/logo_plaid_1.svg'
 
 export const Logo = () => (
   <AniLink cover direction="left" bg="#FF671D" to="/">
-    <Image src={logoPlaid} alt="nba-ref" />
+    {/* <Image src={logoPlaid} alt="nba-ref" /> */}
+    <Image src="/static/logo_plaid_1.svg" alt="nba-ref" />
   </AniLink>
 )
 
