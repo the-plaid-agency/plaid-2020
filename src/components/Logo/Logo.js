@@ -7,7 +7,7 @@ import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 export const Logo = () => (
   <AniLink cover direction="left" bg="#FF671D" to="/">
     {/* <Image src={logoPlaid} alt="nba-ref" /> */}
-    <Image src="/static/logo_plaid_1.svg" alt="nba-ref" />
+    <Image src="/logo_plaid_1.svg" alt="nba-ref" />
   </AniLink>
 )
 
