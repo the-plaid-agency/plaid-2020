@@ -10,7 +10,6 @@ export const Page = ({ children: content }) => (
 const StyledPage = styled.main`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   min-height: 100vh;
 
   p a,
