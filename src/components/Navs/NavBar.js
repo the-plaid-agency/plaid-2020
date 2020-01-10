@@ -1,84 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row as Row_ } from 'components'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { GiHamburgerMenu } from 'react-icons/go'
+import { Row as Row_, Logo, NavBarBurger } from 'components'
 
 export const NavBar = () => (
   <StyledNavBar>
     <Row>
-      <AniLink
-        cover
-        direction="left"
-        bg="#FF671D"
-        activeClassName="active"
-        to="/">
-        Home
-      </AniLink>
-      <AniLink
-        cover
-        direction="left"
-        bg="#FF671D"
-        activeClassName="active"
-        to="/about">
-        About
-      </AniLink>
-      <AniLink
-        cover
-        direction="left"
-        bg="#FF671D"
-        activeClassName="active"
-        to="/portfolio">
-        Portfolio
-      </AniLink>
-      <AniLink
-        cover
-        direction="left"
-        bg="#FF671D"
-        activeClassName="active"
-        to="/contact">
-        Contact
-      </AniLink>
-      <AniLink
-        cover
-        direction="left"
-        bg="#FF671D"
-        activeClassName="active"
-        to="/components">
-        Components
-      </AniLink>
+      <Logo />
+      <NavBarBurger />
     </Row>
   </StyledNavBar>
 )
 
 const StyledNavBar = styled.div`
-  background-color: rgba(255, 255, 255, 0.25);
+  /* background-color: rgba(255, 255, 255, 0.25); */
   display: flex;
   justify-content: center;
-  left: 0;
-  padding: 0 30px;
+  padding: 3.75rem 1.875rem 0 1.875rem;
   position: fixed;
+  left: 0;
   right: 0;
   user-select: none;
-  z-index: 9999;
-
-  a {
-    font-weight: 900;
-    font-size: 1.25em;
-    /* text-transform: uppercase; */
-    margin-left: 30px;
-    line-height: 60px;
-    transition: 0.2s all;
-  }
-  a:first-child {
-    margin-left: 0;
-  }
-  a.active,
-  a:hover {
-    color: #222;
-  }
+  z-index: 100;
 `
-
 const Row = styled(Row_)`
+  align-content: center;
   flex-direction: row;
+  justify-content: space-between;
 `

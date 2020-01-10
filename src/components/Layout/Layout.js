@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import { theme } from 'utils'
+import { StoreProvider } from 'easy-peasy'
+import { theme, store } from 'utils'
 import {
   SEO,
   NormalizeStyle,
@@ -12,22 +13,24 @@ import {
 
 const Layout = ({ children: pages }) => (
   <ThemeProvider theme={theme}>
-    <StyledLayout>
-      <SEO title="" />
-      <NormalizeStyle />
-      <ResetStyle />
-      <GlobalStyle />
-      <NavBar />
-      <Nav />
-      {pages}
-    </StyledLayout>
+    <StoreProvider store={store}>
+      <StyledLayout>
+        <SEO title="" />
+        <NormalizeStyle />
+        <ResetStyle />
+        <GlobalStyle />
+        <NavBar />
+        <Nav />
+        {pages}
+      </StyledLayout>
+    </StoreProvider>
   </ThemeProvider>
 )
 
 const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   position: relative;
 `
 

@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row as Row_ } from 'components'
+import { useStoreState } from 'easy-peasy'
+import { NavClose } from 'components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-export const Nav = () => (
-  <StyledNav>
-    <Row>
+export const Nav = () => {
+  const openStatus = useStoreState(state => state.nav.openStatus)
+
+  return (
+    <StyledNav open={openStatus}>
+      <NavClose />
       <AniLink
         cover
         direction="left"
@@ -46,27 +50,36 @@ export const Nav = () => (
         to="/components">
         Components
       </AniLink>
-    </Row>
-  </StyledNav>
-)
+    </StyledNav>
+  )
+}
 
 const StyledNav = styled.nav`
   background-color: ${props => props.theme.colors.primary};
+  clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 80px 100%);
   display: flex;
-  justify-content: center;
-  left: 0;
-  padding: 0 30px;
+  flex-direction: column;
   position: fixed;
+  top: 0;
   right: 0;
+  bottom: 0;
+  transition: ${props => props.theme.transitions.default};
+  transform: ${props => props.open ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)'};
   user-select: none;
-  z-index: 1;
+  width: 20vw;
+  min-width: 300px;
+  z-index: 200;
 
   a {
+    background-color: ${props => props.theme.colors.transparent};
+    color: ${props => props.theme.colors.white};
+    display: flex;
     font-weight: 900;
     font-size: 1.25em;
-    /* text-transform: uppercase; */
-    margin-left: 30px;
+    text-transform: uppercase;
     line-height: 60px;
+    padding: 0 1.875rem 0 0;
+    justify-content: right;
     transition: ${props => props.theme.transitions.default};
   }
   a:first-child {
@@ -74,10 +87,7 @@ const StyledNav = styled.nav`
   }
   a.active,
   a:hover {
+    background-color: ${props => props.theme.colors.white};
     color: #222;
   }
-`
-
-const Row = styled(Row_)`
-  flex-direction: row;
 `

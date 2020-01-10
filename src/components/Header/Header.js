@@ -30,7 +30,10 @@ export const Header = () => {
         </h1>
         <WhiteTextButton text="Featured Work" to="/portfolio" />
       </HeaderText>
-      <HeaderImage fluid={imageOne.childImageSharp.fluid} alt="THE PLAID AGENCY" />
+      <HeaderImage
+        fluid={imageOne.childImageSharp.fluid}
+        alt="THE PLAID AGENCY"
+      />
     </StyledHeader>
   )
 }
@@ -40,6 +43,7 @@ const StyledHeader = styled.header`
   position: relative;
 `
 const HeaderText = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;

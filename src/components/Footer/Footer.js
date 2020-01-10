@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row } from 'components'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { Row, Logo } from 'components'
+import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
 export const Footer = () => (
   <StyledFooter>
@@ -17,7 +17,7 @@ export const Footer = () => (
           Contact Us.
         </AniLink>
       </h4>
-      <p>Footer</p>
+      <Logo />
     </Row>
   </StyledFooter>
 )
@@ -29,12 +29,11 @@ const StyledFooter = styled.footer`
   justify-content: center;
   margin-top: auto;
   padding: 60px 30px;
-
-  a {
-    border-bottom: 2px solid ${props => props.theme.colors.transparent};
-    transition: ${props => props.theme.transitions.default};
-  }
-  a:hover {
+`
+const AniLink = styled(AniLink_)`
+  border-bottom: 2px solid ${props => props.theme.colors.transparent};
+  transition: ${props => props.theme.transitions.default};
+  :hover {
     border-bottom: 2px solid ${props => props.theme.colors.primary};
   }
 `
