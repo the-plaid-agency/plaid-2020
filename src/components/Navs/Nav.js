@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStoreState } from 'easy-peasy'
-// import { NavClose, NavLink, Social as Social_ } from 'components'
-import { NavClose, NavLink, Social } from 'components'
+import { NavClose, NavLink, Social as Social_ } from 'components'
+// import { NavClose, NavLink, TestMe } from 'components'
 
 export const Nav = () => {
   const openStatus = useStoreState(state => state.nav.openStatus)
@@ -38,8 +38,8 @@ const StyledNav = styled.nav`
   min-width: 300px;
   z-index: 200;
 `
-// const Social = styled(Social_)`
-//   margin-top: auto;
-//   justify-content: flex-end;
-//   padding: 0 3.75rem 6.25rem 1.875rem;
-// `
+const Social = styled(Social_)`
+  margin-top: auto;
+  justify-content: flex-end;
+  padding: 0 3.75rem 6.25rem 1.875rem;
+`
