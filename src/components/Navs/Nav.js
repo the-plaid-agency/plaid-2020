@@ -14,7 +14,7 @@ export const Nav = () => {
       <NavLink text="Portfolio" to="/portfolio" />
       <NavLink text="Contact" to="/contact" />
       <NavLink text="Components" to="/components" />
-      <Social />
+      {/* <Social /> */}
     </StyledNav>
   )
 }
