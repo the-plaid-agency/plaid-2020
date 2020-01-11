@@ -10,6 +10,7 @@ export const Logo = () => (
 )
 
 const AniLink = styled(AniLink_)`
+  pointer-events: auto;
   transition: ${props => props.theme.transitions.default};
 
   :hover {

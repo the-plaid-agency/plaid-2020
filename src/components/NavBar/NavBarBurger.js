@@ -14,6 +14,7 @@ const GiHamburgerMenu = styled(GiHamburgerMenu_)`
   color: #fff;
   cursor: pointer;
   font-size: 26px;
+  pointer-events: auto;
   transform: scale(1);
   transition: ${props => props.theme.transitions.default};
 

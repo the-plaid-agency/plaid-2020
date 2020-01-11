@@ -16,6 +16,7 @@ const StyledNavBar = styled.div`
   display: flex;
   justify-content: center;
   padding: 3.75rem 1.875rem 0 1.875rem;
+  pointer-events: none;
   position: fixed;
   left: 0;
   right: 0;

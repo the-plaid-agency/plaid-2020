@@ -16,7 +16,6 @@ export const SEO = ({ description = ``, lang = `en`, meta = [], title }) => {
       }
     }
   `)
-
   const metaDescription = description || site.siteMetadata.description
 
   return (
