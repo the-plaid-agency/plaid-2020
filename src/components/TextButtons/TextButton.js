@@ -25,7 +25,7 @@ const StyledButton = styled(AniLink)`
   justify-content: center;
   line-height: 1.75; /* 28px */
   position: relative;
-  width: auto;
+  user-select: none;
 
   svg {
     height: inherit;

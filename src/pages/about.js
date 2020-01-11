@@ -2,15 +2,13 @@ import React from 'react'
 import { SEO, Page, Section, Row, Footer } from 'components'
 
 export default () => (
-  <>
+  <Page>
     <SEO title="About" />
-    <Page>
-      <Section>
-        <Row>
-          <p>About page</p>
-        </Row>
-      </Section>
-      <Footer />
-    </Page>
-  </>
+    <Section>
+      <Row>
+        <p>About page</p>
+      </Row>
+    </Section>
+    <Footer />
+  </Page>
 )

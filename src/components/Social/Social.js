@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const Social = props => {
   const { social } = useStaticQuery(graphql`
     query {
-      social: allDatoCmsSocialProfile(sort: { fields: position }) {
+      social: allDatoCmsSocialInfo(sort: { fields: position }) {
         nodes {
           slug
           url

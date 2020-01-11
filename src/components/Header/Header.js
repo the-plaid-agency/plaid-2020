@@ -66,6 +66,6 @@ const HeaderText = styled.div`
 `
 const HeaderImage = styled(Img)`
   height: 100vh;
-  /* object-fit: cover; */
+  user-select: none;
   width: 100vw;
 `
