@@ -1,27 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 import { SocialIcon as SocialIcon_ } from 'components'
-import { useStaticQuery, graphql } from 'gatsby'
+// import { useStaticQuery, graphql } from 'gatsby'
 
 export const Social = props => {
-  const { social } = useStaticQuery(graphql`
-    query {
-      social: allDatoCmsSocialProfile(sort: { fields: position }) {
-        nodes {
-          slug
-          url
-          profileType
-          icon
-        }
-      }
-    }
-  `)
+  // const { social } = useStaticQuery(graphql`
+  //   query {
+  //     social: allDatoCmsSocialProfile(sort: { fields: position }) {
+  //       nodes {
+  //         slug
+  //         url
+  //         profileType
+  //         icon
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <StyledSocial {...props}>
-      {social.nodes.map((data, i) => (
+      {/* {social.nodes.map((data, i) => (
         <SocialIcon key={i} icon={data.profileType} href={data.url} target="_blank" />
-      ))}
+      ))} */}
+      <p>Test</p>
     </StyledSocial>
   )
 }
