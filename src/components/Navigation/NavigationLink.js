@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
-export const NavLink = ({ text = "Link", to = "/" }) => (
+export const NavigationLink = ({ to = "/", children }) => (
   <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to={to}>
-    {text}
+    {children}
   </AniLink>
 )
 

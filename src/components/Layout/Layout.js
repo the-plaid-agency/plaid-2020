@@ -7,24 +7,24 @@ import {
   NormalizeStyle,
   ResetStyle,
   GlobalStyle,
-  Nav,
+  Navigation,
   NavBar,
 } from 'components'
 
 const Layout = ({ children: pages }) => (
-  <ThemeProvider theme={theme}>
-    <StoreProvider store={store}>
+  <StoreProvider store={store}>
+    <ThemeProvider theme={theme}>
       <StyledLayout>
         <SEO title="" />
         <NormalizeStyle />
         <ResetStyle />
         <GlobalStyle />
         <NavBar />
-        <Nav />
+        <Navigation />
         {pages}
       </StyledLayout>
-    </StoreProvider>
-  </ThemeProvider>
+    </ThemeProvider>
+  </StoreProvider>
 )
 
 const StyledLayout = styled.div`

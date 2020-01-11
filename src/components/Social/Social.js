@@ -26,8 +26,7 @@ export const Social = props => {
 }
 
 const StyledSocial = styled.div`
-  display: flex;
-  /* justify-content: flex-end; */
+  display: inline-flex;
 `
 const SocialIcon = styled(SocialIcon_)`
   color: #fff;

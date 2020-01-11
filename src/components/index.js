@@ -1,21 +1,27 @@
 export * from './Row/Row'
 export * from './Col/Col'
 export * from './Image/Image'
-export * from './Social/SocialIcon'
-export * from './Social/Social'
-export * from './TestMe/TestMe'
+
 export * from './Buttons/Button'
 export * from './Buttons/WhiteButton'
 export * from './Buttons/OrangeButton'
+
 export * from './Footer/Footer'
 export * from './Header/Header'
 export * from './Layout/Layout'
 export * from './Logo/Logo'
-export * from './NavBar/NavBar'
+
 export * from './NavBar/NavBarBurger'
-export * from './Navs/Nav'
-export * from './Navs/NavClose'
-export * from './Navs/NavLink'
+export * from './NavBar/NavBar'
+
+export * from './Social/SocialIcon'
+export * from './Social/Social'
+
+export * from './Navigation/NavigationClose'
+export * from './Navigation/NavigationLinks'
+export * from './Navigation/NavigationLink'
+export * from './Navigation/Navigation'
+
 export * from './Page/Page'
 export * from './Section/Section'
 export * from './SEO/SEO'

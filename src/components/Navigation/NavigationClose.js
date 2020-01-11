@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useStoreActions } from 'easy-peasy'
 import { IoMdClose as IoMdClose_ } from 'react-icons/io'
 
-export const NavClose = () => {
+export const NavigationClose = () => {
   const setOpenStatus = useStoreActions(actions => actions.nav.setOpenStatus)
   const handleClick = () => setOpenStatus()
 
