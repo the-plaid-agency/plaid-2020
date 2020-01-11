@@ -11,7 +11,6 @@ export const Social = props => {
           slug
           url
           profileType
-          icon
         }
       }
     }

@@ -10,7 +10,6 @@ export const TestMe = () => {
           slug
           url
           profileType
-          icon
         }
       }
     }
@@ -23,4 +22,6 @@ export const TestMe = () => {
   )
 }
 
-const StyledTestMe = styled.div``
+const StyledTestMe = styled.div`
+  display: flex;
+`
