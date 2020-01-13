@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useStoreActions } from 'easy-peasy'
 import { GiHamburgerMenu as GiHamburgerMenu_ } from 'react-icons/gi'
 
-export const NavBarBurger = () => {
+export const TopBarBurger = () => {
   const setOpenStatus = useStoreActions(actions => actions.nav.setOpenStatus)
   const handleClick = () => setOpenStatus()
 
@@ -15,10 +15,10 @@ const GiHamburgerMenu = styled(GiHamburgerMenu_)`
   cursor: pointer;
   font-size: 26px;
   pointer-events: auto;
-  transform: scale(1);
+  opacity: 1;
   transition: ${props => props.theme.transitions.default};
 
   :hover {
-    transform: scale(1.2);
+    opacity: 0.75;
   }
 `

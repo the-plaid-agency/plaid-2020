@@ -1,21 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row as Row_, Logo, NavBarBurger } from 'components'
+import { Row as Row_, Logo, TopBarBurger } from 'components'
 
-export const NavBar = () => (
-  <StyledNavBar>
+export const TopBar = () => (
+  <StyledTopBar>
     <Row>
       <Logo />
-      <NavBarBurger />
+      <TopBarBurger />
     </Row>
-  </StyledNavBar>
+  </StyledTopBar>
 )
 
-const StyledNavBar = styled.div`
+const StyledTopBar = styled.div`
   /* background-color: rgba(255, 255, 255, 0.25); */
   display: flex;
   justify-content: center;
-  padding: 3.75rem 1.875rem 0 1.875rem;
+  padding: ${props => props.theme.layout.paddingBig} ${props => props.theme.layout.padding} 0 ${props => props.theme.layout.padding};
   pointer-events: none;
   position: fixed;
   left: 0;

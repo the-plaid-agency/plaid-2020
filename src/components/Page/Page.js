@@ -21,8 +21,8 @@ const StyledPage = styled.main`
     border-bottom: 1px solid #ed5429;
   }
 
-  h1,h2,h3,h4,h5,h6,
-  p,ol,ul {
+  h1, h2, h3, h4, h5, h6,
+  p, ol, ul, code {
     margin-bottom: 2.5rem;
   }
   *:last-child {

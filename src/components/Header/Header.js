@@ -55,7 +55,7 @@ const HeaderText = styled.div`
   z-index: 1;
 
   h1 {
-    color: #fff;
+    color: ${props => props.theme.colors.white};
     text-align: center;
     user-select: none;
     margin-bottom: 0;

@@ -26,7 +26,7 @@ const StyledNavigation = styled.nav`
   right: 0;
   bottom: 0;
   transition: ${props => props.theme.transitions.default};
-  transform: ${props => props.open ? 'scale(1) translate3d(0,0,0)' : 'scale(1.5) translate3d(100%,0,0)'};
+  transform: ${props => props.open ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)'};
   user-select: none;
   width: 100%;
   max-width: 430px;
@@ -36,5 +36,5 @@ const StyledNavigation = styled.nav`
 const Social = styled(Social_)`
   margin-top: auto;
   justify-content: flex-end;
-  padding: 0 3.75rem 6.25rem 1.875rem;
+  padding: 0 3.75rem 3.75rem 1.875rem;
 `

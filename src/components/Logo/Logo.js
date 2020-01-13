@@ -4,11 +4,14 @@ import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 import logoPlaid from 'assets/logo_plaid_1.svg'
 
 export const Logo = () => (
-  <AniLink cover direction="left" bg="#FF671D" to="/">
-    <img src={logoPlaid} alt="THE PLAID AGENCY" />
-  </AniLink>
+  <StyledLogo>
+    <AniLink cover direction="left" bg="#FF671D" to="/">
+      <img src={logoPlaid} alt="THE PLAID AGENCY" />
+    </AniLink>
+  </StyledLogo>
 )
 
+const StyledLogo = styled.div``
 const AniLink = styled(AniLink_)`
   pointer-events: auto;
   transition: ${props => props.theme.transitions.default};

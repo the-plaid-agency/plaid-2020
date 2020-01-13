@@ -29,10 +29,15 @@ const StyledSocial = styled.div`
   display: inline-flex;
 `
 const SocialIcon = styled(SocialIcon_)`
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   font-size: 26px;
-  margin-left: 30px;
+  margin-left: ${props => props.theme.layout.margin};
+  transition: ${props => props.theme.transitions.default};
+
   :first-child {
     margin-left: 0;
+  }
+  :hover {
+    opacity: 0.75;
   }
 `

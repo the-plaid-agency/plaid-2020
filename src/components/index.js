@@ -1,5 +1,3 @@
-export * from './Image/Image'
-
 export * from './Section/Section'
 export * from './Row/Row'
 export * from './Col/Col'
@@ -16,8 +14,8 @@ export * from './Header/Header'
 export * from './Footer/Footer'
 export * from './Logo/Logo'
 
-export * from './NavBar/NavBarBurger'
-export * from './NavBar/NavBar'
+export * from './TopBar/TopBarBurger'
+export * from './TopBar/TopBar'
 
 export * from './Social/SocialIcon'
 export * from './Social/Social'

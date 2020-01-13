@@ -13,11 +13,10 @@ const AniLink = styled(AniLink_)`
   color: ${props => props.theme.colors.white};
   display: flex;
   font-weight: 900;
-  font-size: 1.25em;
-  font-size: 33px;
+  font-size: 2.0625em; /* 33px */
   text-transform: uppercase;
-  line-height: 60px;
-  padding: 0 3.75rem 0 0;
+  line-height: 3.75rem; /* 60px */
+  padding: 0 ${props => props.theme.layout.paddingBig} 0 0;
   justify-content: right;
   transition: ${props => props.theme.transitions.default};
 

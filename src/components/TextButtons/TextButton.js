@@ -30,7 +30,7 @@ const StyledButton = styled(AniLink)`
   svg {
     height: inherit;
     margin-left: 5px;
-    transition: 0.2s all;
+    transition: ${props => props.theme.transitions.default};
     transform: translateX(0);
   }
 

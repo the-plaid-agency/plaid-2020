@@ -3,10 +3,10 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
   html {
     color: #444;
-    font-family: 'Lato', sans-serif;
+    font-family: ${props => props.theme.fonts.lato};
     font-size: 1em;
     font-style: normal;
-    font-weight: 400;
+    font-weight: ${props => props.theme.fonts.defaultWeight};
   }
 
   body {
@@ -14,17 +14,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: ${props => props.theme.fonts.playfairDisplay};
     font-size: 5em; /* 80px */
     line-height: 1.25;
   }
   h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: ${props => props.theme.fonts.playfairDisplay};
     font-size: 3.4375em; /* 55px */
     line-height: 1.1818181818;
   }
   h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: ${props => props.theme.fonts.playfairDisplay};
     font-size: 2.25em; /* 36px */
     line-height: 1.1944444444;
   }
@@ -45,13 +45,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #FF671D;
+    color: ${props => props.theme.colors.primary};
     text-decoration: none;
   }
 
   p, ol, ul {
-    font-weight: 300;
-    line-height: 1.75;
+    font-size: ${props => props.theme.fonts.defaultSize};
+    font-weight: ${props => props.theme.fonts.defaultWeight};
+    line-height: ${props => props.theme.fonts.lineHeight};
   }
 
   ul {
@@ -63,10 +64,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   code {
-    background-color: #ED5429;
-    border-radius: 3px;
-    color: #fff;
-    padding: 5px 3px;
+    background-color: ${props => props.theme.colors.secondary};
+    border-radius: ${props => props.theme.layout.borderRadius};
+    color: ${props => props.theme.colors.white};
+    padding: ${props => props.theme.layout.padding};
   }
 
   .gatsby-plugin-transition-link-portal {

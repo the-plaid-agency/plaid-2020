@@ -17,16 +17,16 @@ export const NavigationClose = () => {
 const StyledNavClose = styled.div`
   display: flex;
   justify-content: right;
-  padding: 3.75rem 3.75rem 6.25rem 1.875rem;
+  padding: ${props => props.theme.layout.paddingBig} ${props => props.theme.layout.paddingBig} 6.25rem ${props => props.theme.layout.paddingBig};
 `
 const IoMdClose = styled(IoMdClose_)`
   color: #fff;
   cursor: pointer;
   font-size: 26px;
-  transform: scale(1);
+  opacity: 1;
   transition: ${props => props.theme.transitions.default};
 
   :hover {
-    transform: scale(1.2);
+    opacity: 0.75;
   }
 `

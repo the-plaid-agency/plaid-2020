@@ -24,11 +24,11 @@ export const Footer = () => (
 
 const StyledFooter = styled.footer`
   background-color: ${props => props.theme.colors.secondary};
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   display: flex;
   justify-content: center;
   margin-top: auto;
-  padding: 60px 30px;
+  padding: ${props => props.theme.layout.paddingBig} ${props => props.theme.layout.padding};
 `
 const AniLink = styled(AniLink_)`
   border-bottom: 2px solid ${props => props.theme.colors.transparent};

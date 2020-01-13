@@ -8,7 +8,7 @@ import {
   ResetStyle,
   GlobalStyle,
   Navigation,
-  NavBar,
+  TopBar,
 } from 'components'
 
 const Layout = ({ children: pages }) => (
@@ -19,7 +19,7 @@ const Layout = ({ children: pages }) => (
         <NormalizeStyle />
         <ResetStyle />
         <GlobalStyle />
-        <NavBar />
+        <TopBar />
         <Navigation />
         {pages}
       </StyledLayout>
