@@ -11,6 +11,7 @@ export const theme = {
     playfairDisplay: `'Playfair Display', serif`,
     lineHeight: '1.75',
     defaultSize: '1em',
+    defaultStyle: 'normal',
     defaultWeight: '400',
   },
   transitions: {

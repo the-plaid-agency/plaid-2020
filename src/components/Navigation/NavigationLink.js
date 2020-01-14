@@ -14,11 +14,12 @@ const AniLink = styled(AniLink_)`
   display: flex;
   font-weight: 900;
   font-size: 2.0625em; /* 33px */
-  text-transform: uppercase;
+  justify-content: right;
   line-height: 3.75rem; /* 60px */
   padding: 0 ${props => props.theme.layout.paddingBig} 0 0;
-  justify-content: right;
+  text-transform: uppercase;
   transition: ${props => props.theme.transitions.default};
+  user-select: none;
 
   &.active,
   :hover {

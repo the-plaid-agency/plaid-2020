@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useStoreState } from 'easy-peasy'
-import { NavigationClose, NavigationLinks, Social as Social_ } from 'components'
+import {
+  NavigationClose,
+  NavigationLinks,
+  Address as Address_,
+  Social as Social_,
+} from 'components'
 
-export const Navigation = () => {
+export const Navigation = props => {
   const openStatus = useStoreState(state => state.nav.openStatus)
+
+  useEffect(() => {
+    console.log(props)
+  }, [props])
 
   return (
     <StyledNavigation open={openStatus}>
       <NavigationClose />
       <NavigationLinks />
+      <Address />
       <Social />
     </StyledNavigation>
   )
@@ -21,20 +31,28 @@ const StyledNavigation = styled.nav`
   display: flex;
   flex-direction: column;
   opacity: ${props => (props.open ? '1' : '0')};
+  overflow-y: auto;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   transition: ${props => props.theme.transitions.default};
-  transform: ${props => props.open ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)'};
-  user-select: none;
+  transform: ${props =>
+    props.open ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)'};
   width: 100%;
-  max-width: 430px;
-  min-width: 300px;
+  max-width: 26.875rem; /* 430px */
+  min-width: 18.75rem; /* 300px */
   z-index: 200;
 `
-const Social = styled(Social_)`
+const Address = styled(Address_)`
+  align-items: flex-end;
   margin-top: auto;
+  padding-top: ${props => props.theme.layout.padding};
+  padding-right: ${props => props.theme.layout.paddingBig};
+  padding-bottom: ${props => props.theme.layout.padding};
+`
+const Social = styled(Social_)`
   justify-content: flex-end;
-  padding: 0 3.75rem 3.75rem 1.875rem;
+  padding-right: ${props => props.theme.layout.paddingBig};
+  padding-bottom: ${props => props.theme.layout.paddingBig};
 `

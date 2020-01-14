@@ -17,6 +17,8 @@ export * from './Logo/Logo'
 export * from './TopBar/TopBarBurger'
 export * from './TopBar/TopBar'
 
+export * from './Address/Address'
+
 export * from './Social/SocialIcon'
 export * from './Social/Social'
 

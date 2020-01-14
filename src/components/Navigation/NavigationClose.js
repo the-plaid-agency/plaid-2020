@@ -17,7 +17,9 @@ export const NavigationClose = () => {
 const StyledNavClose = styled.div`
   display: flex;
   justify-content: right;
-  padding: ${props => props.theme.layout.paddingBig} ${props => props.theme.layout.paddingBig} 6.25rem ${props => props.theme.layout.paddingBig};
+  padding-top: ${props => props.theme.layout.paddingBig};
+  padding-right: ${props => props.theme.layout.paddingBig};
+  padding-bottom: 6.25rem; /* 100px */
 `
 const IoMdClose = styled(IoMdClose_)`
   color: #fff;

@@ -49,9 +49,10 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  p, ol, ul {
+  p, ol, ul, address {
     font-size: ${props => props.theme.fonts.defaultSize};
     font-weight: ${props => props.theme.fonts.defaultWeight};
+    font-style: ${props => props.theme.fonts.defaultStyle};
     line-height: ${props => props.theme.fonts.lineHeight};
   }
 
