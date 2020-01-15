@@ -52,16 +52,15 @@ const StyledNavigation = styled.nav`
   clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 80px 100%);
   display: flex;
   flex-direction: column;
-  opacity: ${props => (props.open ? '1' : '0')};
   overflow-y: auto;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  transition: ${props => props.theme.transitions.default};
-  transform: ${props =>
-    props.open ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)'};
+  transition: 0.3s transform ease;
+  transform: ${props => props.open ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)'};
   width: 100%;
+  will-change: transform;
   max-width: 26.875rem; /* 430px */
   min-width: 18.75rem; /* 300px */
   z-index: 200;
