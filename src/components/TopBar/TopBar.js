@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from 'styled-components'
 import { Row as Row_, Logo, TopBarBurger } from 'components'
 
-export const TopBar = () => (
+export const TopBar = memo(() => (
   <StyledTopBar>
     <Row>
       <Logo />
       <TopBarBurger />
     </Row>
   </StyledTopBar>
-)
+))
 
 const StyledTopBar = styled.div`
   /* background-color: rgba(255, 255, 255, 0.25); */

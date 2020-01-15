@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { memo, useEffect } from 'react'
 import styled from 'styled-components'
-import { useStoreState } from 'easy-peasy'
+import { useStoreActions, useStoreState } from 'easy-peasy'
 import {
   NavigationClose,
   NavigationLinks,
@@ -8,18 +8,24 @@ import {
   Social as Social_,
 } from 'components'
 
-export const Navigation = () => {
-  const openStatus = useStoreState(state => state.nav.openStatus)
+export const Navigation = memo(() => {
+  const currentPage = useStoreState(state => state.page.currentPage)
+  const isNavOpen = useStoreState(state => state.nav.isNavOpen)
+  const closeNav = useStoreActions(actions => actions.nav.closeNav)
+
+  useEffect(() => {
+    closeNav()
+  }, [currentPage, closeNav])
 
   return (
-    <StyledNavigation open={openStatus}>
+    <StyledNavigation open={isNavOpen}>
       <NavigationClose />
       <NavigationLinks />
       <Address />
       <Social />
     </StyledNavigation>
   )
-}
+})
 
 const StyledNavigation = styled.nav`
   background-color: ${props => props.theme.colors.primary};

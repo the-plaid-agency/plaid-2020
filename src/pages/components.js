@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
-  SEO,
   Page,
+  SEO,
   Section,
   Row,
   Footer,

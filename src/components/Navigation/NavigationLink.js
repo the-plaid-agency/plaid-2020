@@ -14,7 +14,7 @@ const AniLink = styled(AniLink_)`
   display: flex;
   font-weight: 900;
   font-size: 2.0625em; /* 33px */
-  justify-content: right;
+  justify-content: flex-end;
   line-height: 3.75rem; /* 60px */
   padding: 0 ${props => props.theme.layout.paddingBig} 0 0;
   text-transform: uppercase;

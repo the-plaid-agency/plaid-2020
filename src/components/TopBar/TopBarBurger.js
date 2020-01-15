@@ -4,8 +4,8 @@ import { useStoreActions } from 'easy-peasy'
 import { GiHamburgerMenu as GiHamburgerMenu_ } from 'react-icons/gi'
 
 export const TopBarBurger = () => {
-  const setOpenStatus = useStoreActions(actions => actions.nav.setOpenStatus)
-  const handleClick = () => setOpenStatus()
+  const openNav = useStoreActions(actions => actions.nav.openNav)
+  const handleClick = () => openNav()
 
   return <GiHamburgerMenu onClick={handleClick} />
 }

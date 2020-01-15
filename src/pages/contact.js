@@ -1,5 +1,5 @@
 import React from 'react'
-import { SEO, Page, Section, Row, Footer } from 'components'
+import { Page, SEO, Section, Row, Footer } from 'components'
 
 export default () => (
   <Page>

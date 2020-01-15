@@ -4,8 +4,8 @@ import { useStoreActions } from 'easy-peasy'
 import { IoMdClose as IoMdClose_ } from 'react-icons/io'
 
 export const NavigationClose = () => {
-  const setOpenStatus = useStoreActions(actions => actions.nav.setOpenStatus)
-  const handleClick = () => setOpenStatus()
+  const closeNav = useStoreActions(actions => actions.nav.closeNav)
+  const handleClick = () => closeNav()
 
   return (
     <StyledNavClose>
@@ -16,7 +16,7 @@ export const NavigationClose = () => {
 
 const StyledNavClose = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   padding-top: ${props => props.theme.layout.paddingBig};
   padding-right: ${props => props.theme.layout.paddingBig};
   padding-bottom: 6.25rem; /* 100px */

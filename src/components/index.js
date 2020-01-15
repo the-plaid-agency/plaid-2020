@@ -1,3 +1,5 @@
+export * from './StoreSync/StoreSync'
+
 export * from './Section/Section'
 export * from './Row/Row'
 export * from './Col/Col'
