@@ -20,6 +20,10 @@ const StyledNavClose = styled.div`
   padding-top: ${props => props.theme.layout.paddingBig};
   padding-right: ${props => props.theme.layout.paddingBig};
   padding-bottom: 6.25rem; /* 100px */
+
+  @media only screen and (max-width: 26.875rem) { /* 430px */
+    padding-bottom: ${props => props.theme.layout.paddingBig};
+  }
 `
 const IoMdClose = styled(IoMdClose_)`
   color: #fff;

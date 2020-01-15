@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useStoreState } from 'easy-peasy'
 import {
@@ -8,12 +8,8 @@ import {
   Social as Social_,
 } from 'components'
 
-export const Navigation = props => {
+export const Navigation = () => {
   const openStatus = useStoreState(state => state.nav.openStatus)
-
-  useEffect(() => {
-    console.log(props)
-  }, [props])
 
   return (
     <StyledNavigation open={openStatus}>
@@ -43,6 +39,11 @@ const StyledNavigation = styled.nav`
   max-width: 26.875rem; /* 430px */
   min-width: 18.75rem; /* 300px */
   z-index: 200;
+
+  @media only screen and (max-width: 26.875rem) { /* 430px */
+    clip-path: none;
+    max-width: 100%;
+  }
 `
 const Address = styled(Address_)`
   align-items: flex-end;

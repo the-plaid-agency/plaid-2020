@@ -33,7 +33,7 @@ export const Address = props => {
 const StyledAddress = styled.address`
   color: ${props => props.theme.colors.white};
   display: inline-flex;
-  font-size: 0.875em; /* Address */
+  font-size: 0.875em; /* 14px */
   flex-direction: column;
 
   a {
