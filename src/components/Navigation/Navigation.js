@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { useStoreActions, useStoreState } from 'easy-peasy'
 import {
@@ -12,13 +12,33 @@ export const Navigation = memo(() => {
   const currentPage = useStoreState(state => state.page.currentPage)
   const isNavOpen = useStoreState(state => state.nav.isNavOpen)
   const closeNav = useStoreActions(actions => actions.nav.closeNav)
+  const node = useRef()
 
   useEffect(() => {
     closeNav()
   }, [currentPage, closeNav])
 
+  useEffect(() => {
+    const handleOutsideClick = e => {
+      if (node.current.contains(e.target)) {
+        return
+      }
+      closeNav()
+    }
+
+    if (isNavOpen) {
+      document.addEventListener('mousedown', handleOutsideClick)
+    } else {
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [isNavOpen, closeNav])
+
   return (
-    <StyledNavigation open={isNavOpen}>
+    <StyledNavigation ref={node} open={isNavOpen}>
       <NavigationClose />
       <NavigationLinks />
       <Address />
