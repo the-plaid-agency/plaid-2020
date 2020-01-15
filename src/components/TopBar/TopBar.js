@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
-import { Row as Row_, Logo, TopBarBurger } from 'components'
+import { Row, Logo, TopBarBurger } from 'components'
 
 export const TopBar = memo(() => (
   <StyledTopBar>
@@ -22,9 +22,4 @@ const StyledTopBar = styled.div`
   right: 0;
   user-select: none;
   z-index: 100;
-`
-const Row = styled(Row_)`
-  align-content: center;
-  flex-direction: row;
-  justify-content: space-between;
 `

@@ -1,23 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Logo } from 'components'
+import { Row, Col, Logo, Social } from 'components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
 export const Footer = () => (
   <StyledFooter>
     <Row>
-      <h4>
-        <span>Like what you see? </span>
-        <AniLink
-          cover
-          direction="left"
-          bg="#FF671D"
-          activeClassName="active"
-          to="/contact">
-          Contact Us.
-        </AniLink>
-      </h4>
-      <Logo />
+      <Col>
+        <h4>
+          <span>Like what you see? </span>
+          <AniLink
+            cover
+            direction="left"
+            bg="#FF671D"
+            activeClassName="active"
+            to="/contact">
+            Contact Us.
+          </AniLink>
+        </h4>
+        <Logo />
+      </Col>
+      <Col>
+        <Social />
+      </Col>
     </Row>
   </StyledFooter>
 )

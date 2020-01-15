@@ -1,12 +1,14 @@
 import React from 'react'
-import { Page, SEO, Section, Row, Footer } from 'components'
+import { Page, SEO, Section, Row, Col, Footer } from 'components'
 
 export default () => (
   <Page>
     <SEO title="Portfolio" />
     <Section>
       <Row>
-        <p>Portfolio page</p>
+        <Col>
+          <p>Portfolio page</p>
+        </Col>
       </Row>
     </Section>
     <Footer />
