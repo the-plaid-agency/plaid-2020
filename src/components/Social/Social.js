@@ -30,7 +30,7 @@ const StyledSocial = styled.div`
 `
 const SocialIcon = styled(SocialIcon_)`
   color: ${props => props.theme.colors.white};
-  font-size: 26px;
+  font-size: 1.625em; /* 26px */
   margin-left: ${props => props.theme.layout.margin};
   transition: ${props => props.theme.transitions.default};
 

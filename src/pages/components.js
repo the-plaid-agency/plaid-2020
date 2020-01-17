@@ -25,8 +25,8 @@ export default () => (
           <h5>Header 5</h5>
           <h6>Header 6</h6>
           <p>Body Font</p>
-          <OrangeButton text="View Project" to="/about" />
           <WhiteButton text="View Project" to="/about" />
+          <OrangeButton text="View Project" to="/about" />
           <BlackTextButton text="Featured Work" to="/about" />
         </Col>
       </Row>

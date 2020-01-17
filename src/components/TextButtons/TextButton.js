@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { FaChevronRight } from 'react-icons/fa'
@@ -15,6 +16,13 @@ export const TextButton = ({
     <FaChevronRight />
   </StyledButton>
 )
+
+TextButton.propTypes = {
+  to: PropTypes.string,
+  text: PropTypes.string,
+  coverDir: PropTypes.string,
+  coverBg: PropTypes.string,
+}
 
 const StyledButton = styled(AniLink)`
   background-color: rgba(0, 0, 0, 0);

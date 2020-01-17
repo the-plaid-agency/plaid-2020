@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
@@ -14,6 +15,13 @@ export const Button = ({
   </StyledButton>
 )
 
+Button.propTypes = {
+  to: PropTypes.string,
+  text: PropTypes.string,
+  coverDir: PropTypes.string,
+  coverBg: PropTypes.string,
+}
+
 const StyledButton = styled(AniLink)`
   background-color: ${props => props.theme.colors.primary};
   color: #fff;
@@ -28,7 +36,7 @@ const StyledButton = styled(AniLink)`
   text-transform: uppercase;
   user-select: none;
 
-  ::after {
+  :after {
     content: '';
     border: 1px solid #b0bfbc;
     height: 100%;
@@ -41,7 +49,7 @@ const StyledButton = styled(AniLink)`
     will-change: transform;
     z-index: -1;
   }
-  :hover ::after {
+  :hover :after {
     transform: translate3d(0.625rem, -0.625rem, 0) scale(0.99);
   }
 `
