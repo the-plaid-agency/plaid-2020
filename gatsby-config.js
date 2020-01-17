@@ -84,7 +84,8 @@ module.exports = {
      *
      */
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
