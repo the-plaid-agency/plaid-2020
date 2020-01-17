@@ -25,7 +25,8 @@ const StyledPage = styled.main`
   p, ol, ul, code {
     margin-bottom: 2.5rem;
   }
-  *:last-child {
+
+  [class^="Col"] *:last-child {
     margin-bottom: 0;
   }
 `

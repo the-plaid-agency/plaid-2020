@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { WhiteTextButton } from 'components'
+import Img from 'gatsby-image'
 
 export const Header = () => {
   const { imageOne } = useStaticQuery(graphql`

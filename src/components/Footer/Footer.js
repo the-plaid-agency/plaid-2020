@@ -1,31 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Row, Col, Logo, Social } from 'components'
+import { useStaticQuery, graphql } from 'gatsby'
+import { Row, Col as Col_, Logo, Social as Social_ } from 'components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
-export const Footer = () => (
-  <StyledFooter>
-    <Row>
-      <Col>
-        <h4>
-          <span>Like what you see? </span>
-          <AniLink
-            cover
-            direction="left"
-            bg="#FF671D"
-            activeClassName="active"
-            to="/contact">
-            Contact Us.
-          </AniLink>
-        </h4>
-        <Logo />
-      </Col>
-      <Col>
-        <Social />
-      </Col>
-    </Row>
-  </StyledFooter>
-)
+export const Footer = () => {
+  const { footer } = useStaticQuery(graphql`
+    query {
+      footer: datoCmsFooter {
+        copyright
+        cta
+        ctaLinkPage
+        ctaLinkText
+      }
+    }
+  `)
+
+  return (
+    <StyledFooter>
+      <Row>
+        <Col>
+          <h4>
+            <span>{footer.cta} </span>
+            <AniLink
+              cover
+              direction="left"
+              bg="#FF671D"
+              activeClassName="active"
+              to={'/' + footer.ctaLinkPage}>
+              {footer.ctaLinkText}
+            </AniLink>
+          </h4>
+          <Logo />
+        </Col>
+        <Col align="flex-end" justify="space-between">
+          <Social />
+          <Copyright>{footer.copyright}</Copyright>
+        </Col>
+      </Row>
+    </StyledFooter>
+  )
+}
 
 const StyledFooter = styled.footer`
   background-color: ${props => props.theme.colors.secondary};
@@ -33,7 +48,16 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   margin-top: auto;
-  padding: ${props => props.theme.layout.paddingBig} ${props => props.theme.layout.padding};
+  padding-top: ${props => props.theme.layout.paddingBig};
+  padding-right: ${props => props.theme.layout.padding};
+  padding-bottom: ${props => props.theme.layout.padding};
+  padding-left: ${props => props.theme.layout.padding};
+`
+const Col = styled(Col_)`
+  width: 50%;
+`
+const Social = styled(Social_)`
+  margin-bottom: ${props => props.theme.layout.margin};
 `
 const AniLink = styled(AniLink_)`
   border-bottom: 2px solid ${props => props.theme.colors.transparent};
@@ -41,4 +65,7 @@ const AniLink = styled(AniLink_)`
   :hover {
     border-bottom: 2px solid ${props => props.theme.colors.primary};
   }
+`
+const Copyright = styled.p`
+  font-size: 14px;
 `

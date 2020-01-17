@@ -12,6 +12,9 @@ export * from './TextButtons/BlackTextButton'
 export * from './TextButtons/OrangeTextButton'
 export * from './TextButtons/WhiteTextButton'
 
+export * from './Social/SocialIcon'
+export * from './Social/Social'
+
 export * from './Header/Header'
 export * from './Footer/Footer'
 export * from './Logo/Logo'
@@ -21,8 +24,6 @@ export * from './TopBar/TopBar'
 
 export * from './Address/Address'
 
-export * from './Social/SocialIcon'
-export * from './Social/Social'
 
 export * from './Navigation/NavigationClose'
 export * from './Navigation/NavigationLink'
