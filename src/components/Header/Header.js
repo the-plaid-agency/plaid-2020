@@ -58,7 +58,6 @@ const HeaderText = styled.div`
     color: ${props => props.theme.colors.white};
     text-align: center;
     user-select: none;
-    margin-bottom: 0;
   }
   h1 span {
     color: ${props => props.theme.colors.primary};
@@ -67,5 +66,4 @@ const HeaderText = styled.div`
 const HeaderImage = styled(Img)`
   height: 100vh;
   user-select: none;
-  width: 100vw;
 `
