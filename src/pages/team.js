@@ -26,7 +26,7 @@ export default () => {
 
   return (
     <Page>
-      <SEO title="Portfolio" />
+      <SEO title="Team" />
       <BannerSub
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}
@@ -39,7 +39,7 @@ export default () => {
       <Section>
         <Row>
           <Col>
-            <p>Portfolio page</p>
+            <p>Team page</p>
           </Col>
         </Row>
       </Section>

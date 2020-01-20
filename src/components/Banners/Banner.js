@@ -13,8 +13,8 @@ export const Banner = ({
   buttonUrl = 'portfolio',
   buttonText = 'Featured Work',
 }) => (
-  <StyledHeader>
-    <HeaderText>
+  <StyledBanner>
+    <BannerText>
       <h1>
         <div>
           {textTop}<span>.</span>
@@ -24,13 +24,13 @@ export const Banner = ({
         </div>
       </h1>
       <WhiteTextButton to={'/' + buttonUrl} text={buttonText} />
-    </HeaderText>
-    <HeaderImage
+    </BannerText>
+    <BannerImage
       fluid={imageSrc}
       alt={imageAlt}
       title={imageTitle}
     />
-  </StyledHeader>
+  </StyledBanner>
 )
 
 Banner.propTypes = {
@@ -43,11 +43,11 @@ Banner.propTypes = {
   buttonText: PropTypes.string,
 }
 
-const StyledHeader = styled.header`
+const StyledBanner = styled.header`
   height: 100vh;
   position: relative;
 `
-const HeaderText = styled.div`
+const BannerText = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ const HeaderText = styled.div`
     color: ${props => props.theme.colors.primary};
   }
 `
-const HeaderImage = styled(Img)`
+const BannerImage = styled(Img)`
   height: 100vh;
   user-select: none;
 `

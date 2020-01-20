@@ -4,11 +4,11 @@ import { Page, SEO, Section, Row, Col, Footer } from 'components'
 export default () => {
   return (
     <Page>
-      <SEO title="Contact" />
+      <SEO title="Careers" />
       <Section>
         <Row>
           <Col>
-            <p>Contact page</p>
+            <p>Careers page</p>
           </Col>
         </Row>
       </Section>

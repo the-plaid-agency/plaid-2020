@@ -1,54 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
 import { WhiteTextButton } from 'components'
 import Img from 'gatsby-image'
 
 export const BannerSub = ({
-  textTop = '',
-  textBot = '',
-  buttonText = 'Button',
-  buttonUrl = '/portfolio'
-}) => {
-  const { imageOne } = useStaticQuery(graphql`
-    query {
-      imageOne: file(relativePath: { eq: "banner_home_1_min.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1920) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  return (
-    <StyledHeader>
-      <HeaderText>
-        <h1>
-          <div>
-            {textTop}<span>.</span>
-          </div>
-          <div>
-            <span>{textBot}</span>.
-          </div>
-        </h1>
-        <WhiteTextButton to={'/' + buttonUrl} text={buttonText} />
-      </HeaderText>
-      <HeaderImage
-        fluid={imageOne.childImageSharp.fluid}
-        alt="THE PLAID AGENCY"
-      />
-    </StyledHeader>
-  )
-}
+  imageSrc,
+  imageAlt = '',
+  imageTitle = '',
+  textTop = 'Lorem Ipsum Dolor Sit Amet',
+  textBottom = 'Consectetur Adipiscing',
+  buttonUrl = 'portfolio',
+  buttonText = 'Featured Work',
+}) => (
+  <StyledHeader>
+    <HeaderText>
+      <h1>
+        <div>
+          {textTop}<span>.</span>
+        </div>
+        <div>
+          <span>{textBottom}</span>.
+        </div>
+      </h1>
+      <WhiteTextButton to={'/' + buttonUrl} text={buttonText} />
+    </HeaderText>
+    <HeaderImage
+      fluid={imageSrc}
+      alt={imageAlt}
+      title={imageTitle}
+    />
+  </StyledHeader>
+)
 
 BannerSub.propTypes = {
+  imageSrc: PropTypes.object,
+  imageAlt: PropTypes.string,
+  imageTitle: PropTypes.string,
   textTop: PropTypes.string,
-  textBot: PropTypes.string,
-  buttonText: PropTypes.string,
+  textBottom: PropTypes.string,
   buttonUrl: PropTypes.string,
+  buttonText: PropTypes.string,
 }
 
 const StyledHeader = styled.header`
