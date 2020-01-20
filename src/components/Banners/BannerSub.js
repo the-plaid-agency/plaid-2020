@@ -1,10 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { WhiteTextButton } from 'components'
 import Img from 'gatsby-image'
 
-export const Header = () => {
+export const BannerSub = ({
+  textTop = '',
+  textBot = '',
+  buttonText = 'Button',
+  buttonUrl = '/portfolio'
+}) => {
   const { imageOne } = useStaticQuery(graphql`
     query {
       imageOne: file(relativePath: { eq: "banner_home_1_min.jpg" }) {
@@ -22,13 +28,13 @@ export const Header = () => {
       <HeaderText>
         <h1>
           <div>
-            Lorem Ipsum Dolor Sit Amet<span>.</span>
+            {textTop}<span>.</span>
           </div>
           <div>
-            <span>Consectetur Adipiscing</span>.
+            <span>{textBot}</span>.
           </div>
         </h1>
-        <WhiteTextButton text="Featured Work" to="/portfolio" />
+        <WhiteTextButton to={'/' + buttonUrl} text={buttonText} />
       </HeaderText>
       <HeaderImage
         fluid={imageOne.childImageSharp.fluid}
@@ -36,6 +42,13 @@ export const Header = () => {
       />
     </StyledHeader>
   )
+}
+
+BannerSub.propTypes = {
+  textTop: PropTypes.string,
+  textBot: PropTypes.string,
+  buttonText: PropTypes.string,
+  buttonUrl: PropTypes.string,
 }
 
 const StyledHeader = styled.header`

@@ -44,12 +44,12 @@ const StyledButton = styled(AniLink)`
     top: 0.625rem;
     left: -0.625rem;
     transition: ${props => props.theme.transitions.default};
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0.625rem, -0.625rem, 0) scale(0.99);
     width: 100%;
     will-change: transform;
     z-index: -1;
   }
   :hover :after {
-    transform: translate3d(0.625rem, -0.625rem, 0) scale(0.99);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 `

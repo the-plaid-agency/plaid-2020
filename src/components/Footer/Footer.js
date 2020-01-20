@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Row, Col as Col_, Logo, Social as Social_ } from 'components'
+import { Row, Col, Logo, Social as Social_ } from 'components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
 export const Footer = () => {
-  const { footer } = useStaticQuery(graphql`
+  const { datoCmsFooter: footer } = useStaticQuery(graphql`
     query {
-      footer: datoCmsFooter {
+      datoCmsFooter {
         copyright
         cta
         ctaLinkPage
@@ -19,7 +19,7 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <Row>
-        <Col>
+        <Col width="50%">
           <h4>
             <span>{footer.cta} </span>
             <AniLink
@@ -33,7 +33,7 @@ export const Footer = () => {
           </h4>
           <Logo />
         </Col>
-        <Col align="flex-end" justify="space-between">
+        <Col align="flex-end" justify="space-between" width="50%">
           <Social />
           <Copyright>{footer.copyright}</Copyright>
         </Col>
@@ -52,9 +52,6 @@ const StyledFooter = styled.footer`
   padding-right: ${props => props.theme.layout.padding};
   padding-bottom: ${props => props.theme.layout.padding};
   padding-left: ${props => props.theme.layout.padding};
-`
-const Col = styled(Col_)`
-  width: 50%;
 `
 const Social = styled(Social_)`
   margin-bottom: ${props => props.theme.layout.margin};
