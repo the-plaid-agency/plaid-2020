@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Page, SEO, Banner, Section, Row, Col, Footer } from 'components'
 
 export default () => {
-  const { datoCmsTeam: { bannerData } } = useStaticQuery(graphql`
+  const { datoCmsPortfolio: { bannerData } } = useStaticQuery(graphql`
     query {
-      datoCmsTeam {
+      datoCmsPortfolio {
         bannerData {
           angle
           height
