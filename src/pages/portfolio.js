@@ -1,12 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Page, SEO, BannerSub, Section, Row, Col, Footer } from 'components'
+import { Page, SEO, Banner, Section, Row, Col, Footer } from 'components'
 
 export default () => {
   const { datoCmsTeam: { bannerData } } = useStaticQuery(graphql`
     query {
       datoCmsTeam {
         bannerData {
+          angle
+          height
           textTop
           textBottom
           buttonUrl
@@ -15,8 +17,8 @@ export default () => {
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid
             }
-            alt,
-            title,
+            alt
+            title
           }
         }
       }
@@ -27,10 +29,12 @@ export default () => {
   return (
     <Page>
       <SEO title="Portfolio" />
-      <BannerSub
+      <Banner
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}
         imageTitle={banner.image.title}
+        angle={banner.angle}
+        height={banner.height}
         textTop={banner.textTop}
         textBottom={banner.textBottom}
         buttonUrl={banner.buttonUrl}

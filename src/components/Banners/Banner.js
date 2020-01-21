@@ -8,13 +8,15 @@ export const Banner = ({
   imageSrc,
   imageAlt = '',
   imageTitle = '',
+  angle = 'None',
+  height = 100,
   textTop = 'Lorem Ipsum Dolor Sit Amet',
   textBottom = 'Consectetur Adipiscing',
   buttonUrl = 'portfolio',
   buttonText = 'Featured Work',
 }) => (
-  <StyledBanner>
-    <BannerText>
+  <StyledHeader angle={angle}>
+    <HeaderText>
       <h1>
         <div>
           {textTop}<span>.</span>
@@ -24,30 +26,44 @@ export const Banner = ({
         </div>
       </h1>
       <WhiteTextButton to={'/' + buttonUrl} text={buttonText} />
-    </BannerText>
-    <BannerImage
+    </HeaderText>
+    <HeaderImage
       fluid={imageSrc}
+      height={height}
       alt={imageAlt}
       title={imageTitle}
     />
-  </StyledBanner>
+  </StyledHeader>
 )
 
 Banner.propTypes = {
   imageSrc: PropTypes.object,
   imageAlt: PropTypes.string,
   imageTitle: PropTypes.string,
+  angle: PropTypes.string,
+  height: PropTypes.number,
   textTop: PropTypes.string,
   textBottom: PropTypes.string,
   buttonUrl: PropTypes.string,
   buttonText: PropTypes.string,
 }
 
-const StyledBanner = styled.header`
-  height: 100vh;
+const handleClip = dir => {
+  switch (dir) {
+    case 'LTR':
+      return 'polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw))'
+    case 'RTL':
+      return "polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%)"
+    default:
+      return "none"
+  }
+}
+
+const StyledHeader = styled.header`
+  clip-path: ${({ angle }) => handleClip(angle)};
   position: relative;
 `
-const BannerText = styled.div`
+const HeaderText = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -68,7 +84,7 @@ const BannerText = styled.div`
     color: ${props => props.theme.colors.primary};
   }
 `
-const BannerImage = styled(Img)`
-  height: 100vh;
+const HeaderImage = styled(Img)`
+  height: ${({ height }) => height ?? 100}vh;
   user-select: none;
 `

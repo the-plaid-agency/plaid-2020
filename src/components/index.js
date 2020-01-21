@@ -20,7 +20,6 @@ export * from './Social/SocialIcon'
 export * from './Social/Social'
 
 export * from './Banners/Banner'
-export * from './Banners/BannerSub'
 export * from './Footer/Footer'
 export * from './Logo/Logo'
 

@@ -49,7 +49,7 @@ export const Navigation = memo(() => {
 
 const StyledNavigation = styled.nav`
   background-color: ${props => props.theme.colors.primary};
-  clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 80px 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 80px 100%);
   display: flex;
   flex-direction: column;
   overflow-y: auto;

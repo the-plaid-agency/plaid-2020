@@ -7,6 +7,8 @@ export default () => {
     query {
       datoCmsHome {
         bannerData {
+          angle
+          height
           textTop
           textBottom
           buttonUrl
@@ -15,8 +17,8 @@ export default () => {
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid
             }
-            alt,
-            title,
+            alt
+            title
           }
         }
       }
@@ -30,6 +32,8 @@ export default () => {
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}
         imageTitle={banner.image.title}
+        angle={banner.angle}
+        height={banner.height}
         textTop={banner.textTop}
         textBottom={banner.textBottom}
         buttonUrl={banner.buttonUrl}
