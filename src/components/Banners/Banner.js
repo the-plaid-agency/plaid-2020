@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { WhiteTextButton } from 'components'
+import { TextButton } from 'components'
 import Img from 'gatsby-image'
 
 export const Banner = ({
@@ -25,7 +25,7 @@ export const Banner = ({
           <span>{textBottom}</span>.
         </div>
       </h1>
-      <WhiteTextButton to={'/' + buttonUrl} text={buttonText} />
+      <TextButton to={'/' + buttonUrl} text={buttonText} />
     </HeaderText>
     <HeaderImage
       fluid={imageSrc}

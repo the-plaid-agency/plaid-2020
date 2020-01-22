@@ -12,7 +12,7 @@ const AniLink = styled(AniLink_)`
   background-color: ${props => props.theme.colors.transparent};
   color: ${props => props.theme.colors.white};
   display: flex;
-  font-weight: 900;
+  font-weight: ${props => props.theme.fonts.bold900};
   font-size: 2.0625em; /* 33px */
   justify-content: flex-end;
   line-height: 3.75rem; /* 60px */

@@ -2,14 +2,16 @@ export const theme = {
   colors: {
     primary: 'rgba(255,103,29,1)', // #FF671D
     secondary: 'rgba(68,68,68,1)', // #444444
-    transparent: 'rgba(0,0,0,0)',
-    white: '#fff',
-    black: '#000',
+    transparent: 'rgba(0,0,0,0)', // Transparent
+    white: 'rgba(255, 255, 255, 1)', // #fff
+    black: 'rgba(0, 0, 0, 1)', // #000
   },
   fonts: {
     lato: `'Lato', sans-serif`,
     playfairDisplay: `'Playfair Display', serif`,
     lineHeight: '1.75',
+    bold: '700',
+    bold900: '900',
     defaultSize: '1em',
     defaultStyle: 'normal',
     defaultWeight: '400',
@@ -20,7 +22,7 @@ export const theme = {
   },
   layout: {
     borderRadius: '0.3125rem', // 5px
-    maxWidth: '90vw', // 1100px
+    maxWidth: '90vw',
     padding: '1.875rem', // 30px
     paddingBig: '3.75rem', // 60px
     margin: '1.875rem', // 30px

@@ -9,12 +9,7 @@ export * from './Row/Row'
 export * from './Col/Col'
 
 export * from './Buttons/Button'
-export * from './Buttons/WhiteButton'
-export * from './Buttons/OrangeButton'
 export * from './TextButtons/TextButton'
-export * from './TextButtons/BlackTextButton'
-export * from './TextButtons/OrangeTextButton'
-export * from './TextButtons/WhiteTextButton'
 
 export * from './Social/SocialIcon'
 export * from './Social/Social'

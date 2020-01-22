@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   h6 {
     font-size: 0.875em; /* 14px */
-    font-weight: 900;
+    font-weight: ${props => props.theme.fonts.bold900};
     letter-spacing: 4px;
     line-height: 2;
     text-transform: uppercase;

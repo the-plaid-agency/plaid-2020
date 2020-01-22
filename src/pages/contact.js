@@ -9,9 +9,8 @@ import {
   Row,
   Col,
   Footer,
-  OrangeButton as OrangeButton_,
-  WhiteButton as WhiteButton_,
-  BlackTextButton as BlackTextButton_,
+  Button as Button_,
+  TextButton as TextButton_,
 } from 'components'
 
 export default () => {
@@ -63,9 +62,11 @@ export default () => {
             <h6>Header 6</h6>
             <p>Body Font</p>
             <p>Sunt ipsum sint ad <a href="https://www.google.com/">dolore</a> consequat do amet minim. Culpa Lorem duis ullamco non mollit ad amet. Aute commodo aliquip qui do. Anim eiusmod aliquip nostrud consectetur anim ex aute nulla elit consequat exercitation occaecat sint. Nisi laborum nisi aute proident eiusmod Lorem ipsum sint. Laborum sunt proident exercitation aliqua irure consectetur est nulla veniam veniam dolor quis dolore. Eiusmod nostrud sit dolor velit fugiat cupidatat dolor.</p>
-            <WhiteButton text="View Project" to="/about" />
-            <OrangeButton text="View Project" to="/about" />
-            <BlackTextButton text="Featured Work" to="/about" />
+            <Button text="View Project" to="/about" />
+            <Button white text="View Project" to="/about" />
+            <TextButton text="Featured Work" to="/about" />
+            <TextButton black text="Featured Work" to="/about" />
+            <TextButton orange text="Featured Work" to="/about" />
           </Col>
         </Row>
       </Section>
@@ -74,12 +75,9 @@ export default () => {
   )
 }
 
-const OrangeButton = styled(OrangeButton_)`
+const Button = styled(Button_)`
   margin-bottom: 2.5rem;
 `
-const WhiteButton = styled(WhiteButton_)`
-  margin-bottom: 2.5rem;
-`
-const BlackTextButton = styled(BlackTextButton_)`
+const TextButton = styled(TextButton_)`
   margin-bottom: 2.5rem;
 `

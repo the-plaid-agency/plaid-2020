@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const Button = ({
@@ -24,10 +24,10 @@ Button.propTypes = {
 
 const StyledButton = styled(AniLink)`
   background-color: ${props => props.theme.colors.primary};
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   display: inline-flex;
   font-size: 0.875em; /* 14px */
-  font-weight: 900;
+  font-weight: ${props => props.theme.fonts.bold900};
   justify-content: center;
   letter-spacing: 4px;
   line-height: 1.25;
@@ -50,4 +50,9 @@ const StyledButton = styled(AniLink)`
   :hover :after {
     transform: translate3d(0, 0, 0) scale(1);
   }
+
+  ${props => props.white && css`
+    background-color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.secondary};
+  `}
 `

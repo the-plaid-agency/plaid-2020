@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { FaChevronRight } from 'react-icons/fa'
 
@@ -25,24 +25,31 @@ TextButton.propTypes = {
 }
 
 const StyledButton = styled(AniLink)`
-  background-color: rgba(0, 0, 0, 0);
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   display: inline-flex;
   font-size: 0.9375em; /* 15px */
-  font-weight: 900;
+  font-weight: ${props => props.theme.fonts.bold900};
   justify-content: center;
   line-height: 1.75; /* 28px */
   position: relative;
   user-select: none;
-
   svg {
     height: inherit;
     margin-left: 5px;
     transition: ${props => props.theme.transitions.default};
     transform: translateX(0);
   }
-
   :hover svg {
     transform: translateX(5px);
   }
+
+  ${props => props.black && css`
+    color: ${props => props.theme.colors.black};
+  `}
+  ${props => props.orange && css`
+    color: ${props => props.theme.colors.primary};
+  `}
+  ${props => props.white && css`
+    color: ${props => props.theme.colors.white};
+  `}
 `
