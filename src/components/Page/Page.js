@@ -14,11 +14,12 @@ const StyledPage = styled.main`
 
   p a,
   table a {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid ${props => props.theme.colors.transparent};
+    transition: ${props => props.theme.transitions.default};
   }
   p a:hover,
   table a:hover {
-    border-bottom: 1px solid #ed5429;
+    border-bottom: 2px solid;
   }
 
   h1, h2, h3, h4, h5, h6,

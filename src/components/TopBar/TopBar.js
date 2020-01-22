@@ -12,10 +12,12 @@ export const TopBar = memo(() => (
 ))
 
 const StyledTopBar = styled.div`
-  /* background-color: rgba(255, 255, 255, 0.25); */
   display: flex;
   justify-content: center;
-  padding: ${props => props.theme.layout.paddingBig} ${props => props.theme.layout.padding} 0 ${props => props.theme.layout.padding};
+  padding-top: ${props => props.theme.layout.paddingBig};
+  padding-right: ${props => props.theme.layout.padding};
+  padding-bottom: 0;
+  padding-left: ${props => props.theme.layout.padding};
   pointer-events: none;
   position: fixed;
   left: 0;

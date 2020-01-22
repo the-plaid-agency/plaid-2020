@@ -35,10 +35,9 @@ const StyledButton = styled(AniLink)`
   position: relative;
   text-transform: uppercase;
   user-select: none;
-
   :after {
-    content: '';
     border: 1px solid #b0bfbc;
+    content: '';
     height: 100%;
     position: absolute;
     top: 0.625rem;
@@ -46,7 +45,6 @@ const StyledButton = styled(AniLink)`
     transition: ${props => props.theme.transitions.default};
     transform: translate3d(0.625rem, -0.625rem, 0) scale(0.99);
     width: 100%;
-    will-change: transform;
     z-index: -1;
   }
   :hover :after {

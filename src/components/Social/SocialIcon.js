@@ -23,5 +23,11 @@ export const SocialIcon = ({ href, target, icon, ...props }) => {
 }
 
 const Link = styled.a`
+  color: ${props => props.theme.colors.white};
   display: flex;
+  font-size: 1.625em; /* 26px */
+  transition: ${props => props.theme.transitions.default};
+  :hover {
+    color: inherit;
+  }
 `

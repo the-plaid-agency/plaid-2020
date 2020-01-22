@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Row, Col, Logo, Social as Social_ } from 'components'
+import { Row, Col, Logo, Social as Social_, Copyright } from 'components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
 export const Footer = () => {
@@ -55,6 +55,9 @@ const StyledFooter = styled.footer`
 `
 const Social = styled(Social_)`
   margin-bottom: ${props => props.theme.layout.margin};
+  :hover {
+    color: ${props => props.theme.colors.primary};
+  }
 `
 const AniLink = styled(AniLink_)`
   border-bottom: 2px solid ${props => props.theme.colors.transparent};
@@ -62,7 +65,4 @@ const AniLink = styled(AniLink_)`
   :hover {
     border-bottom: 2px solid ${props => props.theme.colors.primary};
   }
-`
-const Copyright = styled.p`
-  font-size: 14px;
 `

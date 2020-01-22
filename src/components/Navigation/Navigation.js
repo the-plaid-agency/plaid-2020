@@ -20,10 +20,9 @@ export const Navigation = memo(() => {
 
   useEffect(() => {
     const handleOutsideClick = e => {
-      if (node.current.contains(e.target)) {
-        return
+      if (!node.current.contains(e.target)) {
+        closeNav()
       }
-      closeNav()
     }
 
     if (isNavOpen) {
@@ -64,7 +63,6 @@ const StyledNavigation = styled.nav`
   max-width: 26.875rem; /* 430px */
   min-width: 18.75rem; /* 300px */
   z-index: 200;
-
   @media only screen and (max-width: 26.875rem) { /* 430px */
     clip-path: none;
     max-width: 100%;
@@ -76,9 +74,15 @@ const Address = styled(Address_)`
   padding-top: ${props => props.theme.layout.padding};
   padding-right: ${props => props.theme.layout.paddingBig};
   padding-bottom: ${props => props.theme.layout.padding};
+  a:hover {
+    color: ${props => props.theme.colors.secondary};
+  }
 `
 const Social = styled(Social_)`
   justify-content: flex-end;
   padding-right: ${props => props.theme.layout.paddingBig};
   padding-bottom: ${props => props.theme.layout.paddingBig};
+  :hover {
+    color: ${props => props.theme.colors.secondary};
+  }
 `

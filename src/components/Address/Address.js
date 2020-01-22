@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const Address = props => {
-  const { address } = useStaticQuery(graphql`
+  const { datoCmsAddressInfo: address } = useStaticQuery(graphql`
     query {
-      address: datoCmsAddressInfo {
+      datoCmsAddressInfo {
         city
         googleMapsLink
         phoneNumber
@@ -35,11 +35,11 @@ const StyledAddress = styled.address`
   display: inline-flex;
   font-size: 0.875em; /* 14px */
   flex-direction: column;
-
   a {
     align-items: inherit;
+    color: inherit;
     display: inherit;
     flex-direction: inherit;
-    color: #fff;
+    transition: ${props => props.theme.transitions.default};
   }
 `

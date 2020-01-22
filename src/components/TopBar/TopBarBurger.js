@@ -11,14 +11,12 @@ export const TopBarBurger = () => {
 }
 
 const GiHamburgerMenu = styled(GiHamburgerMenu_)`
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   cursor: pointer;
-  font-size: 26px;
+  font-size: 1.625em; /* 26px */
   pointer-events: auto;
-  opacity: 1;
   transition: ${props => props.theme.transitions.default};
-
   :hover {
-    opacity: 0.75;
+    color: ${props => props.theme.colors.primary};
   }
 `

@@ -74,13 +74,12 @@ const HeaderText = styled.div`
   bottom: 0;
   left: 0;
   z-index: 1;
-
   h1 {
     color: ${props => props.theme.colors.white};
     text-align: center;
     user-select: none;
   }
-  h1 span {
+  span {
     color: ${props => props.theme.colors.primary};
   }
 `

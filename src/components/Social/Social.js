@@ -4,9 +4,9 @@ import { SocialIcon as SocialIcon_ } from 'components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const Social = props => {
-  const { social } = useStaticQuery(graphql`
+  const { allDatoCmsSocialInfo: social } = useStaticQuery(graphql`
     query {
-      social: allDatoCmsSocialInfo(sort: { fields: position }) {
+      allDatoCmsSocialInfo(sort: { fields: position }) {
         nodes {
           slug
           url
@@ -29,15 +29,8 @@ const StyledSocial = styled.div`
   display: inline-flex;
 `
 const SocialIcon = styled(SocialIcon_)`
-  color: ${props => props.theme.colors.white};
-  font-size: 1.625em; /* 26px */
   margin-left: ${props => props.theme.layout.margin};
-  transition: ${props => props.theme.transitions.default};
-
   :first-child {
     margin-left: 0;
-  }
-  :hover {
-    opacity: 0.75;
   }
 `

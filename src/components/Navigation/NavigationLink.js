@@ -20,7 +20,6 @@ const AniLink = styled(AniLink_)`
   text-transform: uppercase;
   transition: ${props => props.theme.transitions.default};
   user-select: none;
-
   &.active,
   :hover {
     background-color: ${props => props.theme.colors.white};
