@@ -39,7 +39,7 @@ module.exports = {
      *
      */
     `gatsby-alias-imports`,
-    `gatsby-plugin-remove-trailing-slashes`,
+    // `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
