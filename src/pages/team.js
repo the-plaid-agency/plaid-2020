@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Page, SEO, Banner, Section, Row, Col, Footer } from 'components'
 
 export default () => {
-  const { datoCmsTeam: { bannerData } } = useStaticQuery(graphql`
+  const { datoCmsTeam: { bannerData, seo } } = useStaticQuery(graphql`
     query {
       datoCmsTeam {
         bannerData {
@@ -22,6 +22,10 @@ export default () => {
             title
           }
         }
+        seo {
+          title
+          description
+        }
       }
     }
   `)
@@ -29,7 +33,7 @@ export default () => {
 
   return (
     <Page>
-      <SEO title="Team" />
+      <SEO title={seo.title} description={seo.description} />
       <Banner
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}

@@ -14,7 +14,7 @@ import {
 } from 'components'
 
 export default () => {
-  const { datoCmsContact: { bannerData } } = useStaticQuery(graphql`
+  const { datoCmsContact: { bannerData, seo } } = useStaticQuery(graphql`
     query {
       datoCmsContact {
         bannerData {
@@ -33,6 +33,10 @@ export default () => {
             title
           }
         }
+        seo {
+          title
+          description
+        }
       }
     }
   `)
@@ -40,7 +44,7 @@ export default () => {
 
   return (
     <Page>
-      <SEO title="Contact" />
+      <SEO title={seo.title} description={seo.description} />
       <Banner
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}

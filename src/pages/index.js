@@ -1,9 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Page, Banner, Section, Row, Col, Footer, Button } from 'components'
+import { Page, SEO, Banner, Section, Row, Col, Footer, Button } from 'components'
 
 export default () => {
-  const { datoCmsHome: { bannerData } } = useStaticQuery(graphql`
+  const { datoCmsHome: { bannerData, seo } } = useStaticQuery(graphql`
     query {
       datoCmsHome {
         bannerData {
@@ -22,6 +22,10 @@ export default () => {
             title
           }
         }
+        seo {
+          title
+          description
+        }
       }
     }
   `)
@@ -29,6 +33,7 @@ export default () => {
 
   return (
     <Page>
+      <SEO title={seo.title} description={seo.description} />
       <Banner
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}

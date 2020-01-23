@@ -4,10 +4,10 @@ import { Helmet } from 'react-helmet-async'
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const SEO = ({
-  description = '',
   lang = 'en',
-  meta = [],
   title = '',
+  description = '',
+  meta = []
 }) => {
   const { datoCmsSite: site } = useStaticQuery(graphql`
     query {
@@ -35,38 +35,14 @@ export const SEO = ({
       defaultTitle={site.globalSeo.siteName}
       titleTemplate={`${site.globalSeo.siteName} | %s`}
       meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: metaTitle,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: site.globalSeo.fallbackSeo.twitterCard,
-        },
-        {
-          name: 'twitter:creator',
-          content: site.globalSeo.twitterAccount,
-        },
-        {
-          name: 'twitter:title',
-          content: metaTitle,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
+        { name: 'description', content: metaDescription, },
+        { property: 'og:title', content: metaTitle, },
+        { property: 'og:description', content: metaDescription, },
+        { property: 'og:type', content: 'website', },
+        { name: 'twitter:card', content: site.globalSeo.fallbackSeo.twitterCard, },
+        { name: 'twitter:creator', content: site.globalSeo.twitterAccount, },
+        { name: 'twitter:title', content: metaTitle, },
+        { name: 'twitter:description', content: metaDescription, },
       ].concat(meta)}
     />
   )
