@@ -19,7 +19,7 @@ const Layout = ({ children, location }) => (
       <HelmetProvider>
         <StyledLayout>
           <StoreSync location={location} />
-          <SEO title="" />
+          <SEO />
           <NormalizeStyle />
           <ResetStyle />
           <GlobalStyle />

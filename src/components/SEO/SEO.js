@@ -7,21 +7,8 @@ export const SEO = ({
   description = '',
   lang = 'en',
   meta = [],
-  title
+  title = '',
 }) => {
-  // const { site } = useStaticQuery(graphql`
-  //   query {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //         subTitle
-  //         description
-  //         author
-  //       }
-  //     }
-  //   }
-  // `)
-  // const { datoCmsSite: site, site: siteLocal } = useStaticQuery(graphql`
   const { datoCmsSite: site } = useStaticQuery(graphql`
     query {
       datoCmsSite {
@@ -36,54 +23,48 @@ export const SEO = ({
           }
         }
       }
-      site {
-        siteMetadata {
-          author
-        }
-      }
     }
   `)
-  // const metaDescription = description || site.siteMetadata.description
   const metaDescription = description || site.globalSeo.fallbackSeo.description
-  const metaTitle = title ?? `THE PLAID AGENCY`
+  const metaTitle = title ? `${site.globalSeo.siteName} | ${title}` : site.globalSeo.siteName
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
-      title={title ?? ``}
-      defaultTitle={`${site.globalSeo.siteName}`}
+      title={title}
+      defaultTitle={site.globalSeo.siteName}
       titleTemplate={`${site.globalSeo.siteName} | %s`}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription,
         },
         {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: site.globalSeo.fallbackSeo.twitterCard,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.globalSeo.twitterAccount,
-        },
-        {
-          name: `twitter:title`,
+          property: 'og:title',
           content: metaTitle,
         },
         {
-          name: `twitter:description`,
+          property: 'og:description',
+          content: metaDescription,
+        },
+        {
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          name: 'twitter:card',
+          content: site.globalSeo.fallbackSeo.twitterCard,
+        },
+        {
+          name: 'twitter:creator',
+          content: site.globalSeo.twitterAccount,
+        },
+        {
+          name: 'twitter:title',
+          content: metaTitle,
+        },
+        {
+          name: 'twitter:description',
           content: metaDescription,
         },
       ].concat(meta)}
