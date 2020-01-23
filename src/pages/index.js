@@ -13,6 +13,7 @@ export default () => {
           textBottom
           buttonUrl
           buttonText
+          buttonVariant
           image {
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid
@@ -38,12 +39,12 @@ export default () => {
         textBottom={banner.textBottom}
         buttonUrl={banner.buttonUrl}
         buttonText={banner.buttonText}
+        buttonVariant={banner.buttonVariant}
       />
       <Section>
         <Row>
           <Col>
-            <h1>Lorem Ipsum</h1>
-            <h1>Dolor Amet</h1>
+            <h1>Lorem Ipsum<br />Dolor Amet</h1>
             <h6>What We Do</h6>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -51,7 +52,7 @@ export default () => {
               Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.
               Pellentesque adipiscing commodo elit at imperdiet dui accumsan.
             </p>
-            <Button text="Test" to="/">Test</Button>
+            <Button to="/" text="About Our Company" />
           </Col>
         </Row>
       </Section>

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import { TextButton } from 'components'
 import Img from 'gatsby-image'
@@ -14,6 +14,7 @@ export const Banner = ({
   textBottom = 'Consectetur Adipiscing',
   buttonUrl = 'portfolio',
   buttonText = 'Featured Work',
+  buttonVariant = 'white'
 }) => (
   <StyledHeader angle={angle}>
     <HeaderText>
@@ -25,7 +26,7 @@ export const Banner = ({
           <span>{textBottom}</span>.
         </div>
       </h1>
-      <TextButton to={'/' + buttonUrl} text={buttonText} />
+      <TextButton to={'/' + buttonUrl} text={buttonText} variant={buttonVariant} />
     </HeaderText>
     <HeaderImage
       fluid={imageSrc}
@@ -46,22 +47,18 @@ Banner.propTypes = {
   textBottom: PropTypes.string,
   buttonUrl: PropTypes.string,
   buttonText: PropTypes.string,
-}
-
-const handleClip = dir => {
-  switch (dir) {
-    case 'LTR':
-      return 'polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw))'
-    case 'RTL':
-      return "polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%)"
-    default:
-      return "none"
-  }
+  buttonVariant: PropTypes.string,
 }
 
 const StyledHeader = styled.header`
-  clip-path: ${({ angle }) => handleClip(angle)};
   position: relative;
+
+  ${({ angle }) => angle === 'LTR' && css`
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw));
+  `}
+  ${({ angle }) => angle === 'RTL' && css`
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%);
+  `}
 `
 const HeaderText = styled.div`
   align-items: center;

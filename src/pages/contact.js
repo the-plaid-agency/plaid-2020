@@ -24,6 +24,7 @@ export default () => {
           textBottom
           buttonUrl
           buttonText
+          buttonVariant
           image {
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid
@@ -50,6 +51,7 @@ export default () => {
         textBottom={banner.textBottom}
         buttonUrl={banner.buttonUrl}
         buttonText={banner.buttonText}
+        buttonVariant={banner.buttonVariant}
       />
       <Section>
         <Row>
@@ -62,11 +64,12 @@ export default () => {
             <h6>Header 6</h6>
             <p>Body Font</p>
             <p>Sunt ipsum sint ad <a href="https://www.google.com/">dolore</a> consequat do amet minim. Culpa Lorem duis ullamco non mollit ad amet. Aute commodo aliquip qui do. Anim eiusmod aliquip nostrud consectetur anim ex aute nulla elit consequat exercitation occaecat sint. Nisi laborum nisi aute proident eiusmod Lorem ipsum sint. Laborum sunt proident exercitation aliqua irure consectetur est nulla veniam veniam dolor quis dolore. Eiusmod nostrud sit dolor velit fugiat cupidatat dolor.</p>
-            <Button text="View Project" to="/about" />
-            <Button white text="View Project" to="/about" />
-            <TextButton text="Featured Work" to="/about" />
-            <TextButton black text="Featured Work" to="/about" />
-            <TextButton orange text="Featured Work" to="/about" />
+            <Button to="/about" text="View Project" />
+            <Button to="/about" text="View Project" variant="white" />
+            <Button to="/about" text="View Project" variant="black" />
+            <TextButton to="/about" text="Featured Work" />
+            <TextButton to="/about" text="Featured Work" variant="white" />
+            <TextButton to="/about" text="Featured Work" variant="orange" />
           </Col>
         </Row>
       </Section>

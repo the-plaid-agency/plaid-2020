@@ -9,9 +9,17 @@ export const TextButton = ({
   text = 'Text Button',
   coverDir = 'left',
   coverBg = '#FF671D',
+  variant = 'black',
   ...props
 }) => (
-  <StyledButton to={to} cover direction={coverDir} bg={coverBg} {...props}>
+  <StyledButton
+    to={to}
+    cover
+    direction={coverDir}
+    bg={coverBg}
+    variant={variant}
+    {...props}
+  >
     {text}
     <FaChevronRight />
   </StyledButton>
@@ -22,10 +30,11 @@ TextButton.propTypes = {
   text: PropTypes.string,
   coverDir: PropTypes.string,
   coverBg: PropTypes.string,
+  variant: PropTypes.string,
 }
 
 const StyledButton = styled(AniLink)`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.black};
   display: inline-flex;
   font-size: 0.9375em; /* 15px */
   font-weight: ${props => props.theme.fonts.bold900};
@@ -43,13 +52,10 @@ const StyledButton = styled(AniLink)`
     transform: translateX(5px);
   }
 
-  ${props => props.black && css`
-    color: ${props => props.theme.colors.black};
-  `}
-  ${props => props.orange && css`
-    color: ${props => props.theme.colors.primary};
-  `}
-  ${props => props.white && css`
+  ${({ variant }) => variant === 'white' && css`
     color: ${props => props.theme.colors.white};
+  `}
+  ${({ variant }) => variant === 'orange' && css`
+    color: ${props => props.theme.colors.primary};
   `}
 `

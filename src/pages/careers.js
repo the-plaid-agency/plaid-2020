@@ -13,6 +13,7 @@ export default () => {
           textBottom
           buttonUrl
           buttonText
+          buttonVariant
           image {
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid
@@ -39,6 +40,7 @@ export default () => {
         textBottom={banner.textBottom}
         buttonUrl={banner.buttonUrl}
         buttonText={banner.buttonText}
+        buttonVariant={banner.buttonVariant}
       />
       <Section>
         <Row>

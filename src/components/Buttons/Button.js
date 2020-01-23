@@ -8,9 +8,17 @@ export const Button = ({
   text = 'Button',
   coverDir = 'left',
   coverBg = '#FF671D',
+  variant = 'orange',
   ...props
 }) => (
-  <StyledButton to={to} cover direction={coverDir} bg={coverBg} {...props}>
+  <StyledButton
+    to={to}
+    cover
+    direction={coverDir}
+    bg={coverBg}
+    variant={variant}
+    {...props}
+  >
     {text}
   </StyledButton>
 )
@@ -51,8 +59,12 @@ const StyledButton = styled(AniLink)`
     transform: translate3d(0, 0, 0) scale(1);
   }
 
-  ${props => props.white && css`
+  ${({ variant }) => variant === 'white' && css`
     background-color: ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.secondary};
+  `}
+  ${({ variant }) => variant === 'black' && css`
+    background-color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.white};
   `}
 `
