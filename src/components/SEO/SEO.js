@@ -9,26 +9,50 @@ export const SEO = ({
   meta = [],
   title
 }) => {
-  const { site } = useStaticQuery(graphql`
+  // const { site } = useStaticQuery(graphql`
+  //   query {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //         subTitle
+  //         description
+  //         author
+  //       }
+  //     }
+  //   }
+  // `)
+  // const { datoCmsSite: site, site: siteLocal } = useStaticQuery(graphql`
+  const { datoCmsSite: site } = useStaticQuery(graphql`
     query {
+      datoCmsSite {
+        globalSeo {
+          siteName
+          facebookPageUrl
+          twitterAccount
+          fallbackSeo {
+            title
+            description
+            twitterCard
+          }
+        }
+      }
       site {
         siteMetadata {
-          title
-          subTitle
-          description
           author
         }
       }
     }
   `)
-  const metaDescription = description || site.siteMetadata.description
+  // const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.globalSeo.fallbackSeo.description
+  const metaTitle = title ?? `THE PLAID AGENCY`
 
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title ?? ``}
-      defaultTitle={`${site.siteMetadata.title}`}
-      titleTemplate={`${site.siteMetadata.title} | %s`}
+      defaultTitle={`${site.globalSeo.siteName}`}
+      titleTemplate={`${site.globalSeo.siteName} | %s`}
       meta={[
         {
           name: `description`,
@@ -48,15 +72,15 @@ export const SEO = ({
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: site.globalSeo.fallbackSeo.twitterCard,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.globalSeo.twitterAccount,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
