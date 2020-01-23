@@ -8,7 +8,6 @@ export const Social = props => {
     query {
       allDatoCmsSocialInfo(sort: { fields: position }) {
         nodes {
-          slug
           url
           profileType
         }
@@ -19,7 +18,11 @@ export const Social = props => {
   return (
     <StyledSocial {...props}>
       {social.nodes.map((data, i) => (
-        <SocialIcon key={i} icon={data.profileType} href={data.url} target="_blank" />
+        <SocialIcon
+          key={i}
+          href={data.url}
+          icon={data.profileType}
+        />
       ))}
     </StyledSocial>
   )

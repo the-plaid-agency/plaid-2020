@@ -8,7 +8,7 @@ export const Banner = ({
   imageSrc,
   imageAlt = '',
   imageTitle = '',
-  angle = 'None',
+  angle = 'none',
   height = 100,
   textTop = 'Lorem Ipsum Dolor Sit Amet',
   textBottom = 'Consectetur Adipiscing',
@@ -53,10 +53,10 @@ Banner.propTypes = {
 const StyledHeader = styled.header`
   position: relative;
 
-  ${({ angle }) => angle === 'LTR' && css`
+  ${({ angle }) => angle === 'ltr' && css`
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw));
   `}
-  ${({ angle }) => angle === 'RTL' && css`
+  ${({ angle }) => angle === 'rtl' && css`
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%);
   `}
 `

@@ -28,6 +28,7 @@ Button.propTypes = {
   text: PropTypes.string,
   coverDir: PropTypes.string,
   coverBg: PropTypes.string,
+  variant: PropTypes.string,
 }
 
 const StyledButton = styled(AniLink)`

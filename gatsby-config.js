@@ -7,10 +7,10 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `THE PLAID AGENCY`,
-    subTitle: `TPA`,
-    description: `The official website of THE PLAID AGENCY.`,
-    author: `THE PLAID AGENCY`,
+    title: `Old THE PLAID AGENCY`,
+    subTitle: `Old TPA`,
+    description: `Old The official website of THE PLAID AGENCY.`,
+    author: `Old THE PLAID AGENCY`,
     siteUrl: `https://plaid-2020.netlify.com/`,
   },
   plugins: [
@@ -92,12 +92,12 @@ module.exports = {
         name: `THE PLAID AGENCY`,
         short_name: `THE PLAID AGENCY`,
         start_url: `/`,
-        background_color: `#6b37bf`,
-        theme_color: `#6b37bf`,
+        background_color: `#fff`,
+        theme_color: `#ff671d`,
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
-        icon: `src/assets/icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/favicon.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`, // MUST be after gatsby-plugin-manifest

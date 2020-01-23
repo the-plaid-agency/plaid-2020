@@ -18,8 +18,7 @@ export const TextButton = ({
     direction={coverDir}
     bg={coverBg}
     variant={variant}
-    {...props}
-  >
+    {...props}>
     {text}
     <FaChevronRight />
   </StyledButton>

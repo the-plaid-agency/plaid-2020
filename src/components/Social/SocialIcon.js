@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {
   FaFacebookF,
@@ -7,7 +8,7 @@ import {
   FaInstagram,
 } from 'react-icons/fa'
 
-export const SocialIcon = ({ href, target, icon, ...props }) => {
+export const SocialIcon = ({ href, icon, ...props }) => {
   const Icons = {
     Facebook: <FaFacebookF />,
     Twitter: <FaTwitter />,
@@ -16,10 +17,15 @@ export const SocialIcon = ({ href, target, icon, ...props }) => {
   }
 
   return (
-    <Link href={href} target={target} {...props}>
+    <Link href={href} target="_blank" rel="noopener noreferrer" {...props}>
       {Icons[icon]}
     </Link>
   )
+}
+
+SocialIcon.propTypes = {
+  href: PropTypes.string,
+  icon: PropTypes.string,
 }
 
 const Link = styled.a`
