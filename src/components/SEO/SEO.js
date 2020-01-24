@@ -7,7 +7,7 @@ export const SEO = ({
   lang = 'en',
   title = '',
   description = '',
-  meta = []
+  meta = [],
 }) => {
   const { datoCmsSite: site } = useStaticQuery(graphql`
     query {
