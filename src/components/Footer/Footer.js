@@ -1,7 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Row, Col, Logo, Social as Social_, Copyright } from 'components'
+import {
+  Row,
+  Col as Col_,
+  Logo,
+  Social as Social_,
+  Copyright,
+} from 'components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
 export const Footer = () => {
@@ -52,6 +58,12 @@ const StyledFooter = styled.footer`
   padding-right: ${props => props.theme.layout.padding};
   padding-bottom: ${props => props.theme.layout.padding};
   padding-left: ${props => props.theme.layout.padding};
+`
+const Col = styled(Col_)`
+  @media only screen and (max-width: 50rem) { /* 800px */
+    align-items: flex-start;
+    width: 100%;
+  }
 `
 const Social = styled(Social_)`
   margin-bottom: ${props => props.theme.layout.margin};

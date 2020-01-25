@@ -7,7 +7,7 @@ export const Row = styled.div`
   flex-wrap: wrap;
   justify-content: ${({ justify }) => justify ?? 'space-between' };
   max-width: ${props => props.theme.layout.maxWidth};
-  width: 100%;
+  width: ${({ width }) => width ?? '100%' };
 `
 
 Row.propTypes = {

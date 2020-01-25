@@ -8,6 +8,9 @@ export * from './Section/Section'
 export * from './Row/Row'
 export * from './Col/Col'
 
+export * from './Address/Address'
+export * from './Copyright/Copyright'
+
 export * from './Buttons/Button'
 export * from './TextButtons/TextButton'
 
@@ -18,11 +21,11 @@ export * from './Banners/Banner'
 export * from './Footer/Footer'
 export * from './Logo/Logo'
 
+export * from './CTAs/IntroCTA'
+export * from './CTAs/FooterCTA'
+
 export * from './TopBar/TopBarBurger'
 export * from './TopBar/TopBar'
-
-export * from './Address/Address'
-export * from './Copyright/Copyright'
 
 export * from './Navigation/NavigationClose'
 export * from './Navigation/NavigationLink'
