@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
-export const NavigationLink = ({ to = "/", children }) => (
-  <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to={to}>
+export const NavigationLink = ({ to = "/", children, ...props }) => (
+  <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to={to} {...props}>
     {children}
   </AniLink>
 )
+
+NavigationLink.propTypes = {
+  to: PropTypes.string
+}
 
 const AniLink = styled(AniLink_)`
   background-color: ${props => props.theme.colors.transparent};
