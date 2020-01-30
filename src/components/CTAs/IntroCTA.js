@@ -23,7 +23,7 @@ export const IntroCTA = ({
         <Title>{title}</Title>
         <SubTitle>{subText}</SubTitle>
         <Text>{text}</Text>
-        <Button to={buttonUrl} text={buttonText} />
+        <Button to={'/' + buttonUrl} text={buttonText} />
       </Col>
     </Row>
   </StyledIntroCTA>

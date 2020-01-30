@@ -50,8 +50,8 @@ export default () => {
         height={banner.height}
         textTop={banner.textTop}
         textBottom={banner.textBottom}
-        buttonUrl={banner.buttonUrl}
         buttonText={banner.buttonText}
+        buttonUrl={banner.buttonUrl}
         buttonVariant={banner.buttonVariant}
       />
       <IntroCTA
