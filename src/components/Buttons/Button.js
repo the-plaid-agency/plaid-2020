@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { routes } from 'utils'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const Button = ({
-  to = '/',
+  to = '/home',
   text = 'Button',
   coverDir = 'left',
   coverBg = '#FF671D',
@@ -12,13 +13,12 @@ export const Button = ({
   ...props
 }) => (
   <StyledButton
-    to={to}
+    to={to === '/home' ? routes.home : to}
     cover
     direction={coverDir}
     bg={coverBg}
     variant={variant}
-    {...props}
-  >
+    {...props}>
     {text}
   </StyledButton>
 )

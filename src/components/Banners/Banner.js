@@ -12,9 +12,9 @@ export const Banner = ({
   height = 100,
   textTop = 'Lorem Ipsum Dolor Sit Amet',
   textBottom = 'Consectetur Adipiscing',
-  buttonUrl = 'portfolio',
   buttonText = 'Featured Work',
-  buttonVariant = 'white'
+  buttonUrl = 'portfolio',
+  buttonVariant = 'white',
 }) => (
   <StyledHeader angle={angle}>
     <HeaderText>
@@ -45,8 +45,8 @@ Banner.propTypes = {
   height: PropTypes.number,
   textTop: PropTypes.string,
   textBottom: PropTypes.string,
-  buttonUrl: PropTypes.string,
   buttonText: PropTypes.string,
+  buttonUrl: PropTypes.string,
   buttonVariant: PropTypes.string,
 }
 

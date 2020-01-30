@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 // import PropTypes from 'prop-types'
-import { Section, Row as Row_, Col, Button } from 'components'
+import {
+  Section,
+  Row as Row_,
+  Col,
+  Button
+} from 'components'
 
 export const FooterCTA = () => (
   <StyledFooterCTA>

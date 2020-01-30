@@ -79,10 +79,10 @@ export default () => {
             <p>Sunt ipsum sint ad <a href="https://www.google.com/">dolore</a> consequat do amet minim. Culpa Lorem duis ullamco non mollit ad amet. Aute commodo aliquip qui do.</p>
             <h6>Header 6</h6>
             <p>Sunt ipsum sint ad <a href="https://www.google.com/">dolore</a> consequat do amet minim. Culpa Lorem duis ullamco non mollit ad amet. Aute commodo aliquip qui do.</p>
-            <Button to="/about" text="View Project" />
+            <Button text="View Project" />
             <Button to="/about" text="View Project" variant="white" />
             <Button to="/about" text="View Project" variant="black" />
-            <TextButton to="/about" text="Featured Work" />
+            <TextButton text="Featured Work" />
             <TextButton to="/about" text="Featured Work" variant="white" />
             <TextButton to="/about" text="Featured Work" variant="orange" />
           </Col>

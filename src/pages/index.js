@@ -1,15 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import {
-  Page,
-  SEO,
-  Banner,
-  IntroCTA,
-  Footer,
-} from 'components'
+import { Page, SEO, Banner, IntroCTA, Footer } from 'components'
 
 export default () => {
-  const { datoCmsHome: { bannerData, seo } } = useStaticQuery(graphql`
+  const { datoCmsHome: { bannerData, introData, seo } } = useStaticQuery(graphql`
     query {
       datoCmsHome {
         bannerData {
@@ -17,8 +11,8 @@ export default () => {
           height
           textTop
           textBottom
-          buttonUrl
           buttonText
+          buttonUrl
           buttonVariant
           image {
             fluid(maxWidth: 1920) {
@@ -28,6 +22,13 @@ export default () => {
             title
           }
         }
+        introData {
+          title
+          subText
+          text
+          buttonText
+          buttonUrl
+        }
         seo {
           title
           description
@@ -36,6 +37,7 @@ export default () => {
     }
   `)
   const banner = bannerData[0]
+  const intro = introData[0]
 
   return (
     <Page>
@@ -48,11 +50,17 @@ export default () => {
         height={banner.height}
         textTop={banner.textTop}
         textBottom={banner.textBottom}
-        buttonUrl={banner.buttonUrl}
         buttonText={banner.buttonText}
+        buttonUrl={banner.buttonUrl}
         buttonVariant={banner.buttonVariant}
       />
-      <IntroCTA />
+      <IntroCTA
+        title={intro.title}
+        subText={intro.subText}
+        text={intro.text}
+        buttonText={intro.buttonText}
+        buttonUrl={intro.buttonUrl}
+      />
       <Footer />
     </Page>
   )

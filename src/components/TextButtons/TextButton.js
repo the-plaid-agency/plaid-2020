@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { routes } from 'utils'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { FaChevronRight } from 'react-icons/fa'
 
 export const TextButton = ({
-  to = '/',
+  to = '/home',
   text = 'Text Button',
   coverDir = 'left',
   coverBg = '#FF671D',
@@ -13,7 +14,7 @@ export const TextButton = ({
   ...props
 }) => (
   <StyledButton
-    to={to}
+    to={to === '/home' ? routes.home : to}
     cover
     direction={coverDir}
     bg={coverBg}

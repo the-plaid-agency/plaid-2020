@@ -1,9 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Page, SEO, Banner, Section, Row, Col, Footer } from 'components'
+import { Page, SEO, Banner, IntroCTA, Footer } from 'components'
 
 export default () => {
-  const { datoCmsTeam: { bannerData, seo } } = useStaticQuery(graphql`
+  const { datoCmsTeam: { bannerData, introData, seo } } = useStaticQuery(graphql`
     query {
       datoCmsTeam {
         bannerData {
@@ -22,6 +22,13 @@ export default () => {
             title
           }
         }
+        introData {
+          title
+          subText
+          text
+          buttonText
+          buttonUrl
+        }
         seo {
           title
           description
@@ -30,6 +37,7 @@ export default () => {
     }
   `)
   const banner = bannerData[0]
+  const intro = introData[0]
 
   return (
     <Page>
@@ -46,13 +54,13 @@ export default () => {
         buttonText={banner.buttonText}
         buttonVariant={banner.buttonVariant}
       />
-      <Section>
-        <Row>
-          <Col>
-            <p>Team page</p>
-          </Col>
-        </Row>
-      </Section>
+      <IntroCTA
+        title={intro.title}
+        subText={intro.subText}
+        text={intro.text}
+        buttonText={intro.buttonText}
+        buttonUrl={intro.buttonUrl}
+      />
       <Footer />
     </Page>
   )
