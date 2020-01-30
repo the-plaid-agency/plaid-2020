@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280px" height="356px" viewBox="0 0 280 356" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61.1 (101010) - https://sketch.com -->
+    <title>99D83D88-55AD-43EC-8031-B0CFA1FDA6A1</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="0.09673526 0.0379436975 228.063467 0.0379436975 228.063467 261 0.09673526 261"></polygon>
+        <polygon id="path-3" points="0.00197313622 0.0379436975 227.969362 0.0379436975 227.969362 261 0.00197313622 261"></polygon>
+    </defs>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Page---PFD" transform="translate(0.000000, -4089.000000)">
+            <g id="PLAID-Texture-1" transform="translate(142.636578, 4310.405558) rotate(-225.000000) translate(-142.636578, -4310.405558) translate(-86.363422, 4117.905558)">
+                <polygon id="Fill-1" fill="#F16829" points="227.218766 0.416697508 189.719854 45.1422024 227.218766 87.4166975 264.719854 45.1422024"></polygon>
+                <g id="Group-8" transform="translate(0.153212, 123.899346)">
+                    <g id="Group-4" transform="translate(227.877889, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-3"></g>
+                        <polygon id="Fill-2" fill-opacity="0.1" fill="#444545" mask="url(#mask-2)" points="228.064125 119.551818 119.561364 261.000658 0.09673526 128.324927 119.561364 0.0379436975"></polygon>
+                    </g>
+                    <g id="Group-7">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Clip-6"></g>
+                        <polygon id="Fill-5" fill-opacity="0.05" fill="#444545" mask="url(#mask-4)" points="227.969362 128.324927 108.504734 261.000658 0.00197313622 119.551818 108.504734 0.0379436975"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
