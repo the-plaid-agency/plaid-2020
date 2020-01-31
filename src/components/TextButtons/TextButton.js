@@ -54,7 +54,7 @@ const StyledButton = styled(AniLink)`
 
   ${({ variant }) => variant === 'white' && css`
     color: ${props => props.theme.colors.white};
-    filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 0 1.5px rgba(0,0,0,0.6));
   `}
   ${({ variant }) => variant === 'orange' && css`
     color: ${props => props.theme.colors.primary};

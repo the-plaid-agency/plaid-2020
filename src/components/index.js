@@ -22,7 +22,7 @@ export * from './Footer/Footer'
 export * from './Logo/Logo'
 
 export * from './CTAs/IntroCTA'
-export * from './CTAs/FooterCTA'
+export * from './CTAs/OutroCTA'
 
 export * from './TopBar/TopBarBurger'
 export * from './TopBar/TopBar'

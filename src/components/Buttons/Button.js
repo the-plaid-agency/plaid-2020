@@ -51,7 +51,7 @@ const StyledButton = styled(AniLink)`
     position: absolute;
     top: 0.625rem;
     left: -0.625rem;
-    transition: ${props => props.theme.transitions.default};
+    transition: ${props => props.theme.transitions.fast};
     transform: translate3d(0.625rem, -0.625rem, 0) scale(0.99);
     width: 100%;
     z-index: -1;

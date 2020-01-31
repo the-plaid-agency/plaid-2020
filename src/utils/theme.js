@@ -23,9 +23,14 @@ export const theme = {
   layout: {
     borderRadius: '0.3125rem', // 5px
     maxWidth: '90vw',
+    maxWidthFixed: '75rem', // 1200px
     padding: '1.875rem', // 30px
     paddingBig: '3.75rem', // 60px
+    paddingHuge: '5.625rem', // 90px
+    paddingGiant: '7.5rem', // 120px
     margin: '1.875rem', // 30px
     marginBig: '3.75rem', // 60px
+    marginHuge: '5.625rem', // 90px
+    marginGiant: '7.5rem', // 120px
   }
 }

@@ -37,7 +37,10 @@ IntroCTA.propTypes = {
   buttonUrl: PropTypes.string,
 }
 
-const StyledIntroCTA = styled(Section)``
+const StyledIntroCTA = styled(Section)`
+  padding-bottom: ${props => props.theme.layout.paddingHuge};
+  padding-top: ${props => props.theme.layout.paddingGiant};
+`
 const Row = styled(Row_)`
   max-width: 1000px;
 `

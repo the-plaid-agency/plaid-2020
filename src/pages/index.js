@@ -1,43 +1,12 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Page, SEO, Banner, IntroCTA, Footer } from 'components'
+import { useHomeData } from 'hooks'
+import { Page, SEO, Banner, IntroCTA, OutroCTA, Footer } from 'components'
 
 export default () => {
-  const { datoCmsHome: { bannerData, introData, seo } } = useStaticQuery(graphql`
-    query {
-      datoCmsHome {
-        bannerData {
-          angle
-          height
-          textTop
-          textBottom
-          buttonText
-          buttonUrl
-          buttonVariant
-          image {
-            fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid
-            }
-            alt
-            title
-          }
-        }
-        introData {
-          title
-          subText
-          text
-          buttonText
-          buttonUrl
-        }
-        seo {
-          title
-          description
-        }
-      }
-    }
-  `)
+  const { seo, bannerData, introData, outroData } = useHomeData()
   const banner = bannerData[0]
   const intro = introData[0]
+  const outro = outroData[0]
 
   return (
     <Page>
@@ -60,6 +29,13 @@ export default () => {
         text={intro.text}
         buttonText={intro.buttonText}
         buttonUrl={intro.buttonUrl}
+      />
+      <OutroCTA
+        textTop={outro.textTop}
+        textBottom={outro.textBottom}
+        text={outro.text}
+        buttonText={outro.buttonText}
+        buttonUrl={outro.buttonUrl}
       />
       <Footer />
     </Page>
