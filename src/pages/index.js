@@ -1,9 +1,9 @@
 import React from 'react'
-import { useHomeData } from 'hooks'
 import { Page, SEO, Banner, IntroCTA, OutroCTA, Footer } from 'components'
+import { useHomeApi } from 'hooks'
 
 export default () => {
-  const { seo, bannerData, introData, outroData } = useHomeData()
+  const { seo, bannerData, introData, outroData } = useHomeApi()
   const banner = bannerData[0]
   const intro = introData[0]
   const outro = outroData[0]

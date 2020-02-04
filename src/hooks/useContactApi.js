@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
-export const useHomeData = () => {
-  const { datoCmsHome } = useStaticQuery(graphql`
+export const useContactApi = () => {
+  const { datoCmsContact } = useStaticQuery(graphql`
     query {
-      datoCmsHome {
+      datoCmsContact {
         seo {
           title
           description
@@ -24,13 +24,6 @@ export const useHomeData = () => {
             title
           }
         }
-        introData {
-          title
-          subText
-          text
-          buttonText
-          buttonUrl
-        }
         outroData {
           buttonText
           buttonUrl
@@ -42,5 +35,5 @@ export const useHomeData = () => {
     }
   `)
 
-  return datoCmsHome
+  return datoCmsContact
 }

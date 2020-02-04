@@ -1,35 +1,11 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Page, SEO, Banner, Section, Row, Col, Footer } from 'components'
+import { Page, SEO, Banner, OutroCTA, Footer } from 'components'
+import { usePortfolioApi } from 'hooks'
 
 export default () => {
-  const { datoCmsPortfolio: { bannerData, seo } } = useStaticQuery(graphql`
-    query {
-      datoCmsPortfolio {
-        bannerData {
-          angle
-          height
-          textTop
-          textBottom
-          buttonUrl
-          buttonText
-          buttonVariant
-          image {
-            fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid
-            }
-            alt
-            title
-          }
-        }
-        seo {
-          title
-          description
-        }
-      }
-    }
-  `)
+  const { seo, bannerData, outroData } = usePortfolioApi()
   const banner = bannerData[0]
+  const outro = outroData[0]
 
   return (
     <Page>
@@ -46,13 +22,13 @@ export default () => {
         buttonUrl={banner.buttonUrl}
         buttonVariant={banner.buttonVariant}
       />
-      <Section>
-        <Row>
-          <Col>
-            <p>Portfolio page</p>
-          </Col>
-        </Row>
-      </Section>
+      <OutroCTA
+        textTop={outro.textTop}
+        textBottom={outro.textBottom}
+        text={outro.text}
+        buttonText={outro.buttonText}
+        buttonUrl={outro.buttonUrl}
+      />
       <Footer />
     </Page>
   )

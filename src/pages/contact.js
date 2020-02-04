@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
 import {
   Page,
   SEO,
   Banner,
+  OutroCTA,
   Section,
   Row,
   Col,
@@ -12,35 +12,12 @@ import {
   Button as Button_,
   TextButton as TextButton_,
 } from 'components'
+import { useContactApi } from 'hooks'
 
 export default () => {
-  const { datoCmsContact: { bannerData, seo } } = useStaticQuery(graphql`
-    query {
-      datoCmsContact {
-        bannerData {
-          angle
-          height
-          textTop
-          textBottom
-          buttonUrl
-          buttonText
-          buttonVariant
-          image {
-            fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid
-            }
-            alt
-            title
-          }
-        }
-        seo {
-          title
-          description
-        }
-      }
-    }
-  `)
+  const { seo, bannerData, outroData } = useContactApi()
   const banner = bannerData[0]
+  const outro = outroData[0]
 
   return (
     <Page>
@@ -88,6 +65,13 @@ export default () => {
           </Col>
         </Row>
       </Section>
+      <OutroCTA
+        textTop={outro.textTop}
+        textBottom={outro.textBottom}
+        text={outro.text}
+        buttonText={outro.buttonText}
+        buttonUrl={outro.buttonUrl}
+      />
       <Footer />
     </Page>
   )

@@ -5,11 +5,10 @@ import { IoMdClose as IoMdClose_ } from 'react-icons/io'
 
 export const NavigationClose = () => {
   const closeNav = useStoreActions(actions => actions.nav.closeNav)
-  const handleClick = () => closeNav()
 
   return (
     <StyledNavClose>
-      <IoMdClose onClick={handleClick} />
+      <IoMdClose onClick={closeNav} />
     </StyledNavClose>
   )
 }

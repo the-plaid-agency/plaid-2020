@@ -5,9 +5,8 @@ import { GiHamburgerMenu as GiHamburgerMenu_ } from 'react-icons/gi'
 
 export const TopBarBurger = () => {
   const openNav = useStoreActions(actions => actions.nav.openNav)
-  const handleClick = () => openNav()
 
-  return <GiHamburgerMenu onClick={handleClick} />
+  return <GiHamburgerMenu onClick={openNav} />
 }
 
 const GiHamburgerMenu = styled(GiHamburgerMenu_)`

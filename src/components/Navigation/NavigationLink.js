@@ -4,7 +4,13 @@ import PropTypes from 'prop-types'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 
 export const NavigationLink = ({ to = "/", children, ...props }) => (
-  <AniLink cover direction="left" bg="#FF671D" activeClassName="active" to={to} {...props}>
+  <AniLink
+    activeClassName="active"
+    bg="#FF671D"
+    cover
+    direction="left"
+    to={to}
+    {...props}>
     {children}
   </AniLink>
 )
