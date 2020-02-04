@@ -15,7 +15,9 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: ${props => props.theme.fonts.playfairDisplay};
-    font-size: 5em; /* 80px */
+    /* 80px */
+    /* font-size: 5em; */
+    font-size: 4.761904762vw;
     line-height: 1.25;
   }
   h2 {
