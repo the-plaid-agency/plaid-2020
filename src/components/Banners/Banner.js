@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import { TextButton } from 'components'
 import Img from 'gatsby-image'
+import { media } from 'utils'
 
 export const Banner = ({
   imageSrc,
@@ -17,17 +18,17 @@ export const Banner = ({
   buttonVariant = 'white',
 }) => (
   <StyledHeader angle={angle}>
-    <HeaderText>
-      <h1>
+    <HeaderContainer>
+      <HeaderText>
         <div>
           {textTop}<span>.</span>
         </div>
         <div>
           <span>{textBottom}</span>.
         </div>
-      </h1>
+      </HeaderText>
       <TextButton to={'/' + buttonUrl} text={buttonText} variant={buttonVariant} />
-    </HeaderText>
+    </HeaderContainer>
     <HeaderImage
       fluid={imageSrc}
       height={height}
@@ -60,7 +61,7 @@ const StyledHeader = styled.header`
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6vw), 0 100%);
   `}
 `
-const HeaderText = styled.div`
+const HeaderContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -71,14 +72,17 @@ const HeaderText = styled.div`
   bottom: 0;
   left: 0;
   z-index: 1;
-  h1 {
-    color: ${props => props.theme.colors.white};
-    text-align: center;
-    user-select: none;
-  }
+`
+const HeaderText = styled.h1`
+  color: ${props => props.theme.colors.white};
+  text-align: center;
+  user-select: none;
   span {
     color: ${props => props.theme.colors.primary};
   }
+  ${media.wrap`
+    font-size: 5vw;
+  `}
 `
 const HeaderImage = styled(Img)`
   height: ${({ height }) => height ?? 100}vh;

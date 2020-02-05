@@ -42,7 +42,7 @@ const StyledIntroCTA = styled(Section)`
   padding-top: ${props => props.theme.layout.paddingGiant};
 `
 const Row = styled(Row_)`
-  max-width: 1000px;
+  max-width: ${props => props.theme.layout.maxWidthFixedSmall};
 `
 const Col = styled(Col_)`
   background-image: url(${imgTexturePlaid1});

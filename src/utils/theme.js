@@ -24,6 +24,7 @@ export const theme = {
     borderRadius: '0.3125rem', // 5px
     maxWidth: '90vw',
     maxWidthFixed: '75rem', // 1200px
+    maxWidthFixedSmall: '62.5rem', // 1000px
     padding: '1.875rem', // 30px
     paddingBig: '3.75rem', // 60px
     paddingHuge: '5.625rem', // 90px
@@ -35,6 +36,7 @@ export const theme = {
   },
   breakpoints: {
     desktop: 1200,
+    wrap: 1000,
     tablet: 960,
     phone: 480
   }

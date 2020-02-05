@@ -10,7 +10,8 @@ export const NavigationLink = ({ to = "/", children, ...props }) => (
     cover
     direction="left"
     to={to}
-    {...props}>
+    {...props}
+  >
     {children}
   </AniLink>
 )
