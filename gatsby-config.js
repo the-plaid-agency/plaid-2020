@@ -48,27 +48,23 @@ module.exports = {
         // Add any options here
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Playfair Display`,
-    //         variants: [`700`],
-    //       },
-    //       {
-    //         family: `Lato`,
-    //         subsets: [`latin`],
-    //         variants: [`400`, `400i`, `700`, `900`],
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            subsets: [`latin`],
+            variants: [`400`, `400i`, `700`, `900`],
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Playfair Display:700', 'Lato:400,400i,700,700i']
+          families: ['Playfair Display:700']
         }
       }
     },
