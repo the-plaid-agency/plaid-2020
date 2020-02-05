@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { Page, SEO, Banner, IntroCTA, FeaturedPortfolioItem, OutroCTA, Footer } from 'components'
 import { useHomeApi, usePortfolioItemApi } from 'hooks'
 
@@ -8,7 +8,7 @@ export default () => {
   const banner = bannerData[0]
   const intro = introData[0]
   const outro = outroData[0]
-  const items = useMemo(() => itemData.filter(data => data.featured))
+  const items = itemData.filter(data => data.featured)
 
   return (
     <Page>
