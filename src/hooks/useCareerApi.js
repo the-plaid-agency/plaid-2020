@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
-export const useCareerApis = () => {
+export const useCareerApi = () => {
   const { datoCmsCareer } = useStaticQuery(graphql`
     query {
       datoCmsCareer {

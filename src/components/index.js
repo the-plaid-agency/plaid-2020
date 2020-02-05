@@ -24,6 +24,8 @@ export * from './Logo/Logo'
 export * from './CTAs/IntroCTA'
 export * from './CTAs/OutroCTA'
 
+export * from './Portfolio/FeaturedPortfolioItem'
+
 export * from './TopBar/TopBarBurger'
 export * from './TopBar/TopBar'
 

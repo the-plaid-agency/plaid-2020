@@ -1,39 +1,18 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Page, SEO, Banner, Section, Row, Col, Footer } from 'components'
+import { Page, SEO, Banner, OutroCTA, Footer } from 'components'
+import { useCareerApi } from 'hooks'
 
 export default () => {
-  const { datoCmsCareer: { bannerData, seo } } = useStaticQuery(graphql`
-    query {
-      datoCmsCareer {
-        bannerData {
-          angle
-          height
-          textTop
-          textBottom
-          buttonUrl
-          buttonText
-          buttonVariant
-          image {
-            fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid
-            }
-            alt
-            title
-          }
-        }
-        seo {
-          title
-          description
-        }
-      }
-    }
-  `)
+  const { seo, bannerData, outroData } = useCareerApi()
   const banner = bannerData[0]
+  const outro = outroData[0]
 
   return (
     <Page>
-      <SEO title={seo.title} description={seo.description} />
+      <SEO
+        title={seo.title}
+        description={seo.description}
+      />
       <Banner
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}
@@ -46,13 +25,13 @@ export default () => {
         buttonUrl={banner.buttonUrl}
         buttonVariant={banner.buttonVariant}
       />
-      <Section>
-        <Row>
-          <Col>
-            <p>Careers page</p>
-          </Col>
-        </Row>
-      </Section>
+      <OutroCTA
+        textTop={outro.textTop}
+        textBottom={outro.textBottom}
+        text={outro.text}
+        buttonText={outro.buttonText}
+        buttonUrl={outro.buttonUrl}
+      />
       <Footer />
     </Page>
   )

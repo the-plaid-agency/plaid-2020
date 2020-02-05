@@ -1,16 +1,21 @@
-import React from 'react'
-import { Page, SEO, Banner, IntroCTA, OutroCTA, Footer } from 'components'
-import { useHomeApi } from 'hooks'
+import React, { useMemo } from 'react'
+import { Page, SEO, Banner, IntroCTA, FeaturedPortfolioItem, OutroCTA, Footer } from 'components'
+import { useHomeApi, usePortfolioItemApi } from 'hooks'
 
 export default () => {
   const { seo, bannerData, introData, outroData } = useHomeApi()
+  const { itemData } = usePortfolioItemApi()
   const banner = bannerData[0]
   const intro = introData[0]
   const outro = outroData[0]
+  const items = useMemo(() => itemData.filter(data => data.featured))
 
   return (
     <Page>
-      <SEO title={seo.title} description={seo.description} />
+      <SEO
+        title={seo.title}
+        description={seo.description}
+      />
       <Banner
         imageSrc={banner.image.fluid}
         imageAlt={banner.image.alt}
@@ -30,6 +35,17 @@ export default () => {
         buttonText={intro.buttonText}
         buttonUrl={intro.buttonUrl}
       />
+      {items.map((data, i) => {
+        let key = i + 1
+        return (
+          <FeaturedPortfolioItem
+            key={key}
+            name={data.name}
+            shortDescription={data.shortDescription}
+            tags={data.tags}
+          />
+        )
+      })}
       <OutroCTA
         textTop={outro.textTop}
         textBottom={outro.textBottom}
