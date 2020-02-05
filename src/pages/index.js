@@ -17,9 +17,7 @@ export default () => {
         description={seo.description}
       />
       <Banner
-        imageSrc={banner.image.fluid}
-        imageAlt={banner.image.alt}
-        imageTitle={banner.image.title}
+        image={banner.image}
         angle={banner.angle}
         height={banner.height}
         textTop={banner.textTop}
@@ -41,8 +39,11 @@ export default () => {
           <FeaturedPortfolioItem
             key={key}
             name={data.name}
-            shortDescription={data.shortDescription}
+            fullName={data.fullName}
             tags={data.tags}
+            shortDescription={data.shortDescription}
+            logo={data.logo}
+            featuredImage={data.featuredImage}
           />
         )
       })}

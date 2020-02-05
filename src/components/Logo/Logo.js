@@ -4,7 +4,7 @@ import { routes } from 'utils'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const Logo = () => (
-  <StyledLogo cover direction="left" bg="#FF671D" to={routes.home}>
+  <StyledLogo cover direction="right" bg="#FF671D" to={routes.home}>
     <svg width="59px" height="26px" viewBox="0 0 59 26">
       <g id="Website" stroke="none">
         <g id="Home-Page-PFD-v2" transform="translate(-84.000000, -60.000000)">

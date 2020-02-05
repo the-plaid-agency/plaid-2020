@@ -6,9 +6,11 @@ import Img from 'gatsby-image'
 import { media } from 'utils'
 
 export const Banner = ({
-  imageSrc,
-  imageAlt = '',
-  imageTitle = '',
+  image: {
+    fluid,
+    alt = '',
+    title = '',
+  },
   angle = 'none',
   height = 100,
   textTop = 'Lorem Ipsum Dolor Sit Amet',
@@ -30,18 +32,20 @@ export const Banner = ({
       <TextButton to={'/' + buttonUrl} text={buttonText} variant={buttonVariant} />
     </HeaderContainer>
     <HeaderImage
-      fluid={imageSrc}
+      fluid={fluid}
+      alt={alt}
+      title={title}
       height={height}
-      alt={imageAlt}
-      title={imageTitle}
     />
   </StyledHeader>
 )
 
 Banner.propTypes = {
-  imageSrc: PropTypes.object,
-  imageAlt: PropTypes.string,
-  imageTitle: PropTypes.string,
+  image: PropTypes.exact({
+    fluid: PropTypes.object,
+    alt: PropTypes.string,
+    title: PropTypes.string,
+  }),
   angle: PropTypes.string,
   height: PropTypes.number,
   textTop: PropTypes.string,

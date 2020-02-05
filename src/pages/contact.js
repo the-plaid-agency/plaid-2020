@@ -26,9 +26,7 @@ export default () => {
         description={seo.description}
       />
       <Banner
-        imageSrc={banner.image.fluid}
-        imageAlt={banner.image.alt}
-        imageTitle={banner.image.title}
+        image={banner.image}
         angle={banner.angle}
         height={banner.height}
         textTop={banner.textTop}
