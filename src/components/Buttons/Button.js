@@ -59,7 +59,6 @@ const StyledButton = styled(AniLink)`
   :hover :after {
     transform: translate3d(0, 0, 0) scale(1);
   }
-
   ${({ variant }) => variant === 'white' && css`
     background-color: ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.secondary};

@@ -12,10 +12,14 @@ export const usePortfolioItemApi = () => {
           fullName
           featured
           logo {
+            url
             alt
             title
           }
           featuredImage {
+            fluid(maxWidth: 960) {
+              ...GatsbyDatoCmsFluid
+            }
             alt
             title
           }

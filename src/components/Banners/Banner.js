@@ -57,7 +57,6 @@ Banner.propTypes = {
 
 const StyledHeader = styled.header`
   position: relative;
-
   ${({ angle }) => angle === 'ltr' && css`
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 6vw));
   `}

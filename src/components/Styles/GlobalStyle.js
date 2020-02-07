@@ -10,39 +10,44 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background-color: ${props => props.theme.colors.white};
     overflow-y: scroll;
   }
 
   h1 {
     font-family: ${props => props.theme.fonts.playfairDisplay};
-    /* 80px */
-    font-size: 5em;
-    /* font-size: 4.761904762vw; */
+    font-size: 5em; /* 80px */
     line-height: 1.25;
+
   }
   h2 {
     font-family: ${props => props.theme.fonts.playfairDisplay};
     font-size: 3.4375em; /* 55px */
     line-height: 1.1818181818;
+
   }
   h3 {
     font-family: ${props => props.theme.fonts.playfairDisplay};
     font-size: 2.25em; /* 36px */
     line-height: 1.1944444444;
+
   }
   h4 {
     font-size: 1.625em; /* 26px */
     line-height: 1.2307692308;
+
   }
   h5 {
     font-size: 1.125em; /* 18px */
     line-height: 1.4444444444;
+
   }
   h6 {
     font-size: 0.875em; /* 14px */
     font-weight: ${props => props.theme.fonts.bold900};
     letter-spacing: 4px;
     line-height: 2;
+
     text-transform: uppercase;
   }
 
@@ -64,6 +69,11 @@ export const GlobalStyle = createGlobalStyle`
   }
   ol {
     list-style-position:  inside;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  p, ol, ul, code {
+    margin-bottom: ${props => props.theme.layout.margin};
   }
 
   code {

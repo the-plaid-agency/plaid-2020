@@ -51,7 +51,6 @@ const StyledButton = styled(AniLink)`
   :hover svg {
     transform: translateX(5px);
   }
-
   ${({ variant }) => variant === 'white' && css`
     color: ${props => props.theme.colors.white};
     filter: drop-shadow(0 0 1px rgba(0,0,0,0.5));

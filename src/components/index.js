@@ -1,8 +1,8 @@
-export * from './StoreSync/StoreSync'
-
-export * from './Styles/GlobalStyle'
 export * from './Styles/NormalizeStyle'
 export * from './Styles/ResetStyle'
+export * from './Styles/GlobalStyle'
+
+export * from './StoreSync/StoreSync'
 
 export * from './Section/Section'
 export * from './Row/Row'
