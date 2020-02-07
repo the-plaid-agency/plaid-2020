@@ -19,12 +19,16 @@ export const FeaturedPortfolioItem = ({
   return (
     <StyledFeaturedPortfolioItem {...props}>
       <Name>{name}</Name>
-      <Card>
-        <Tags>{tags}</Tags>
-        <FullName>{fullName}</FullName>
-        <Description>{shortDescription}</Description>
-        <Button to={routes.portfolio} text="View Project" variant="white" />
-      </Card>
+      <CardPadder>
+        <CardHolder>
+          <Card>
+            <Tags>{tags}</Tags>
+            <FullName>{fullName}</FullName>
+            <Description>{shortDescription}</Description>
+            <Button to={routes.portfolio} text="View Project" variant="white" />
+          </Card>
+        </CardHolder>
+      </CardPadder>
       <Feature>
         <Image
           fluid={featuredImage.fluid}
@@ -55,17 +59,35 @@ FeaturedPortfolioItem.propTypes = {
 const StyledFeaturedPortfolioItem = styled.div`
   padding-top: ${props => props.theme.layout.paddingGiant};
   position: relative;
+  display: flex;
+  justify-content: flex-end;
+`
+
+const CardPadder = styled.div`
+  position: relative;
+  width: 33%;
+  display: flex;
+`
+const CardHolder = styled.div`
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
 `
 const Card = styled.div`
   background-color: ${props => props.theme.colors.secondary};
   padding: ${props => props.theme.layout.paddingBig};
-  max-width: 530px;
+  width: 530px;
+  transform: translateX(50%);
+  z-index: 1;
 `
 const Name = styled.div`
   color: #f9f9f9;
   font-family: ${props => props.theme.fonts.playfairDisplay};
   font-size: 12vw;
-  line-height: 1;
+  line-height: 0.8;
   position: absolute;
   top: 0;
   left: 0;
@@ -75,7 +97,7 @@ const Name = styled.div`
   z-index: -1;
 `
 const Tags = styled.h6`
-  color: ${props => props.theme.colors.white};
+  color: #b0bfbc;
   margin-bottom: 20px;
 `
 const FullName = styled.h2`
@@ -84,6 +106,7 @@ const FullName = styled.h2`
 const Description = styled.p`
   color: ${props => props.theme.colors.white};
 `
+
 const Feature = styled.div`
   position: relative;
   width: 67%;
@@ -96,9 +119,11 @@ const LogoHolder = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 33%;
 `
 const Logo = styled.img`
   max-width: 300px;
 `
-const Image = styled(Img)``
+const Image = styled(Img)`
+  min-height: 620px;
+`
