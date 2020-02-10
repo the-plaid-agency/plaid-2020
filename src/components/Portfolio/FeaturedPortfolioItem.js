@@ -20,12 +20,12 @@ export const FeaturedPortfolioItem = ({
     <StyledFeaturedPortfolioItem variant={variant} {...props}>
       <Name>{name}</Name>
       <Card variant={variant}>
-        <CardBg variant={variant}>
+        <Background variant={variant}>
           <Tags variant={variant}>{tags}</Tags>
           <FullName variant={variant}>{fullName}</FullName>
           <Description variant={variant}>{shortDescription}</Description>
           <Button to={routes.portfolio} text="View Project" variant={variant === 'green' ? 'white2' : 'white'} />
-        </CardBg>
+        </Background>
       </Card>
       <Feature>
         <Image
@@ -72,13 +72,14 @@ const Card = styled.div`
   display: flex;
   justify-content: flex-end;
   ${media.tablet`
+    justify-content: flex-start;
     width: 100%;
   `}
   ${({ variant }) => variant === 'green' && css`
     justify-content: flex-start;
   `}
 `
-const CardBg = styled.div`
+const Background = styled.div`
   background-color: ${props => props.theme.colors.secondary};
   padding: ${props => props.theme.layout.paddingBig};
   width: 530px;
@@ -86,6 +87,7 @@ const CardBg = styled.div`
   transform: translateX(50%);
   z-index: 1;
   ${media.tablet`
+    min-width: auto;
     transform: none;
     width: 100%;
   `}
@@ -143,12 +145,12 @@ const LogoHolder = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  left: 29%;
+  left: 265px; /*Half of card width */
   ${media.tablet`
     left: 0;
   `}
   ${({ variant }) => variant === 'green' && css`
-    right: 29%;
+    right: 265px;
     left: 0;
     ${media.tablet`
       right: 0;
