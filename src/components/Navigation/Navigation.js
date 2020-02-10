@@ -63,7 +63,7 @@ const StyledNavigation = styled.nav`
   max-width: 26.875rem; /* 430px */
   min-width: 18.75rem; /* 300px */
   z-index: 200;
-  @media only screen and (max-width: 26.875rem) { /* 430px */
+  @media (max-width: 26.875rem) { /* 430px */
     clip-path: none;
     max-width: 100%;
   }

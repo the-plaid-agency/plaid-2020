@@ -60,7 +60,7 @@ const StyledFooter = styled.footer`
   padding-left: ${props => props.theme.layout.padding};
 `
 const Col = styled(Col_)`
-  @media only screen and (max-width: 50rem) { /* 800px */
+  @media (max-width: 50rem) { /* 800px */
     align-items: flex-start;
     width: 100%;
   }
