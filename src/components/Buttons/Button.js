@@ -45,7 +45,7 @@ const StyledButton = styled(AniLink)`
   text-transform: uppercase;
   user-select: none;
   :after {
-    border: 1px solid #b0bfbc;
+    border: 1px solid ${props => props.theme.colors.tertiary};
     content: '';
     height: 100%;
     position: absolute;
@@ -64,6 +64,13 @@ const StyledButton = styled(AniLink)`
   ${({ variant }) => variant === 'white' && css`
     background-color: ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.secondary};
+  `}
+  ${({ variant }) => variant === 'white2' && css`
+    background-color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.secondary};
+    :after {
+      border: 1px solid ${props => props.theme.colors.secondary};
+    }
   `}
   ${({ variant }) => variant === 'black' && css`
     background-color: ${props => props.theme.colors.black};

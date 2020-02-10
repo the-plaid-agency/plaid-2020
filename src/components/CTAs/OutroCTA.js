@@ -28,7 +28,7 @@ export const OutroCTA = ({
           </div>
         </Title>
       </Col>
-      <Col width="40%">
+      <Col width="40%" justify="center">
         <Text>{text}</Text>
         <Button to={'/' + buttonUrl} text={buttonText} />
       </Col>

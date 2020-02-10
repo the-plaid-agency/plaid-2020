@@ -44,6 +44,7 @@ export default () => {
             shortDescription={data.shortDescription}
             logo={data.logo}
             featuredImage={data.featuredImage}
+            variant={key % 2 === 0 ? 'green' : 'default'}
           />
         )
       })}

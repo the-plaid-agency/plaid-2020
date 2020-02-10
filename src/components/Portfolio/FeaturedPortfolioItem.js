@@ -1,11 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
-// import styled, { css } from 'styled-components'
+// import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import { Button } from 'components'
 import Img from 'gatsby-image'
-// import { media } from 'utils'
-import { routes } from 'utils'
+import { media, routes } from 'utils'
 
 export const FeaturedPortfolioItem = ({
   name = 'Project Name',
@@ -14,28 +13,27 @@ export const FeaturedPortfolioItem = ({
   shortDescription = 'Lorem Ipsum Dolor Sit Amet',
   logo,
   featuredImage,
+  variant = 'default',
   ...props
 }) => {
   return (
-    <StyledFeaturedPortfolioItem {...props}>
+    <StyledFeaturedPortfolioItem variant={variant} {...props}>
       <Name>{name}</Name>
-      <CardPadder>
-        <CardHolder>
-          <Card>
-            <Tags>{tags}</Tags>
-            <FullName>{fullName}</FullName>
-            <Description>{shortDescription}</Description>
-            <Button to={routes.portfolio} text="View Project" variant="white" />
-          </Card>
-        </CardHolder>
-      </CardPadder>
+      <Card variant={variant}>
+        <CardBg variant={variant}>
+          <Tags variant={variant}>{tags}</Tags>
+          <FullName variant={variant}>{fullName}</FullName>
+          <Description variant={variant}>{shortDescription}</Description>
+          <Button to={routes.portfolio} text="View Project" variant={variant === 'green' ? 'white2' : 'white'} />
+        </CardBg>
+      </Card>
       <Feature>
         <Image
           fluid={featuredImage.fluid}
           alt={featuredImage.alt}
           title={featuredImage.title}
         />
-        <LogoHolder>
+        <LogoHolder variant={variant}>
           <Logo
             src={logo.url}
             alt={logo.alt}
@@ -57,36 +55,50 @@ FeaturedPortfolioItem.propTypes = {
 }
 
 const StyledFeaturedPortfolioItem = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   padding-top: ${props => props.theme.layout.paddingGiant};
   position: relative;
-  display: flex;
-  justify-content: flex-end;
+  ${({ variant }) => variant === 'green' && css`
+    flex-direction: row-reverse;
+  `}
 `
 
-const CardPadder = styled.div`
+const Card = styled.div`
   position: relative;
   width: 33%;
-  display: flex;
-`
-const CardHolder = styled.div`
   align-items: center;
   display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  justify-content: flex-end;
+  ${media.tablet`
+    width: 100%;
+  `}
+  ${({ variant }) => variant === 'green' && css`
+    justify-content: flex-start;
+  `}
 `
-const Card = styled.div`
+const CardBg = styled.div`
   background-color: ${props => props.theme.colors.secondary};
   padding: ${props => props.theme.layout.paddingBig};
   width: 530px;
+  min-width: 530px;
   transform: translateX(50%);
   z-index: 1;
+  ${media.tablet`
+    transform: none;
+    width: 100%;
+  `}
+  ${({ variant }) => variant === 'green' && css`
+    background-color: ${props => props.theme.colors.tertiary};
+    transform: translateX(-50%);
+  `}
 `
 const Name = styled.div`
   color: #f9f9f9;
   font-family: ${props => props.theme.fonts.playfairDisplay};
-  font-size: 12vw;
+  /* font-size: 12vw; */
+  font-size: 200px;
   line-height: 0.8;
   position: absolute;
   top: 0;
@@ -97,19 +109,31 @@ const Name = styled.div`
   z-index: -1;
 `
 const Tags = styled.h6`
-  color: #b0bfbc;
+  color: ${props => props.theme.colors.tertiary};
   margin-bottom: 20px;
+  ${({ variant }) => variant === 'green' && css`
+    color: ${props => props.theme.colors.white};
+  `}
 `
 const FullName = styled.h2`
   color: ${props => props.theme.colors.white};
+  ${({ variant }) => variant === 'green' && css`
+    color: ${props => props.theme.colors.secondary};
+  `}
 `
 const Description = styled.p`
   color: ${props => props.theme.colors.white};
+  ${({ variant }) => variant === 'green' && css`
+    color: ${props => props.theme.colors.secondary};
+  `}
 `
 
 const Feature = styled.div`
   position: relative;
   width: 67%;
+  ${media.tablet`
+    width: 100%;
+  `}
 `
 const LogoHolder = styled.div`
   display: flex;
@@ -119,7 +143,17 @@ const LogoHolder = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  left: 33%;
+  left: 29%;
+  ${media.tablet`
+    left: 0;
+  `}
+  ${({ variant }) => variant === 'green' && css`
+    right: 29%;
+    left: 0;
+    ${media.tablet`
+      right: 0;
+    `}
+  `}
 `
 const Logo = styled.img`
   max-width: 300px;
