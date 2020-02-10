@@ -9,6 +9,7 @@ import {
   Copyright,
 } from 'components'
 import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
+import { media } from 'utils'
 
 export const Footer = () => {
   const { datoCmsFooter: footer } = useStaticQuery(graphql`
@@ -25,7 +26,7 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <Row>
-        <Col width="50%">
+        <Col width="49%">
           <h4>
             <span>{footer.cta} </span>
             <AniLink
@@ -39,7 +40,7 @@ export const Footer = () => {
           </h4>
           <Logo />
         </Col>
-        <Col align="flex-end" justify="space-between" width="50%">
+        <Col align="flex-end" justify="space-between" width="49%">
           <Social />
           <Copyright>{footer.copyright}</Copyright>
         </Col>
@@ -60,10 +61,10 @@ const StyledFooter = styled.footer`
   padding-left: ${props => props.theme.layout.padding};
 `
 const Col = styled(Col_)`
-  @media (max-width: 50rem) { /* 800px */
+  ${media.tablet`
     align-items: flex-start;
     width: 100%;
-  }
+  `}
 `
 const Social = styled(Social_)`
   margin-bottom: ${props => props.theme.layout.margin};

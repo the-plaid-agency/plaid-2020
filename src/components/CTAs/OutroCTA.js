@@ -8,6 +8,7 @@ import {
   Button,
 } from 'components'
 import imgTexturePlaid1 from 'assets/texture_plaid_1.svg'
+import { media } from 'utils'
 
 export const OutroCTA = ({
   textTop = 'Lorem Ipsum',
@@ -18,7 +19,7 @@ export const OutroCTA = ({
 }) => (
   <StyledOutroCTA>
     <Row>
-      <Col width="60%">
+      <Col width="59%">
         <Title>
           <div>
             {textTop}
@@ -28,7 +29,7 @@ export const OutroCTA = ({
           </div>
         </Title>
       </Col>
-      <Col width="40%" justify="center">
+      <Col width="39%" justify="center">
         <Text>{text}</Text>
         <Button to={'/' + buttonUrl} text={buttonText} />
       </Col>
@@ -56,7 +57,9 @@ const Row = styled(Row_)`
   max-width: ${props => props.theme.layout.maxWidthFixed};
 `
 const Col = styled(Col_)`
-  /* Media Query Stuff Here */
+  ${media.tablet`
+    width: 100%;
+  `}
 `
 const Title = styled.h1`
   span {
