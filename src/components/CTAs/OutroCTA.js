@@ -15,7 +15,7 @@ export const OutroCTA = ({
   textBottom = 'Dolor Amet',
   text = 'Content coming soon!',
   buttonText = 'Button',
-  buttonUrl = 'about',
+  buttonUrl = 'team',
 }) => (
   <StyledOutroCTA>
     <Row>
@@ -49,7 +49,7 @@ const StyledOutroCTA = styled(Section)`
   background-image: url(${imgTexturePlaid1});
   background-position: right -20px bottom -50px;
   background-repeat: no-repeat;
-  background-size: auto 75%;
+  background-size: 340px auto;
   padding-bottom: ${props => props.theme.layout.paddingHuge};
   padding-top: ${props => props.theme.layout.paddingGiant};
 `

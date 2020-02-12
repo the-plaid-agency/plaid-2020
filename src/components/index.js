@@ -23,8 +23,10 @@ export * from './Logo/Logo'
 
 export * from './CTAs/IntroCTA'
 export * from './CTAs/OutroCTA'
+export * from './CTAs/PartnerCTA'
 
 export * from './Portfolio/FeaturedPortfolioItem'
+export * from './Portfolio/FeaturedPortfolioList'
 
 export * from './TopBar/TopBarBurger'
 export * from './TopBar/TopBar'

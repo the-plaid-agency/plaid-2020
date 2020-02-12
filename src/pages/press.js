@@ -9,10 +9,7 @@ export default () => {
 
   return (
     <Page>
-      <SEO
-        title={seo.title}
-        description={seo.description}
-      />
+      <SEO title={seo.title} description={seo.description} />
       <Banner
         image={banner.image}
         angle={banner.angle}

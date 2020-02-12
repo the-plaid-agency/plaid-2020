@@ -4,7 +4,7 @@ export const usePortfolioItemApi = () => {
   const { allDatoCmsPortfolioItem } = useStaticQuery(graphql`
     query {
       allDatoCmsPortfolioItem(sort: {order: ASC, fields: position}) {
-        itemData: nodes {
+        portfolioItem: nodes {
           name
           tags
           shortDescription

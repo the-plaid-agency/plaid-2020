@@ -5,31 +5,32 @@ import {
   Section,
   Row as Row_,
   Col as Col_,
-  Button as Button_,
+  TextButton as TextButton_,
 } from 'components'
-import imgTexturePlaid1 from 'assets/texture_plaid_1.svg'
+import imgTexturePlaid2 from 'assets/texture_plaid_2.svg'
 import imgIconBowtieGrey from 'assets/icon_bowtie_grey.svg'
 
-export const IntroCTA = ({
+export const PartnerCTA = ({
   title = 'Lorem Ipsum',
   subTitle = 'Dolor Amet',
   text = 'Content coming soon!',
   buttonText = 'Button',
   buttonUrl = 'team',
 }) => (
-  <StyledIntroCTA>
+  <StyledPartnerCTA>
     <Row>
       <Col>
-        <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
+        <Title>{title}</Title>
+        <Bowtie src={imgIconBowtieGrey} alt="" />
         <Text>{text}</Text>
-        <Button to={'/' + buttonUrl} text={buttonText} />
+        <TextButton to={'/' + buttonUrl} text={buttonText} />
       </Col>
     </Row>
-  </StyledIntroCTA>
+  </StyledPartnerCTA>
 )
 
-IntroCTA.propTypes = {
+PartnerCTA.propTypes = {
   title: PropTypes.string,
   subTitle: PropTypes.string,
   text: PropTypes.string,
@@ -37,34 +38,30 @@ IntroCTA.propTypes = {
   buttonUrl: PropTypes.string,
 }
 
-const StyledIntroCTA = styled(Section)`
+const StyledPartnerCTA = styled(Section)`
+  background-image: url(${imgTexturePlaid2});
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 200px auto;
   padding-bottom: ${props => props.theme.layout.paddingHuge};
   padding-top: ${props => props.theme.layout.paddingGiant};
 `
 const Row = styled(Row_)`
   max-width: ${props => props.theme.layout.maxWidthFixedSmall};
 `
-const Col = styled(Col_)`
-  background-image: url(${imgTexturePlaid1});
-  background-position: center right;
-  background-repeat: no-repeat;
-  background-size: 340px auto;
+const Col = styled(Col_)``
+const SubTitle = styled.h6`
+  color: ${props => props.theme.colors.primary};
+  margin-bottom: 20px;
 `
-const Title = styled.h1`
+const Bowtie = styled.img`
+  max-height: 18px;
+  margin-bottom: ${props => props.theme.layout.padding};
+`
+const Title = styled.h3`
   max-width: 500px;
 `
-const SubTitle = styled.h6`
-  background-image: url(${imgIconBowtieGrey});
-  background-position: center left;
-  background-repeat: no-repeat;
-  background-size: auto 18px;
-  color: ${props => props.theme.colors.primary};
-  padding-left: 60px;
-`
 const Text = styled.p`
-  margin-left: 60px;
   max-width: 460px;
 `
-const Button = styled(Button_)`
-  margin-left: 60px;
-`
+const TextButton = styled(TextButton_)``

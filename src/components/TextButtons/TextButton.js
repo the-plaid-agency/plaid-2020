@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { routes } from 'utils'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { FaChevronRight } from 'react-icons/fa'
+// import { FaChevronRight } from 'react-icons/fa'
+// import { IoIosArrowForward } from 'react-icons/io'
+import { FiChevronRight as FiChevronRight_ } from 'react-icons/fi'
+// import { AiOutlineRight } from 'react-icons/ai'
 
 export const TextButton = ({
   to = '/home',
@@ -21,7 +24,7 @@ export const TextButton = ({
     variant={variant}
     {...props}>
     {text}
-    <FaChevronRight />
+    <FiChevronRight />
   </StyledButton>
 )
 
@@ -42,15 +45,6 @@ const StyledButton = styled(AniLink)`
   line-height: 1.75; /* 28px */
   position: relative;
   user-select: none;
-  svg {
-    height: inherit;
-    margin-left: 5px;
-    transition: ${props => props.theme.transitions.default};
-    transform: translateX(0);
-  }
-  :hover svg {
-    transform: translateX(5px);
-  }
   ${({ variant }) => variant === 'white' && css`
     color: ${props => props.theme.colors.white};
     filter: drop-shadow(0 0 1px rgba(0,0,0,0.5));
@@ -58,4 +52,13 @@ const StyledButton = styled(AniLink)`
   ${({ variant }) => variant === 'orange' && css`
     color: ${props => props.theme.colors.primary};
   `}
+`
+const FiChevronRight = styled(FiChevronRight_)`
+  height: inherit;
+  margin-left: 5px;
+  transition: ${props => props.theme.transitions.default};
+  transform: scale(2) translateX(0);
+  ${StyledButton}:hover & {
+    transform: scale(2) translateX(2px);
+  }
 `

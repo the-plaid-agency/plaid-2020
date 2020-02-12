@@ -26,7 +26,14 @@ export const useHomeApi = () => {
         }
         introData {
           title
-          subText
+          subTitle
+          text
+          buttonText
+          buttonUrl
+        }
+        partnerData {
+          title
+          subTitle
           text
           buttonText
           buttonUrl

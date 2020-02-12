@@ -2,12 +2,13 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 export const Row = styled.div`
-  align-items: ${({ align }) => align ?? 'stretch' };
+  align-items: ${({ align }) => align ?? 'stretch'};
   display: flex;
+  flex-direction: ${({ direction }) => direction ?? 'row'};
   flex-wrap: wrap;
-  justify-content: ${({ justify }) => justify ?? 'space-between' };
+  justify-content: ${({ justify }) => justify ?? 'space-between'};
   max-width: ${props => props.theme.layout.maxWidth};
-  width: ${({ width }) => width ?? '100%' };
+  width: ${({ width }) => width ?? '100%'};
 `
 
 Row.propTypes = {
@@ -19,6 +20,10 @@ Row.propTypes = {
     'baseline',
     'initial',
     'inherit',
+  ]),
+  direction: PropTypes.oneOf([
+    'row',
+    'row-reverse',
   ]),
   justify: PropTypes.oneOf([
     'justify-content',

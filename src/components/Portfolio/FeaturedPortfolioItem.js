@@ -1,5 +1,4 @@
 import React from 'react'
-// import styled from 'styled-components'
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import { Button } from 'components'
@@ -24,7 +23,11 @@ export const FeaturedPortfolioItem = ({
           <Tags variant={variant}>{tags}</Tags>
           <FullName variant={variant}>{fullName}</FullName>
           <Description variant={variant}>{shortDescription}</Description>
-          <Button to={routes.portfolio} text="View Project" variant={variant === 'green' ? 'white2' : 'white'} />
+          <Button
+            to={routes.portfolio}
+            text="View Project"
+            variant={variant === 'green' ? 'white2' : 'white'}
+          />
         </Background>
       </Card>
       <Feature>
@@ -34,11 +37,7 @@ export const FeaturedPortfolioItem = ({
           title={featuredImage.title}
         />
         <LogoHolder variant={variant}>
-          <Logo
-            src={logo.url}
-            alt={logo.alt}
-            title={logo.title}
-          />
+          <Logo src={logo.url} alt={logo.alt} title={logo.title} />
         </LogoHolder>
       </Feature>
     </StyledFeaturedPortfolioItem>

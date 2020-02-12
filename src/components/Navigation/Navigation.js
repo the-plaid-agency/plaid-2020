@@ -74,7 +74,7 @@ const Address = styled(Address_)`
   padding-top: ${props => props.theme.layout.padding};
   padding-right: ${props => props.theme.layout.paddingBig};
   padding-bottom: ${props => props.theme.layout.padding};
-  a:hover {
+  :hover {
     color: ${props => props.theme.colors.secondary};
   }
 `
