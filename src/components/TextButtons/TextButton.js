@@ -57,8 +57,8 @@ const FiChevronRight = styled(FiChevronRight_)`
   height: inherit;
   margin-left: 5px;
   transition: ${props => props.theme.transitions.default};
-  transform: scale(2) translateX(0);
+  transform: scale(2) translateX(0) translateZ(0);
   ${StyledButton}:hover & {
-    transform: scale(2) translateX(2px);
+    transform: scale(2) translateX(2px) translateZ(0);
   }
 `

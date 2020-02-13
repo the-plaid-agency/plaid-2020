@@ -39,6 +39,7 @@ export const theme = {
     desktop: 1200,
     wrap: 1000,
     tablet: 960,
+    phablet: 600,
     phone: 480
   }
 }

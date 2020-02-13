@@ -79,7 +79,7 @@ export default () => {
           buttonUrl={partner.buttonUrl}
         />
       </Bg>
-      <FeaturedPortfolioList number="9" />
+      <FeaturedPortfolioList number={9} />
       <OutroCTA
         textTop={outro.textTop}
         textBottom={outro.textBottom}
