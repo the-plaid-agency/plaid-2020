@@ -22,7 +22,7 @@ export const PartnerCTA = ({
       <Col>
         <SubTitle>{subTitle}</SubTitle>
         <Title>{title}</Title>
-        <Bowtie src={imgIconBowtieGrey} alt="" />
+        <Bowtie src={imgIconBowtieGrey} alt="Bowtie Image" />
         <Text>{text}</Text>
         <TextButton to={'/' + buttonUrl} text={buttonText} />
       </Col>

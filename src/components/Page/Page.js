@@ -21,8 +21,4 @@ const StyledPage = styled.main`
   table a:hover {
     border-bottom: 2px solid;
   }
-
-  [class^="Col"] *:last-child {
-    margin-bottom: 0;
-  }
 `
