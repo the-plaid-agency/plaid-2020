@@ -16,34 +16,34 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: ${props => props.theme.fonts.playfairDisplay};
-    font-size: 5em; /* 80px */
+    font-size: ${props => props.theme.fonts.h1Size};
     line-height: 1.25;
 
   }
   h2 {
     font-family: ${props => props.theme.fonts.playfairDisplay};
-    font-size: 3.4375em; /* 55px */
+    font-size: ${props => props.theme.fonts.h2Size};
     line-height: 1.1818181818;
 
   }
   h3 {
     font-family: ${props => props.theme.fonts.playfairDisplay};
-    font-size: 2.25em; /* 36px */
+    font-size: ${props => props.theme.fonts.h3Size};
     line-height: 1.1944444444;
 
   }
   h4 {
-    font-size: 1.625em; /* 26px */
+    font-size: ${props => props.theme.fonts.h4Size};
     line-height: 1.2307692308;
 
   }
   h5 {
-    font-size: 1.125em; /* 18px */
+    font-size: ${props => props.theme.fonts.h5Size};
     line-height: 1.4444444444;
 
   }
   h6 {
-    font-size: 0.875em; /* 14px */
+    font-size: ${props => props.theme.fonts.h6Size};
     font-weight: ${props => props.theme.fonts.bold900};
     letter-spacing: 4px;
     line-height: 2;
@@ -60,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${props => props.theme.fonts.defaultSize};
     font-weight: ${props => props.theme.fonts.defaultWeight};
     font-style: ${props => props.theme.fonts.defaultStyle};
-    line-height: ${props => props.theme.fonts.lineHeight};
+    line-height: ${props => props.theme.fonts.defaultLineHeight};
   }
 
   ul {

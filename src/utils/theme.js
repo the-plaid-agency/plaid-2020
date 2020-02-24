@@ -10,12 +10,18 @@ export const theme = {
   fonts: {
     lato: `'Lato', sans-serif`,
     playfairDisplay: `'Playfair Display', serif`,
-    lineHeight: '1.75',
     bold: '700',
     bold900: '900',
+    defaultLineHeight: '1.75',
     defaultSize: '1em',
     defaultStyle: 'normal',
     defaultWeight: '400',
+    h1Size: '5em', // 80px
+    h2Size: '3.4375em', // 55px
+    h3Size: '2.25em', // 36px
+    h4Size: '1.625em', // 26px
+    h5Size: '1.125em', // 18px
+    h6Size: '0.875em', // 14px
   },
   transitions: {
     default: '0.3s all ease',
