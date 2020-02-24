@@ -1,12 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { Anchor } from 'components'
 import { routes } from 'utils'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-// import { FaChevronRight } from 'react-icons/fa'
-// import { IoIosArrowForward } from 'react-icons/io'
 import { FiChevronRight as FiChevronRight_ } from 'react-icons/fi'
-// import { AiOutlineRight } from 'react-icons/ai'
 
 export const TextButton = ({
   to = '/home',
@@ -18,11 +15,11 @@ export const TextButton = ({
 }) => (
   <StyledButton
     to={to === '/home' ? routes.home : to}
-    cover
     direction={coverDir}
     bg={coverBg}
     variant={variant}
-    {...props}>
+    {...props}
+  >
     {text}
     <FiChevronRight />
   </StyledButton>
@@ -36,7 +33,7 @@ TextButton.propTypes = {
   variant: PropTypes.string,
 }
 
-const StyledButton = styled(AniLink)`
+const StyledButton = styled(Anchor)`
   color: ${props => props.theme.colors.black};
   display: inline-flex;
   font-size: 0.9375em; /* 15px */

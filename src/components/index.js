@@ -8,6 +8,8 @@ export * from './Section/Section'
 export * from './Row/Row'
 export * from './Col/Col'
 
+export * from './Anchor/Anchor'
+
 export * from './Address/Address'
 export * from './Copyright/Copyright'
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Anchor } from 'components'
 import { routes } from 'utils'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const Logo = () => (
-  <StyledLogo cover direction="right" bg="#FF671D" to={routes.home}>
+  <StyledLogo direction="right" to={routes.home}>
     <svg width="59px" height="26px" viewBox="0 0 59 26">
       <g id="Website" stroke="none">
         <g id="Home-Page-PFD-v2" transform="translate(-84.000000, -60.000000)">
@@ -21,7 +21,7 @@ export const Logo = () => (
   </StyledLogo>
 )
 
-const StyledLogo = styled(AniLink)`
+const StyledLogo = styled(Anchor)`
   pointer-events: auto;
   svg {
     fill: ${props => props.theme.colors.white};

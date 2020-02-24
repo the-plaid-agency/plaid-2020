@@ -26,6 +26,7 @@ export const theme = {
   transitions: {
     default: '0.3s all ease',
     fast: '0.2s all ease',
+    slow: '0.4s all ease',
   },
   layout: {
     borderRadius: '0.3125rem', // 5px

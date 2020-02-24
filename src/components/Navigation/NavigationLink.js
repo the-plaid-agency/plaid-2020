@@ -1,26 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
+import { Anchor as Anchor_ } from 'components'
 
-export const NavigationLink = ({ to = "/", children, ...props }) => (
-  <AniLink
-    activeClassName="active"
-    bg="#FF671D"
-    cover
-    direction="left"
-    to={to}
-    {...props}
-  >
+export const NavigationLink = ({ to = '/', children, ...props }) => (
+  <Anchor to={to} {...props}>
     {children}
-  </AniLink>
+  </Anchor>
 )
 
 NavigationLink.propTypes = {
-  to: PropTypes.string
+  to: PropTypes.string,
+  children: PropTypes.any,
 }
 
-const AniLink = styled(AniLink_)`
+const Anchor = styled(Anchor_)`
   background-color: ${props => props.theme.colors.transparent};
   color: ${props => props.theme.colors.white};
   display: flex;

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { Anchor } from 'components'
 import { routes } from 'utils'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 export const Button = ({
   to = '/home',
@@ -14,11 +14,11 @@ export const Button = ({
 }) => (
   <StyledButton
     to={to === '/home' ? routes.home : to}
-    cover
     direction={coverDir}
     bg={coverBg}
     variant={variant}
-    {...props}>
+    {...props}
+  >
     {text}
   </StyledButton>
 )
@@ -31,7 +31,7 @@ Button.propTypes = {
   variant: PropTypes.string,
 }
 
-const StyledButton = styled(AniLink)`
+const StyledButton = styled(Anchor)`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
   display: inline-flex;

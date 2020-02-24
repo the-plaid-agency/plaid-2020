@@ -4,11 +4,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import {
   Row,
   Col as Col_,
+  Anchor as Anchor_,
   Logo,
   Social as Social_,
   Copyright,
 } from 'components'
-import AniLink_ from 'gatsby-plugin-transition-link/AniLink'
 import { media } from 'utils'
 
 export const Footer = () => {
@@ -29,14 +29,9 @@ export const Footer = () => {
         <Col width="49%">
           <h4>
             <span>{footer.cta} </span>
-            <AniLink
-              cover
-              direction="left"
-              bg="#FF671D"
-              activeClassName="active"
-              to={'/' + footer.ctaLinkPage}>
+            <Anchor to={'/' + footer.ctaLinkPage}>
               {footer.ctaLinkText}
-            </AniLink>
+            </Anchor>
           </h4>
           <Logo />
         </Col>
@@ -72,7 +67,7 @@ const Social = styled(Social_)`
     color: ${props => props.theme.colors.primary};
   }
 `
-const AniLink = styled(AniLink_)`
+const Anchor = styled(Anchor_)`
   border-bottom: 2px solid ${props => props.theme.colors.transparent};
   transition: ${props => props.theme.transitions.default};
   :hover {
