@@ -68,18 +68,18 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-plugin-transition-link`,
-      options: {
-        layout: require.resolve(`./src/components/Layout/Layout`),
-      },
-    },
     // {
-    //   resolve: `gatsby-plugin-layout`,
+    //   resolve: `gatsby-plugin-transition-link`,
     //   options: {
-    //     component: require.resolve(`./src/components/Layout/Layout`),
+    //     layout: require.resolve(`./src/components/Layout/Layout`),
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout/Layout`),
+      },
+    },
 
     /**
      *

@@ -1,7 +1,9 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { useStoreActions } from 'easy-peasy'
 import PropTypes from 'prop-types'
 import { TextButton } from 'components'
+import { Waypoint } from 'react-waypoint'
 import Img from 'gatsby-image'
 import { media } from 'utils'
 
@@ -18,27 +20,42 @@ export const Banner = ({
   buttonText = 'Featured Work',
   buttonUrl = 'portfolio',
   buttonVariant = 'white',
-}) => (
-  <StyledHeader angle={angle}>
-    <HeaderContainer>
-      <HeaderText>
-        <div>
-          {textTop}<span>.</span>
-        </div>
-        <div>
-          <span>{textBottom}</span>.
-        </div>
-      </HeaderText>
-      <TextButton to={'/' + buttonUrl} text={buttonText} variant={buttonVariant} />
-    </HeaderContainer>
-    <HeaderImage
-      fluid={fluid}
-      alt={alt}
-      title={title}
-      height={height}
-    />
-  </StyledHeader>
-)
+}) => {
+  const activateTopBar = useStoreActions(actions => actions.topBar.activateTopBar)
+  const deactivateTopBar = useStoreActions(actions => actions.topBar.deactivateTopBar)
+
+  const handleWaypointEnter = () => {
+    console.log("Entering")
+    deactivateTopBar()
+  }
+  const handleWaypointLeave = () => {
+    console.log("Leaving")
+    activateTopBar()
+  }
+
+  return (
+    <StyledHeader angle={angle}>
+      <HeaderContainer>
+        <HeaderText>
+          <div>
+            {textTop}<span>.</span>
+          </div>
+          <div>
+            <span>{textBottom}</span>.
+          </div>
+        </HeaderText>
+        <TextButton to={'/' + buttonUrl} text={buttonText} variant={buttonVariant} />
+      </HeaderContainer>
+      <HeaderImage
+        fluid={fluid}
+        alt={alt}
+        title={title}
+        height={height}
+      />
+      <Waypoint onEnter={handleWaypointEnter} onLeave={handleWaypointLeave} topOffset="73px" />
+    </StyledHeader>
+  )
+}
 
 Banner.propTypes = {
   image: PropTypes.exact({

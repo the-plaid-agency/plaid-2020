@@ -1,20 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { useStoreState } from 'easy-peasy'
 import { Anchor } from 'components'
 import { routes } from 'utils'
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 export const Logo = () => {
-  const [hideOnScroll, setHideOnScroll] = useState(true)
-
-  useScrollPosition(({ prevPos, currPos }) => {
-    const isShow = currPos.y > prevPos.y
-    if (isShow !== hideOnScroll) setHideOnScroll(isShow)
-  }, [hideOnScroll], false, false, 300)
+  const isTopBarActive = useStoreState(state => state.topBar.isTopBarActive)
 
   return (
     <StyledLogo direction="right" to={routes.home}>
-      <SvgLogo show={hideOnScroll ? 1 : 0} width="59px" height="26px" viewBox="0 0 59 26">
+      <SvgLogo active={isTopBarActive} width="59px" height="26px" viewBox="0 0 59 26">
         <g id="Website" stroke="none">
           <g id="Home-Page-PFD-v2" transform="translate(-84.000000, -60.000000)">
             <g id="White-Bowtie-Copy" transform="translate(84.000000, 60.000000)">
@@ -35,7 +30,7 @@ const StyledLogo = styled(Anchor)`
   pointer-events: auto;
 `
 const SvgLogo = styled.svg`
-  fill: ${props => props.show ? props.theme.colors.white : props.theme.colors.primary};
+  fill: ${props => props.active ? props.theme.colors.primary : props.theme.colors.white};
   transition: ${props => props.theme.transitions.default};
   ${StyledLogo}:hover & {
     fill: ${props => props.theme.colors.primary};

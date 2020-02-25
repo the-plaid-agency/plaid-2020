@@ -1,23 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { useStoreActions } from 'easy-peasy'
+import { useStoreActions, useStoreState } from 'easy-peasy'
 import { GiHamburgerMenu as GiHamburgerMenu_ } from 'react-icons/gi'
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 export const TopBarBurger = () => {
   const openNav = useStoreActions(actions => actions.nav.openNav)
-  const [hideOnScroll, setHideOnScroll] = useState(true)
+  const isTopBarActive = useStoreState(state => state.topBar.isTopBarActive)
 
-  useScrollPosition(({ prevPos, currPos }) => {
-    const isShow = currPos.y > prevPos.y
-    if (isShow !== hideOnScroll) setHideOnScroll(isShow)
-  }, [hideOnScroll], false, false, 300)
-
-  return <GiHamburgerMenu show={hideOnScroll ? 1 : 0} onClick={openNav} />
+  return <GiHamburgerMenu active={isTopBarActive} onClick={openNav} />
 }
 
 const GiHamburgerMenu = styled(GiHamburgerMenu_)`
-  color: ${props => props.show ? props.theme.colors.white : props.theme.colors.primary};
+  color: ${props => props.active ? props.theme.colors.primary : props.theme.colors.white};
   cursor: pointer;
   font-size: 1.625em; /* 26px */
   pointer-events: auto;

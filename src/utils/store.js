@@ -15,5 +15,14 @@ export const store = createStore({
     closeNav: action((state) => {
       state.isNavOpen = false
     })
+  },
+  topBar: {
+    isTopBarActive: false,
+    activateTopBar: action((state) => {
+      state.isTopBarActive = true
+    }),
+    deactivateTopBar: action((state) => {
+      state.isTopBarActive = false
+    })
   }
 })
