@@ -12,6 +12,7 @@ const StyledPage = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  z-index: 1;
 
   p a,
   table a {

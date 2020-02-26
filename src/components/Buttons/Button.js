@@ -44,7 +44,7 @@ const StyledButton = styled(Anchor)`
   position: relative;
   text-transform: uppercase;
   user-select: none;
-  :after {
+  :before {
     border: 1px solid ${props => props.theme.colors.tertiary};
     content: '';
     height: 100%;
@@ -57,7 +57,7 @@ const StyledButton = styled(Anchor)`
     opacity: 0;
     z-index: -1;
   }
-  :hover :after {
+  :hover :before {
     transform: translate3d(0, 0, 0) scale(1);
     opacity: 1;
   }
@@ -68,7 +68,7 @@ const StyledButton = styled(Anchor)`
   ${({ variant }) => variant === 'white2' && css`
     background-color: ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.secondary};
-    :after {
+    :before {
       border: 1px solid ${props => props.theme.colors.secondary};
     }
   `}
