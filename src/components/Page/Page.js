@@ -19,6 +19,7 @@ const StyledPage = styled.main`
     border-bottom: 2px solid ${props => props.theme.colors.transparent};
     transition: ${props => props.theme.transitions.default};
   }
+
   p a:hover,
   table a:hover {
     border-bottom: 2px solid;
