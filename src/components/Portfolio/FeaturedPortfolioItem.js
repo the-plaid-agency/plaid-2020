@@ -57,6 +57,7 @@ const StyledFeaturedPortfolioItem = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  overflow: hidden;
   padding-top: ${props => props.theme.layout.paddingGiant};
   position: relative;
   ${({ variant }) => variant === 'green' && css`
