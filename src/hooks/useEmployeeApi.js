@@ -12,12 +12,12 @@ export const useEmployeeApi = () => {
             alt
             title
           }
-          quote
-          description
           firstName
           lastName
-          linkedin
           jobTitle
+          linkedin
+          quote
+          description
         }
       }
     }
