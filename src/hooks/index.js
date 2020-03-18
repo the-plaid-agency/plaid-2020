@@ -1,6 +1,7 @@
 export * from './useToggle'
 export * from './useCareerApi'
 export * from './useContactApi'
+export * from './useEmployeeApi'
 export * from './useHomeApi'
 export * from './usePortfolioApi'
 export * from './usePortfolioItemApi'
