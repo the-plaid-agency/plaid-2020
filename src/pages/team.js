@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, SEO, Banner, OutroCTA, Footer } from 'components'
+import { Page, SEO, Banner, OutroCTA, EmployeeGrid, Footer } from 'components'
 import { useTeamApi } from 'hooks'
 
 export default () => {
@@ -20,6 +20,7 @@ export default () => {
         buttonUrl={banner.buttonUrl}
         buttonVariant={banner.buttonVariant}
       />
+      <EmployeeGrid />
       <OutroCTA
         textTop={outro.textTop}
         textBottom={outro.textBottom}

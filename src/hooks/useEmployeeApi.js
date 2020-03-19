@@ -4,7 +4,7 @@ export const useEmployeeApi = () => {
   const { allDatoCmsEmployee } = useStaticQuery(graphql`
     query {
       allDatoCmsEmployee(sort: {fields: position, order: ASC}) {
-        employee: nodes {
+        employees: nodes {
           profilePicture {
             fluid(maxWidth: 960) {
               ...GatsbyDatoCmsFluid
@@ -15,7 +15,7 @@ export const useEmployeeApi = () => {
           firstName
           lastName
           jobTitle
-          linkedin
+          linkedIn
           quote
           description
         }

@@ -14,35 +14,33 @@ export const FeaturedPortfolioItem = ({
   featuredImage,
   variant = 'default',
   ...props
-}) => {
-  return (
-    <StyledFeaturedPortfolioItem variant={variant} {...props}>
-      <Name>{name}</Name>
-      <Card variant={variant}>
-        <Background variant={variant}>
-          <Tags variant={variant}>{tags}</Tags>
-          <FullName variant={variant}>{fullName}</FullName>
-          <Description variant={variant}>{shortDescription}</Description>
-          <Button
-            to={routes.portfolio}
-            text="View Project"
-            variant={variant === 'green' ? 'white2' : 'white'}
-          />
-        </Background>
-      </Card>
-      <Feature>
-        <Image
-          fluid={featuredImage.fluid}
-          alt={featuredImage.alt}
-          title={featuredImage.title}
+}) => (
+  <StyledFeaturedPortfolioItem variant={variant} {...props}>
+    <Name>{name}</Name>
+    <Card variant={variant}>
+      <Background variant={variant}>
+        <Tags variant={variant}>{tags}</Tags>
+        <FullName variant={variant}>{fullName}</FullName>
+        <Description variant={variant}>{shortDescription}</Description>
+        <Button
+          to={routes.portfolio}
+          text="View Project"
+          variant={variant === 'green' ? 'white2' : 'white'}
         />
-        <LogoHolder variant={variant}>
-          <Logo src={logo.url} alt={logo.alt} title={logo.title} />
-        </LogoHolder>
-      </Feature>
-    </StyledFeaturedPortfolioItem>
-  )
-}
+      </Background>
+    </Card>
+    <Feature>
+      <Image
+        fluid={featuredImage.fluid}
+        alt={featuredImage.alt}
+        title={featuredImage.title}
+      />
+      <LogoHolder variant={variant}>
+        <Logo src={logo.url} alt={logo.alt} title={logo.title} />
+      </LogoHolder>
+    </Feature>
+  </StyledFeaturedPortfolioItem>
+)
 
 FeaturedPortfolioItem.propTypes = {
   name: PropTypes.string,

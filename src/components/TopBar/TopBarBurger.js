@@ -7,7 +7,7 @@ export const TopBarBurger = () => {
   const openNav = useStoreActions(actions => actions.nav.openNav)
   const isTopBarActive = useStoreState(state => state.topBar.isTopBarActive)
 
-  return <GiHamburgerMenu active={isTopBarActive} onClick={openNav} />
+  return <GiHamburgerMenu active={isTopBarActive ? 1 : 0} onClick={openNav} />
 }
 
 const GiHamburgerMenu = styled(GiHamburgerMenu_)`

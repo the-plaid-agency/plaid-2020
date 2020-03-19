@@ -27,6 +27,9 @@ export * from './CTAs/IntroCTA'
 export * from './CTAs/OutroCTA'
 export * from './CTAs/PartnerCTA'
 
+export * from './Employees/Employee'
+export * from './Employees/EmployeeGrid'
+
 export * from './Portfolio/FeaturedPortfolioItem'
 export * from './Portfolio/FeaturedPortfolioList'
 
