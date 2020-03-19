@@ -31,6 +31,12 @@ export const useTeamApi = () => {
           buttonText
           buttonUrl
         }
+        teamGridData {
+          title
+          description
+          workHereTitle
+          workHereDescription
+        }
         outroData {
           buttonText
           buttonUrl

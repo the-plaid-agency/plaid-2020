@@ -33,6 +33,10 @@ export const theme = {
     maxWidth: '90vw',
     maxWidthFixed: '75rem', // 1200px
     maxWidthFixedSmall: '62.5rem', // 1000px
+    spacing: '1.875rem', // 30px
+    spacingBig: '3.75rem', // 60px
+    spacingHuge: '5.625rem', // 90px
+    spacingGiant: '7.5rem', // 120px
     padding: '1.875rem', // 30px
     paddingBig: '3.75rem', // 60px
     paddingHuge: '5.625rem', // 90px

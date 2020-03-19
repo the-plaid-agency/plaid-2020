@@ -5,20 +5,20 @@ import Img from 'gatsby-image'
 import { SocialIcon as SocialIcon_ } from 'components'
 
 export const Employee = ({
-  profilePicture,
+  profilePicture: { fluid, alt = '', title = '' },
   firstName = 'First Name',
   lastName = 'Last Name',
   jobTitle = 'Job Title',
-  linkedIn = 'https://www.linkedin.com/',
+  linkedIn = '',
   quote = 'Amazing Quote',
   description = 'Lorem Ipsum',
   ...props
 }) => (
   <StyledEmployee {...props}>
     <Image
-      fluid={profilePicture.fluid}
-      alt={profilePicture.alt}
-      title={profilePicture.title}
+      fluid={fluid}
+      alt={alt}
+      title={title}
     />
     <Gradient />
     <Info>
@@ -26,14 +26,18 @@ export const Employee = ({
       <Name>{lastName}</Name>
       <Meta>
         <JobTitle>{jobTitle}</JobTitle>
-        <SocialIcon href={linkedIn} icon="LinkedIn" />
+        {linkedIn && <SocialIcon href={linkedIn} icon="LinkedIn" />}
       </Meta>
     </Info>
   </StyledEmployee>
 )
 
 Employee.propTypes = {
-  profilePicture: PropTypes.object,
+  profilePicture: PropTypes.exact({
+    fluid: PropTypes.object,
+    alt: PropTypes.string,
+    title: PropTypes.string,
+  }),
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   jobTitle: PropTypes.string,
@@ -46,13 +50,16 @@ const StyledEmployee = styled.div`
   position: relative;
   z-index: 1;
 `
-const Image = styled(Img)``
+const Image = styled(Img)`
+  height: 100%;
+`
 const Gradient = styled.div`
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.75) 0%,
     rgba(255, 255, 255, 0) 50%
   );
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;

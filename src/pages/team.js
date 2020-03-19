@@ -1,11 +1,24 @@
 import React from 'react'
-import { Page, SEO, Banner, IntroCTA, OutroCTA, EmployeeGrid, Footer } from 'components'
+import styled from 'styled-components'
+import {
+  Page,
+  SEO,
+  Banner,
+  IntroCTA,
+  Section,
+  Row,
+  Col,
+  OutroCTA,
+  EmployeeGrid,
+  Footer,
+} from 'components'
 import { useTeamApi } from 'hooks'
 
 export default () => {
-  const { seo, bannerData, introData, outroData } = useTeamApi()
+  const { seo, bannerData, introData, teamGridData, outroData } = useTeamApi()
   const banner = bannerData[0]
   const intro = introData[0]
+  const teamGrid = teamGridData[0]
   const outro = outroData[0]
 
   return (
@@ -28,7 +41,20 @@ export default () => {
         buttonText={intro.buttonText}
         buttonUrl={intro.buttonUrl}
       />
-      <EmployeeGrid />
+      <MeetYourTeam>
+        <Row justify="center">
+          <Col width="740px">
+            <h1>{teamGrid.title}<span>.</span></h1>
+            <p>{teamGrid.description}</p>
+          </Col>
+        </Row>
+      </MeetYourTeam>
+      <EmployeeGrid
+        title={teamGrid.title}
+        description={teamGrid.description}
+        workHereTitle={teamGrid.workHereTitle}
+        workHereDescription={teamGrid.workHereDescription}
+      />
       <OutroCTA
         textTop={outro.textTop}
         textBottom={outro.textBottom}
@@ -40,3 +66,10 @@ export default () => {
     </Page>
   )
 }
+
+const MeetYourTeam = styled(Section)`
+  padding-bottom: 0;
+  span {
+    color: ${props => props.theme.colors.primary};
+  }
+`

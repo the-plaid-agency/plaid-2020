@@ -6,7 +6,11 @@ import { useEmployeeApi } from 'hooks'
 import { media } from 'utils'
 import imgIconBowtieOrange from 'assets/icon_bowtie_orange.svg'
 
-export const EmployeeGrid = props => {
+export const EmployeeGrid = ({
+  workHereTitle = 'Your Picture Here!',
+  workHereDescription = 'Lorem ipsum.',
+  ...props
+}) => {
   const { employees } = useEmployeeApi()
 
   return (
@@ -26,9 +30,9 @@ export const EmployeeGrid = props => {
             />
           ))}
           <YourPictureHere>
-            <h3>Your Picture Here!</h3>
+            <h3>{workHereTitle}</h3>
             <Bowtie src={imgIconBowtieOrange} alt="Bowtie Image" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitv lorem ipsum dolor sit amet, consectetur adipiscing elitv.</p>
+            <p>{workHereDescription}</p>
           </YourPictureHere>
         </Grid>
       </Row>
@@ -67,10 +71,14 @@ const YourPictureHere = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: ${props => props.theme.layout.padding};
+  padding-left: ${props => props.theme.layout.padding};
+  padding-right: ${props => props.theme.layout.padding};
   text-align: center;
   h3 {
     margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 0;
   }
 `
 const Bowtie = styled.img`
