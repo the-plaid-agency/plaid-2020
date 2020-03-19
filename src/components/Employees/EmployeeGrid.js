@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Section, Row, Employee } from 'components'
 import { useEmployeeApi } from 'hooks'
 import { media } from 'utils'
+import imgIconBowtieOrange from 'assets/icon_bowtie_orange.svg'
 
 export const EmployeeGrid = props => {
   const { employees } = useEmployeeApi()
@@ -24,6 +25,11 @@ export const EmployeeGrid = props => {
               description={data.description}
             />
           ))}
+          <YourPictureHere>
+            <h3>Your Picture Here!</h3>
+            <Bowtie src={imgIconBowtieOrange} alt="Bowtie Image" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitv lorem ipsum dolor sit amet, consectetur adipiscing elitv.</p>
+          </YourPictureHere>
         </Grid>
       </Row>
     </StyledEmployeeGrid>
@@ -55,4 +61,19 @@ const Grid = styled.div`
   ${media.phablet`
     grid-template-columns: 1fr;
   `}
+`
+const YourPictureHere = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: ${props => props.theme.layout.padding};
+  text-align: center;
+  h3 {
+    margin-bottom: 20px;
+  }
+`
+const Bowtie = styled.img`
+  max-height: 18px;
+  margin-bottom: 20px;
 `

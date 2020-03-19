@@ -24,6 +24,13 @@ export const useTeamApi = () => {
             title
           }
         }
+        introData {
+          title
+          subTitle
+          text
+          buttonText
+          buttonUrl
+        }
         outroData {
           buttonText
           buttonUrl

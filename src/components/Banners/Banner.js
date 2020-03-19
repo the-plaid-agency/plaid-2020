@@ -37,12 +37,16 @@ export const Banner = ({
     <StyledHeader angle={angle}>
       <HeaderContainer>
         <HeaderText>
-          <div>
-            {textTop}<span>.</span>
-          </div>
-          <div>
-            <span>{textBottom}</span>.
-          </div>
+          {textTop &&
+            <div>
+              {textTop}<span>.</span>
+            </div>
+          }
+          {textBottom &&
+            <div>
+              <span>{textBottom}</span>.
+            </div>
+          }
         </HeaderText>
         <TextButton to={'/' + buttonUrl} text={buttonText} variant={buttonVariant} />
       </HeaderContainer>
@@ -52,7 +56,7 @@ export const Banner = ({
         title={title}
         height={height}
       />
-      <Waypoint onEnter={handleWaypointEnter} onLeave={handleWaypointLeave} topOffset="73px" />
+      <Waypoint onEnter={handleWaypointEnter} onLeave={handleWaypointLeave} topOffset="180px" />
     </StyledHeader>
   )
 }

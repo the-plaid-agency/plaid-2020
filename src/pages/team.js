@@ -1,10 +1,11 @@
 import React from 'react'
-import { Page, SEO, Banner, OutroCTA, EmployeeGrid, Footer } from 'components'
+import { Page, SEO, Banner, IntroCTA, OutroCTA, EmployeeGrid, Footer } from 'components'
 import { useTeamApi } from 'hooks'
 
 export default () => {
-  const { seo, bannerData, outroData } = useTeamApi()
+  const { seo, bannerData, introData, outroData } = useTeamApi()
   const banner = bannerData[0]
+  const intro = introData[0]
   const outro = outroData[0]
 
   return (
@@ -19,6 +20,13 @@ export default () => {
         buttonText={banner.buttonText}
         buttonUrl={banner.buttonUrl}
         buttonVariant={banner.buttonVariant}
+      />
+      <IntroCTA
+        title={intro.title}
+        subTitle={intro.subTitle}
+        text={intro.text}
+        buttonText={intro.buttonText}
+        buttonUrl={intro.buttonUrl}
       />
       <EmployeeGrid />
       <OutroCTA
