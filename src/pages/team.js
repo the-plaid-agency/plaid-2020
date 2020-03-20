@@ -9,6 +9,7 @@ import {
   Row,
   Col,
   OutroCTA,
+  ServiceList,
   EmployeeGrid,
   Footer,
 } from 'components'
@@ -41,6 +42,7 @@ export default () => {
         buttonText={intro.buttonText}
         buttonUrl={intro.buttonUrl}
       />
+      <ServiceList />
       <MeetYourTeam>
         <Row justify="center">
           <Col width="740px">

@@ -30,6 +30,8 @@ export * from './CTAs/PartnerCTA'
 export * from './Employees/Employee'
 export * from './Employees/EmployeeGrid'
 
+export * from './Services/ServiceList'
+
 export * from './Portfolio/FeaturedPortfolioItem'
 export * from './Portfolio/FeaturedPortfolioList'
 
