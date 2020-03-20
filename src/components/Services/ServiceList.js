@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-// import PropTypes from 'prop-types'
 import { Section, Row as Row_ } from 'components'
 import { useServiceListApi } from 'hooks'
 import { media } from 'utils'
@@ -16,8 +15,8 @@ export const ServiceList = props => {
             <Service key={i}>
               <ServiceTitle>{data.title}</ServiceTitle>
               <ServiceDivier />
-              {data.serviceNameData.map((data, i) => (
-                <ServiceName>{data.name}</ServiceName>
+              {data.serviceNameData.map((data, x) => (
+                <ServiceName key={x}>{data.name}</ServiceName>
               ))}
             </Service>
           ))}

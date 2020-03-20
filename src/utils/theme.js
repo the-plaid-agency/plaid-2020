@@ -3,6 +3,7 @@ export const theme = {
     primary: 'rgba(255,103,29,1)', // #ff671d
     secondary: 'rgba(68,68,68,1)', // #444
     tertiary: 'rgba(176, 191, 188, 1)', // #b0bfbc
+    quaternary: 'rgba(174, 196, 194, 1)', // #AEC4C2
     transparent: 'rgba(0,0,0,0)', // Transparent
     white: 'rgba(255, 255, 255, 1)', // #fff
     black: 'rgba(0, 0, 0, 1)', // #000
