@@ -31,6 +31,14 @@ export const useTeamApi = () => {
           buttonText
           buttonUrl
         }
+        pillarsTitleData {
+          title
+          subTitle
+        }
+        serviceTitleData {
+          title
+          subTitle
+        }
         teamGridData {
           title
           description

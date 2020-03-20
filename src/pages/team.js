@@ -13,14 +13,26 @@ import {
   EmployeeGrid,
   Footer,
 } from 'components'
-import { useTeamApi } from 'hooks'
+import { useTeamApi, usePillarListApi } from 'hooks'
+import { media } from 'utils'
 import imgIconBowtieGrey from 'assets/icon_bowtie_grey.svg'
 import imgIconBowtieOrange from 'assets/icon_bowtie_orange.svg'
 
 export default () => {
-  const { seo, bannerData, introData, teamGridData, outroData } = useTeamApi()
+  const {
+    seo,
+    bannerData,
+    introData,
+    pillarsTitleData,
+    serviceTitleData,
+    teamGridData,
+    outroData,
+  } = useTeamApi()
+  const { pillarList } = usePillarListApi()
   const banner = bannerData[0]
   const intro = introData[0]
+  const pillarsTitle = pillarsTitleData[0]
+  const serviceTitle = serviceTitleData[0]
   const teamGrid = teamGridData[0]
   const outro = outroData[0]
 
@@ -47,38 +59,27 @@ export default () => {
       <PillarsSection>
         <PillarsRow>
           <Col>
-            <PillarsTitle>PLAID Pillars</PillarsTitle>
-            <PillarsSubTitle>Who We Are</PillarsSubTitle>
+            <PillarsTitle>{pillarsTitle.title}</PillarsTitle>
+            <PillarsSubTitle>{pillarsTitle.subTitle}</PillarsSubTitle>
           </Col>
         </PillarsRow>
-        <PillarsRow>
-          <Col width="19%">
-            <PillarsLetter>P</PillarsLetter>
-            <PillarText>Partnership</PillarText>
-          </Col>
-          <Col width="19%">
-            <PillarsLetter variant="green">L</PillarsLetter>
-            <PillarText>Lifelong Learning</PillarText>
-          </Col>
-          <Col width="19%">
-            <PillarsLetter>A</PillarsLetter>
-            <PillarText>Activators</PillarText>
-          </Col>
-          <Col width="19%">
-            <PillarsLetter variant="green">I</PillarsLetter>
-            <PillarText>Integrity</PillarText>
-          </Col>
-          <Col width="19%">
-            <PillarsLetter>D</PillarsLetter>
-            <PillarText>Dedication</PillarText>
-          </Col>
-        </PillarsRow>
+        <Row>
+          {pillarList.map((data, i) => {
+            const green = i % 2 !== 0
+            return (
+              <PillarsCol key={data.letter} width="18%">
+                <PillarsLetter variant={green && 'green'}>{data.letter}</PillarsLetter>
+                <PillarTitle>{data.title}</PillarTitle>
+              </PillarsCol>
+            )
+          })}
+        </Row>
       </PillarsSection>
       <OurServicesSection>
         <OurServicesRow justify="center">
           <Col last>
-            <h1>Full-Service Agency</h1>
-            <OurServicesSubTitle>Our Services</OurServicesSubTitle>
+            <h1>{serviceTitle.title}</h1>
+            <OurServicesSubTitle>{serviceTitle.subTitle}</OurServicesSubTitle>
           </Col>
         </OurServicesRow>
       </OurServicesSection>
@@ -112,7 +113,6 @@ export default () => {
   )
 }
 
-
 const PillarsSection = styled(Section)`
   background-color: ${props => props.theme.colors.secondary};
   flex-direction: column;
@@ -120,6 +120,15 @@ const PillarsSection = styled(Section)`
 `
 const PillarsRow = styled(Row)`
   max-width: ${props => props.theme.layout.maxWidthFixed};
+  margin-bottom: ${props => props.theme.layout.marginBig};
+`
+const PillarsCol = styled(Col)`
+  ${media.tablet`
+    width: 49%;
+  `}
+  ${media.phone`
+    width: 100%;
+  `}
 `
 const PillarsTitle = styled.h1`
   color: ${props => props.theme.colors.white};
@@ -137,7 +146,7 @@ const PillarsLetter = styled.h1`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
   display: flex;
-  font-size: 10vw;
+  font-size: 14vw;
   justify-content: center;
   min-height: 450px;
   width: 100%;
@@ -145,7 +154,7 @@ const PillarsLetter = styled.h1`
     background-color: ${props => props.theme.colors.quaternary};
   `}
 `
-const PillarText = styled.h3`
+const PillarTitle = styled.h3`
   color: ${props => props.theme.colors.white};
   font-size: 2.0625em;
   text-align: center;
