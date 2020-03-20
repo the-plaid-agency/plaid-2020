@@ -36,16 +36,14 @@ const Row = styled(Row_)`
 `
 const Grid = styled.div`
   display: grid;
-  grid-gap: ${props => props.theme.layout.margin};
+  grid-column-gap: ${props => props.theme.layout.margin};
+  grid-row-gap: ${props => props.theme.layout.marginHuge};
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   padding-bottom: ${props => props.theme.layout.margin};
   transition: ${props => props.theme.transitions.default};
   width: 100%;
   ${media.desktop`
-    grid-template-columns: repeat(3, 1fr);
-  `}
-  ${media.tablet`
     grid-template-columns: repeat(2, 1fr);
   `}
   ${media.phablet`
