@@ -57,6 +57,7 @@ export default () => {
         buttonUrl={intro.buttonUrl}
       />
       <PillarsSection>
+        <PillarsArrow />
         <PillarsRow>
           <Col>
             <PillarsTitle>{pillarsTitle.title}</PillarsTitle>
@@ -67,15 +68,17 @@ export default () => {
           {pillarList.map((data, i) => {
             const green = i % 2 !== 0
             return (
-              <PillarsCol key={data.letter} width="18%">
+              <PillarsCol key={data.letter} width="17%">
                 <PillarsLetter variant={green && 'green'}>{data.letter}</PillarsLetter>
                 <PillarTitle>{data.title}</PillarTitle>
               </PillarsCol>
             )
           })}
         </Row>
+        <PilarsBgText>We Are</PilarsBgText>
       </PillarsSection>
       <OurServicesSection>
+        <OurServicesArrow />
         <OurServicesRow justify="center">
           <Col last>
             <h1>{serviceTitle.title}</h1>
@@ -114,9 +117,28 @@ export default () => {
 }
 
 const PillarsSection = styled(Section)`
+  align-items: center;
   background-color: ${props => props.theme.colors.secondary};
   flex-direction: column;
-  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+`
+const PillarsArrow = styled.div`
+  position: absolute;
+  top: 0;
+  width: 90vw;
+  :before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 60px solid #fff;
+    content: '';
+  }
 `
 const PillarsRow = styled(Row)`
   max-width: ${props => props.theme.layout.maxWidthFixed};
@@ -129,6 +151,23 @@ const PillarsCol = styled(Col)`
   ${media.phone`
     width: 100%;
   `}
+`
+const PilarsBgText = styled.div`
+  align-items: center;
+  color: #4b4b4b;
+  display: flex;
+  font-family: ${props => props.theme.fonts.playfairDisplay};
+  font-size: 500px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  user-select: none;
+  z-index: -1;
 `
 const PillarsTitle = styled.h1`
   color: ${props => props.theme.colors.white};
@@ -146,9 +185,11 @@ const PillarsLetter = styled.h1`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
   display: flex;
-  font-size: 14vw;
+  font-size: 240px;
   justify-content: center;
   min-height: 450px;
+  overflow: hidden;
+  padding-bottom: 30px;
   width: 100%;
   ${({ variant }) => variant === 'green' && css`
     background-color: ${props => props.theme.colors.quaternary};
@@ -163,6 +204,24 @@ const PillarTitle = styled.h3`
 
 const OurServicesSection = styled(Section)`
   padding-bottom: 0;
+  position: relative;
+`
+const OurServicesArrow = styled.div`
+  position: absolute;
+  top: 0;
+  width: 90vw;
+  :before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 60px solid ${props => props.theme.colors.secondary};
+    content: '';
+  }
 `
 const OurServicesRow = styled(Row)`
   max-width: ${props => props.theme.layout.maxWidthFixed};
