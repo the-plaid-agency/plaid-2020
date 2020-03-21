@@ -1,10 +1,21 @@
 import React from 'react'
-import { Page, SEO, Banner, OutroCTA, Footer } from 'components'
+import styled from 'styled-components'
+import {
+  Page,
+  SEO,
+  Banner,
+  Section,
+  Row as Row_,
+  Col,
+  OutroCTA,
+  Footer,
+} from 'components'
 import { usePortfolioApi } from 'hooks'
 
 export default () => {
-  const { seo, bannerData, outroData } = usePortfolioApi()
+  const { seo, bannerData, portfolioIntroData, outroData } = usePortfolioApi()
   const banner = bannerData[0]
+  const intro = portfolioIntroData[0]
   const outro = outroData[0]
 
   return (
@@ -20,6 +31,14 @@ export default () => {
         buttonUrl={banner.buttonUrl}
         buttonVariant={banner.buttonVariant}
       />
+      <Section>
+        <Row>
+          <Col>
+            <IntroText>{intro.introTitle}</IntroText>
+            <h1>{intro.text}</h1>
+          </Col>
+        </Row>
+      </Section>
       <OutroCTA
         textTop={outro.textTop}
         textBottom={outro.textBottom}
@@ -31,3 +50,10 @@ export default () => {
     </Page>
   )
 }
+
+const Row = styled(Row_)`
+  max-width: ${props => props.theme.layout.maxWidthFixed};
+`
+const IntroText = styled.h6`
+  color: ${props => props.theme.colors.primary};
+`

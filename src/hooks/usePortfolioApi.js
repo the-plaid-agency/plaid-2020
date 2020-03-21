@@ -24,6 +24,10 @@ export const usePortfolioApi = () => {
             title
           }
         }
+        portfolioIntroData {
+          introTitle
+          text
+        }
         outroData {
           buttonText
           buttonUrl
